@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://legaldhara.com
+
+# Sitemaps
+Sitemap: https://legaldhara.com/sitemap.xml
