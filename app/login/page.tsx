@@ -77,12 +77,12 @@ export default function LoginPage() {
   return (
     <AuthShell
       description="Choose your verified email or mobile number. Both methods finish with the same protected account session."
-      title="Sign in to LegalDhara"
+      title="Sign in to Legal Dhara"
     >
-      <div className="grid grid-cols-2 border-b border-slate-200" role="tablist" aria-label="Sign in method">
+      <div className="grid grid-cols-2 border-b border-ledger-border" role="tablist" aria-label="Sign in method">
         <button
           aria-selected={mode === "email"}
-          className={mode === "email" ? "border-b-2 border-[#d5a643] px-3 py-3 font-semibold text-[#0b1f3a]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
+          className={mode === "email" ? "border-b-2 border-legal-gold px-3 py-3 font-semibold text-ink" : "px-3 py-3 font-semibold text-secondary-text hover:text-ink"}
           onClick={() => selectMode("email")}
           role="tab"
           type="button"
@@ -91,7 +91,7 @@ export default function LoginPage() {
         </button>
         <button
           aria-selected={mode === "phone"}
-          className={mode === "phone" ? "border-b-2 border-[#d5a643] px-3 py-3 font-semibold text-[#0b1f3a]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
+          className={mode === "phone" ? "border-b-2 border-legal-gold px-3 py-3 font-semibold text-ink" : "px-3 py-3 font-semibold text-secondary-text hover:text-ink"}
           onClick={() => selectMode("phone")}
           role="tab"
           type="button"
@@ -109,7 +109,7 @@ export default function LoginPage() {
           <Field label="Email address" type="email" autoComplete="email" value={email} onChange={setEmail} />
           <PasswordField label="Password" autoComplete="current-password" value={password} onChange={setPassword} required />
           <PrimaryButton disabled={auth.loading}>Sign in with email</PrimaryButton>
-          <button className="w-full text-sm font-semibold text-blue-800 underline decoration-blue-300 underline-offset-4" onClick={resetPassword} type="button">
+          <button className="w-full text-sm font-semibold text-ink underline decoration-legal-gold decoration-2 underline-offset-4" onClick={resetPassword} type="button">
             Forgot password?
           </button>
         </form>
@@ -123,7 +123,7 @@ export default function LoginPage() {
               <OtpInput label="Verification code" value={code} onChange={setCode} />
               <PrimaryButton disabled={auth.loading || code.length !== 6}>Verify and sign in</PrimaryButton>
               <button
-                className="w-full text-sm font-semibold text-blue-800 underline decoration-blue-300 underline-offset-4 disabled:text-slate-400 disabled:no-underline"
+                className="w-full text-sm font-semibold text-ink underline decoration-legal-gold decoration-2 underline-offset-4 disabled:text-secondary-text disabled:no-underline"
                 disabled={countdown > 0 || auth.loading}
                 onClick={requestOtp}
                 type="button"
@@ -135,8 +135,8 @@ export default function LoginPage() {
         </form>
       )}
 
-      <p className="mt-8 text-center text-sm text-slate-600">
-        New to LegalDhara? <Link className="font-semibold text-blue-800 underline decoration-blue-300 underline-offset-4" href="/signup">Create an account</Link>
+      <p className="mt-8 text-center text-sm text-secondary-text">
+        New to Legal Dhara? <Link className="font-semibold text-ink underline decoration-legal-gold decoration-2 underline-offset-4" href="/signup">Create an account</Link>
       </p>
     </AuthShell>
   );
@@ -153,10 +153,10 @@ interface FieldProps {
 
 function Field({ label, onChange, ...inputProps }: FieldProps) {
   return (
-    <label className="block text-sm font-semibold text-slate-800">
+    <label className="block text-sm font-semibold text-main-text">
       {label}
       <input
-        className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-950 outline-none transition focus:border-blue-700 focus:ring-4 focus:ring-blue-100 disabled:bg-slate-100"
+        className="mt-2 w-full rounded-md border border-ledger-border bg-white px-4 py-3 text-base text-main-text outline-none transition focus:border-legal-gold focus:ring-4 focus:ring-[#F4EBD8] disabled:bg-warm-paper"
         onChange={(event) => onChange(event.target.value)}
         required
         {...inputProps}
@@ -168,7 +168,7 @@ function Field({ label, onChange, ...inputProps }: FieldProps) {
 function PrimaryButton({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
-      className="w-full rounded-xl bg-[#0b3b75] px-5 py-3.5 font-semibold text-white shadow-[0_12px_24px_-14px_rgba(11,59,117,0.9)] transition hover:bg-[#082d59] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none"
+      className="w-full rounded-md bg-legal-gold px-5 py-3.5 font-semibold text-ink transition hover:bg-[#A77D2E] focus:outline-none focus:ring-4 focus:ring-[#F4EBD8] disabled:cursor-not-allowed disabled:bg-ledger-border disabled:text-secondary-text"
       {...props}
     >
       {children}

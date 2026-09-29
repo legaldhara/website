@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     "Legal Dhara is India's leading LegalTech platform offering expert services in trademark registration, GST filing, company incorporation, business compliance, tax filing, and intellectual property rights. Trusted by startups, entrepreneurs, and enterprises for fast, reliable, and affordable legal solutions.",
   keywords:
     "Legal Dhara, legal tech platform India, trademark registration, company registration, GST filing, tax filing, business compliance, startup legal services, IPR registration, legal documentation, online company incorporation, LLP registration, FSSAI license, ISO certification, PAN TAN registration, startup India registration, private limited company, MSME registration, legal services for startups, legal advisor India, business legal solutions",
+  icons: {
+    icon: "/assets/brand/legal-dhara-mark-48.png",
+    apple: "/assets/brand/legal-dhara-mark-192.png",
+  },
 };
 
 
@@ -23,9 +27,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-       <head>
-        <link rel="icon" href="assets/favicon.ico" />
-      </head>
       <body className="font-sans">
         {/* <PageLoader /> */}
         

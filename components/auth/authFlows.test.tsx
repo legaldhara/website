@@ -126,6 +126,19 @@ describe("customer auth UI", () => {
     expect(loginPassword).toHaveAttribute("type", "text");
   });
 
+  it("uses the Legal Dhara brand in the authentication shell", () => {
+    render(<LoginPage />);
+
+    expect(screen.getByAltText("Legal Dhara monogram")).toBeVisible();
+    expect(screen.getByText("Legal Dhara")).toBeVisible();
+  });
+
+  it("provides compact signup progress for mobile layouts", () => {
+    render(<SignupPage />);
+
+    expect(screen.getByText("Step 1 of 4")).toBeVisible();
+  });
+
   it("shows generic store errors in an accessible live region", () => {
     authState.error = "Unable to sign in with those details.";
     render(<LoginPage />);
