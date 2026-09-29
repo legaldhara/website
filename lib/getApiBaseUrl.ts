@@ -1,19 +1,9 @@
-export function getApiBaseUrl() {
-  if (typeof window === 'undefined') {
-    // Server-side
-    return process.env.NEXT_PUBLIC_API_URL_IN; // fallback
-  }
-
-  const host = window.location.hostname;
-
-  if (host.includes('legaldhara.in')) {
-    return process.env.NEXT_PUBLIC_API_URL_IN;
-  }
-
-  if (host.includes('legaldhara.com')) {
-    return process.env.NEXT_PUBLIC_API_URL_COM;
-  }
-
-  // default fallback
-  return process.env.NEXT_PUBLIC_API_URL_COM;
+export function getApiBaseUrl(
+  environment: Record<string, string | undefined> = process.env,
+  nodeEnv = process.env.NODE_ENV,
+): string {
+  const configuredUrl = environment.NEXT_PUBLIC_BACKEND_API_URL?.trim().replace(/\/+$/, "");
+  if (configuredUrl) return configuredUrl;
+  if (nodeEnv !== "production") return "http://localhost:4001";
+  throw new Error("NEXT_PUBLIC_BACKEND_API_URL is required in production");
 }

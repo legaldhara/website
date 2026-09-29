@@ -49,6 +49,7 @@ export default function ApplyPage() {
       if (response.data.success) {
         const ticketNo = response.data.application.ticketNo;
         const serviceNameFromResponse = response.data.application.serviceName;
+        const chargeId = response.data.application.chargeId;
         
         setSuccess('Application submitted successfully!');
         toast.success("Application submitted successfully! Redirecting...");
@@ -59,6 +60,7 @@ export default function ApplyPage() {
           const query = new URLSearchParams({
             serviceName: serviceNameFromResponse,
             ticketNo: ticketNo,
+            chargeId,
             servicePrice: servicePrice ?? "",
             governmentCharges: serviceGovtPrice ?? '',
           }).toString();

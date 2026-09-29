@@ -1106,7 +1106,7 @@ export default function DocumentationPage() {
 </Link>
 
 <Link
-  href="#" // 👈 change this to your actual documents page
+  href="/contact"
   className="px-10 py-4 bg-white bg-opacity-10 text-white font-semibold rounded-xl hover:bg-opacity-20 transition-all text-lg border-2 border-white flex items-center"
 >
   Browse Documents

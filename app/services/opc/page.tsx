@@ -338,7 +338,7 @@ export default function Opc() {
           <p className="text-base sm:text-lg text-[#071B34]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Start your solo entrepreneurial journey with complete legal protection and expert guidance
           </p>
-          <Link href='#' className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
+          <Link href='/contact' className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
             Start Your OPC Registration
           </Link>
         </section>

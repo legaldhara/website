@@ -477,7 +477,7 @@ export default function CopyrightRegistrationPage() {
                 Start your copyright registration process today and secure your creative assets with our expert guidance.
               </p>
             
-<Link href="#" passHref>
+<Link href="/contact" passHref>
   <Button 
     size="lg"
     className="bg-[#EAB308] text-[#071B34] hover:bg-[#F2C79A] font-bold px-8 py-6 text-lg"

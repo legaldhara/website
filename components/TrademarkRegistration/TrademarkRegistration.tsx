@@ -176,7 +176,7 @@ export default function TrademarkRegistrationPage() {
 
                   {/* Button */}
                   <Link
-                    href="#"
+                    href="/contact"
                     className="w-full bg-gradient-to-r from-[#EAB308] to-[#F2C79A] hover:from-[#d9a307] hover:to-[#EAB308] text-[#071B34] font-semibold py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1"
                   >
                     Register Now

@@ -221,7 +221,7 @@ export default function privateLimitedCompany() {
       Get started with LegalDhara's expert guidance and complete your registration in just 7-10 days
     </p>
     <Link
-      href="#"
+      href="/contact"
       className="bg-brand-orange text-deep-blue px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-brand-orange2 transition-colors shadow-lg"
     >
       Start Your Registration

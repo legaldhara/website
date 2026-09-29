@@ -39,7 +39,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
           <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
             <span className="text-xl">👍</span>
             <span>Secure & Transparent Filing</span>
-            <a href="#" className="text-blue-600 underline">T&C</a>
+            <a href="/terms" className="text-blue-600 underline">T&amp;C</a>
           </div>
         </div>
 
@@ -189,7 +189,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
 
         <div className="text-center mt-8 text-sm text-gray-600">
           Government charges are additional to the above fee. Refer{' '}
-          <a href="#" className="text-blue-600 underline">T&C</a>
+          <a href="/terms" className="text-blue-600 underline">T&amp;C</a>
         </div>
       </div>
     </div>

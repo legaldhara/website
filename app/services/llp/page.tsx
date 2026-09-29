@@ -418,7 +418,7 @@ export default function LlpPage() {
             Get started with expert guidance and complete your LLP registration in just 10-15 days with complete transparency
           </p>
           <Link 
-          href='#'         
+          href='/contact'
           className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
             Start Your LLP Registration
           </Link>

@@ -767,7 +767,7 @@ export default function TrademarkObjectionPage() {
   </div>
 
    <div className="flex flex-wrap justify-center gap-4">
-      <Link href="#" passHref>
+      <Link href="/contact" passHref>
         <Button
           size="lg"
           variant="secondary"
@@ -778,7 +778,7 @@ export default function TrademarkObjectionPage() {
         </Button>
       </Link>
 
-      <Link href="#" passHref>
+      <Link href="/contact" passHref>
         <Button
           size="lg"
           variant="outline"

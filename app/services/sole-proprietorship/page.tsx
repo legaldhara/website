@@ -291,7 +291,7 @@ export default function soleProprietorship() {
   <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
     Register your sole proprietorship today and start your entrepreneurial journey with complete legal support.
   </p>
-  <Link href='#'
+  <Link href='/contact'
    className="bg-[#EAB308] text-[#071B34] px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-yellow-400 transition-colors shadow-lg">
     Start Your Registration
   </Link>

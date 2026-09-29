@@ -5,7 +5,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = withBundleAnalyzer({
   output: 'export',
-  eslint: { ignoreDuringBuilds: true },
   images: { unoptimized: true },
 });
 

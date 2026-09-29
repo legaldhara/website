@@ -1,11 +1,17 @@
-
-
 import { secureApi } from "@/config/apiClient";
+
+export interface UploadedAsset {
+  assetId: string;
+  url: string;
+  publicId: string;
+  mimeType: string;
+  sizeBytes: number;
+}
 
 export async function uploadImages(
   files: File[],
   onProgress?: (progress: number) => void
-): Promise<string[]> {
+): Promise<UploadedAsset[]> {
   if (!files || files.length === 0) {
     throw new Error("No files provided for upload");
   }
@@ -29,19 +35,21 @@ export async function uploadImages(
     });
 
     const data = response.data;
-
-    if (data?.success && Array.isArray(data.urls)) {
-      return data; 
-    } else {
-      throw new Error(data?.message || "Invalid upload response");
+    if (
+      data?.success &&
+      Array.isArray(data.assets) &&
+      data.assets.every((asset: UploadedAsset) => Boolean(asset.assetId))
+    ) {
+      return data.assets;
     }
+
+    throw new Error(data?.message || "Invalid upload response");
   } catch (error: any) {
-    console.error("❌ Upload failed:", error.response || error.message);
-    throw new Error(error.response?.data?.message || "Image upload failed");
+    console.error("Upload failed:", error.response || error.message);
+    throw new Error(error.response?.data?.message || error.message || "Image upload failed");
   }
 }
 
-export const deleteFileFromServer = async (publicId: string) => {
-  await secureApi.delete(`/api/v1/media/delete/${publicId}`);
+export const deleteFileFromServer = async (assetId: string) => {
+  await secureApi.delete(`/api/v1/media/${encodeURIComponent(assetId)}`);
 };
-

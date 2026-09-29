@@ -370,7 +370,7 @@ export default function patentRegistration() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="#" passHref>
+            <Link href="/contact" passHref>
               <Button
                 size="lg"
                 className="bg-white text-[#0A2342] hover:bg-gray-100 font-bold px-12 py-6 rounded-2xl text-xl shadow-2xl transform hover:scale-105 transition-all duration-300"

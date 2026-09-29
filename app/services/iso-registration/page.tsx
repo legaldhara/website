@@ -674,7 +674,7 @@ export default function IsoRegistration() {
               <p className="text-blue-100 mb-6">
                 Join thousands of organizations that have achieved ISO certification with our expert guidance
               </p>
-              <Link href='#'>
+              <Link href='/contact'>
                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-bold px-8 py-3">
                 Start Your ISO Journey
                 <ArrowRight className="ml-2 h-5 w-5" />

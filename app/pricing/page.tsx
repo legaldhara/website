@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { X, Loader2 } from 'lucide-react';
+import { secureApi } from '@/config/apiClient';
+import { RazorpayCheckout } from '@/components/payments/RazorpayCheckout';
 
 // TypeScript Types
 type PlanType = 'one-year' | 'two-year';
@@ -37,6 +39,7 @@ export default function PricingPage(): JSX.Element {
   const [showBuyForm, setShowBuyForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [purchaseChargeId, setPurchaseChargeId] = useState<string | null>(null);
   
   const [formData, setFormData] = useState<BuyFormData>({
     fullName: '',
@@ -81,6 +84,7 @@ export default function PricingPage(): JSX.Element {
 
   const handleBuyNow = (plan: Plan) => {
     setSelectedPlan(plan);
+    setPurchaseChargeId(null);
     setFormData({
       fullName: '',
       email: '',
@@ -94,29 +98,11 @@ export default function PricingPage(): JSX.Element {
   const handleSubmitBuy = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.fullName || !formData.email || !formData.phone) {
-      alert('Please fill all required fields');
-      return;
-    }
-
     setSubmitting(true);
     try {
-      const response = await fetch(`${API_URL}/api/v1/plan/buy`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData),
-        credentials: 'include'
-      });
-
-      const data = await response.json();
-
-      if (data.success && data.redirectUrl) {
-        window.location.href = data.redirectUrl;
-      } else {
-        throw new Error(data.message || 'Failed to initiate payment');
-      }
+      if (!selectedPlan) throw new Error('Plan is required');
+      const response = await secureApi.post(`/api/v1/plan/${selectedPlan.id}/charge`);
+      setPurchaseChargeId(response.data.data.chargeId);
     } catch (error: any) {
       console.error('Error:', error);
       alert(error.message || 'Failed to process payment');
@@ -604,7 +590,12 @@ export default function PricingPage(): JSX.Element {
               </div>
 
               {/* Submit Button */}
-              <button
+              {purchaseChargeId ? (
+                <RazorpayCheckout
+                  chargeId={purchaseChargeId}
+                  onComplete={(chargeId) => { window.location.href = `/payment/response?chargeId=${chargeId}`; }}
+                />
+              ) : <button
                 type="submit"
                 disabled={submitting}
                 className="w-full bg-gradient-to-r from-[#EAB308] to-[#fbbf24] hover:from-[#fbbf24] hover:to-[#EAB308] text-white font-bold py-3 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -622,14 +613,14 @@ export default function PricingPage(): JSX.Element {
                     Proceed to Payment
                   </>
                 )}
-              </button>
+              </button>}
 
               {/* Secure Payment Badge */}
               <div className="flex items-center justify-center gap-2 text-xs text-gray-500">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                 </svg>
-                <span>Secure payment powered by PhonePe</span>
+                <span>Secure payment powered by Razorpay</span>
               </div>
             </form>
           </div>

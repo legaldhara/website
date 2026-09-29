@@ -3,14 +3,8 @@ import type { Metadata } from 'next';
 // import { Inter, Poppins } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Urbanist } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 // import PageLoader from '@/components/PageLoader';
-
-const urbanist = Urbanist({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // choose the weights you need
-});
 
 
 export const metadata: Metadata = {
@@ -32,7 +26,7 @@ export default function RootLayout({
        <head>
         <link rel="icon" href="assets/favicon.ico" />
       </head>
-      <body className={` ${urbanist.className}`}>
+      <body className="font-sans">
         {/* <PageLoader /> */}
         
                <Header />

@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
       </div>
     </div>
     <a
-      href="#"
+      href="/contact"
       className="text-sm text-brand-orange hover:underline"
     >
       See all our reviews

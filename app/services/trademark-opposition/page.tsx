@@ -384,7 +384,7 @@ const TrademarkOppositionPage = () => {
           <p className="text-base sm:text-lg text-[#071B34]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Get expert legal assistance to correct errors in your trademark registration. Ensure your brand remains protected and compliant.
           </p>
-        <Link href="#">
+        <Link href="/contact">
         <button className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
           Start Trademark Opposition
         </button>

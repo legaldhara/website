@@ -28,7 +28,7 @@ export default function CtaSection({ title, serviceName, description }: CtaSecti
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-2">
-            <Link href="#" passHref>
+            <Link href="/contact" passHref>
               <Button
                 size="lg"
                 className="bg-white text-[#0A2342] hover:bg-gray-100 font-bold 

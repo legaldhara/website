@@ -293,7 +293,7 @@ export default function trademarkRenewal() {
               <span className="font-semibold">Continuous Protection</span>
             </div>
           </div>
-         <Link href="#">
+         <Link href="/contact">
           <button className="bg-brand-orange text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
             Renew Your Trademark Now
           </button>

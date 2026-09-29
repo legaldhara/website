@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { useAuthStore } from '@/store/useAuthStore';
-import { uploadImages } from '@/lib/uploadImage';
+import { uploadImages, type UploadedAsset } from '@/lib/uploadImage';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { secureApi } from '@/config/apiClient';
@@ -37,6 +37,7 @@ import {
   File
 } from 'lucide-react';
 import CertificateApplications from '@/components/CertificateApplication';
+import { RazorpayCheckout } from '@/components/payments/RazorpayCheckout';
 
 // TypeScript Interfaces
 interface Service {
@@ -102,13 +103,14 @@ interface UpdateHistory {
 }
 
 interface PaymentHistory {
-  amount: string;
+  id: string;
+  amountMinor: number;
+  currency: string;
   status: string;
   purpose: string;
-  paymentType: string;
-  transactionId: string;
-  paymentMethod: string;
-  paymentDate: string;
+  category: string;
+  createdAt: string;
+  paidAt: string | null;
 }
 
 interface ApplicationData {
@@ -134,16 +136,6 @@ interface ApplicationData {
   paymentHistory: PaymentHistory[];
   updateHistory: UpdateHistory[];
 }
-
-interface UploadResultObj {
-  success?: boolean;
-  message?: string;
-  urls?: string[];
-  publicIds?: string[];
-}
-
-
-
 
 // Skeleton Loaders
 const SkeletonCard = () => (
@@ -183,11 +175,12 @@ const ServiceCardSkeleton = () => (
 
 // Application Detail Modal Component
 function ApplicationDetailModal({ ticketNo, onClose }: ApplicationDetailModalProps) {
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [applicationData, setApplicationData] = useState<ApplicationData | null>(null);
   
   const [message, setMessage] = useState('');
-  const [documents, setDocuments] = useState<Array<{ urls: string[]; publicIds: string[] }>>([]);
+  const [documents, setDocuments] = useState<UploadedAsset[]>([]);
   const [uploading, setUploading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   
@@ -228,39 +221,17 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
 
   setUploading(true);
   const fileArray = Array.from(files);
-
-  // Step 1: Show blob previews first
-  const previewUrls = fileArray.map(file => URL.createObjectURL(file));
-
-  // Add preview entry to the documents list
-  setDocuments(prev => [...prev, { urls: previewUrls, publicIds: [] }]);
-
   const toastId = toast.loading("Uploading files...");
 
   try {
-    // 🔥 FORCE TS TO TREAT RETURN AS OBJECT
-    const uploadResult = await uploadImages(fileArray) as UploadResultObj;
-
-    const uploadedUrls = uploadResult.urls;
-    const publicIds = uploadResult.publicIds;
-
-    if (!uploadedUrls || uploadedUrls.length === 0) {
+    const uploadedAssets = await uploadImages(fileArray);
+    if (uploadedAssets.length === 0) {
       toast.dismiss(toastId);
       toast.error("No files were uploaded. Please try again.");
-      setUploading(false);
       return;
     }
 
-    // Step 3: Replace last preview entry with final uploaded URLs
-    setDocuments(prev => {
-      const newDocs = [...prev];
-      newDocs[newDocs.length - 1] = {
-        urls: uploadedUrls,
-        publicIds: publicIds || [],
-      };
-      return newDocs;
-    });
-
+    setDocuments((previous) => [...previous, ...uploadedAssets]);
     toast.dismiss(toastId);
     toast.success("Files uploaded successfully!");
   } catch (error: any) {
@@ -273,30 +244,6 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
 };
 
 
-
- const initiatePayment = async (
-  amount: string,
-  paymentType: string = "INITIAL"
-) => {
-  try {
-    const response = await secureApi.post("/api/v1/application/pay", {
-      ticketNo,
-      amount: parseFloat(amount),
-      paymentType,
-    });
-
-    const data = response.data;
-
-    if (data.success && data.redirectUrl) {
-      window.location.href = data.redirectUrl;
-    } else {
-      throw new Error(data.message || "Failed to initiate payment");
-    }
-  } catch (error: any) {
-    console.error("Error initiating payment:", error);
-    throw error;
-  }
-};
 
   const handleSubmitUpdate = async () => {
   if (!message.trim()) {
@@ -320,7 +267,7 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     };
 
     if (currentStatus === "DATA_REQUIRED" && documents.length > 0) {
-      payload.meta = { documents };
+      payload.meta = { documents: documents.map(({ assetId }) => ({ assetId })) };
     }
     
     console.log("payload",payload);
@@ -333,11 +280,6 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const data = response.data;
 
     if (data.success) {
-      if (data.nextStatus === "PAYMENT_REQUIRED" && data.paymentDue) {
-        await initiatePayment(data.paymentDue, "INITIAL");
-        return;
-      }
-
       setMessage("");
       setDocuments([]);
       await fetchApplicationDetails();
@@ -352,24 +294,6 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setSubmitting(false);
   }
 };
-
-  const handlePaymentClick = async () => {
-    if (!applicationData) return;
-    
-    const latestUpdate = applicationData.updateHistory[0];
-    const amount = latestUpdate?.updateCharges;
-    
-    if (amount) {
-      setSubmitting(true);
-      try {
-        await initiatePayment(amount, 'INITIAL');
-      } catch (error) {
-        alert('Failed to initiate payment');
-      } finally {
-        setSubmitting(false);
-      }
-    }
-  };
 
   // Major Milestones - Simplified to 4 phases
   const getMajorMilestones = (status: string) => {
@@ -540,6 +464,7 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
   const milestones = getMajorMilestones(applicationData.applicationStatus);
   const statusConfig = getStatusConfig(applicationData.applicationStatus);
   const StatusIcon = statusConfig.icon;
+  const openPaymentCharge = applicationData.paymentHistory.find((payment) => payment.status === "OPEN");
 
   return (
     <div
@@ -688,14 +613,14 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-gray-800">{payment.purpose}</p>
-                        <p className="text-xs text-gray-500 mt-1">{formatDate(payment.paymentDate)}</p>
-                        <p className="text-xs text-gray-500 break-all">Txn: {payment.transactionId}</p>
+                        <p className="text-xs text-gray-500 mt-1">{formatDate(payment.createdAt)}</p>
+                        <p className="text-xs text-gray-500 break-all">Charge: {payment.id}</p>
                       </div>
                       <div className="flex items-center gap-2 sm:flex-col sm:items-end">
-                        <span className="text-base sm:text-lg font-bold text-gray-800">₹{payment.amount}</span>
+                        <span className="text-base sm:text-lg font-bold text-gray-800">₹{(payment.amountMinor / 100).toFixed(2)}</span>
                         <span className={`text-xs px-2 py-1 rounded whitespace-nowrap ${
-                          payment.status === 'SUCCESS' ? 'bg-green-100 text-green-700' : 
-                          payment.status === 'FAILED' ? 'bg-red-100 text-red-700' : 
+                          payment.status === 'PAID' ? 'bg-green-100 text-green-700' :
+                          payment.status === 'FAILED' ? 'bg-red-100 text-red-700' :
                           'bg-yellow-100 text-yellow-700'
                         }`}>
                           {payment.status}
@@ -721,23 +646,12 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
                   <p className="text-sm text-gray-700">
                     Payment of ₹{applicationData.updateHistory[0]?.updateCharges} is required to proceed with your application.
                   </p>
-                  <button
-                    onClick={handlePaymentClick}
-                    disabled={submitting}
-                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        <IndianRupee className="h-4 w-4" />
-                        Proceed to Payment
-                      </>
-                    )}
-                  </button>
+                  {openPaymentCharge ? (
+                    <RazorpayCheckout
+                      chargeId={openPaymentCharge.id}
+                      onComplete={(chargeId) => router.push(`/payment/response?chargeId=${chargeId}`)}
+                    />
+                  ) : <p className="text-sm text-red-600">No payable charge is available.</p>}
                 </div>
               ) : (
                 <>
@@ -1013,32 +927,20 @@ export default function DashboardPage() {
   const toastId = toast.loading("Uploading files...");
 
   try {
-    // ⛔ FIX: uploadImages now returns { urls:[], publicIds:[] }
-    const uploadResult = await uploadImages(fileArray) as UploadResultObj
-
-    const uploadedUrls = uploadResult.urls;
-    const publicIds = uploadResult.publicIds;
-
-    console.log("Uploaded:", uploadedUrls, publicIds);
-
-    if (!uploadedUrls || uploadedUrls.length === 0) {
+    const uploadedAssets = await uploadImages(fileArray);
+    if (uploadedAssets.length === 0) {
       toast.dismiss(toastId);
       toast.error("No files were uploaded. Please try again.");
-      setUploading(false);
       return [];
     }
 
-    // 2️⃣ Send to /document API
     const uploadResults = await Promise.all(
-      uploadedUrls.map(async (url, index) => {
+      uploadedAssets.map(async ({ assetId }) => {
         try {
-          const publicId = (publicIds || [])[index] || [];
-
           const payload = {
             title: "Documents",
             description: "Documents",
-            url,
-            publicId,
+            assetId,
           };
 
           const response = await secureApi.post("/api/v1/document", payload);

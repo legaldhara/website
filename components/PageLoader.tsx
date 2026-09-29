@@ -17,7 +17,6 @@ export default function PageLoader() {
 
   return (
     <AnimatePresence>
-      // inside PageLoader
 {loading && (
   <motion.div
     initial={{ opacity: 0 }}

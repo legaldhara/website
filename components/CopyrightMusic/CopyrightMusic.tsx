@@ -341,7 +341,7 @@ export default function CopyrightMusic() {
             Register your music copyright and secure legal protection for your compositions and recordings. Get started with expert assistance.
           </p>
           
-          <Link href="#" className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
+          <Link href="/contact" className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
             Register Music Copyright Now
           </Link >
         </section>

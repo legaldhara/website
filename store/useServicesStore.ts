@@ -36,9 +36,7 @@ export const useServicesStore = create<ServicesStore>((set) => ({
     set({ loading: true, error: null });
 
     try {
-      const res = await secureApi.get(`/api/v1/service/services?page=1&limit=50`,{
-        withCredentials:true
-      });
+      const res = await secureApi.get(`/api/v1/service/services?page=1&limit=50`);
       if (!res) throw new Error("Failed to fetch services");
 
       const data = res.data

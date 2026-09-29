@@ -7,7 +7,7 @@ import SectionNavigation from "@/components/section-navigation";
 import Link from "next/link";
 
 
-function startupIndiaRegistrationPage() {
+function StartupIndiaRegistrationPage() {
   const sections = [
   { id: "overview1", title: "Overview" },
   { id: "eligibility", title: "Eligibility" },
@@ -629,13 +629,13 @@ function startupIndiaRegistrationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-            href='#'
+            href='/contact'
              className="bg-white text-deep-blue px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-2">
               Start Registration
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link 
-            href='#'
+            href='/contact'
             className="border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
               Schedule Consultation
             </Link>
@@ -675,4 +675,4 @@ function startupIndiaRegistrationPage() {
   )
 }
 
-export default startupIndiaRegistrationPage
+export default StartupIndiaRegistrationPage

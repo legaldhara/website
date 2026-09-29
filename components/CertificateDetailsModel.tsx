@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Upload, FileText, Clock, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import { secureApi } from '@/config/apiClient';
 import { uploadImages } from '@/lib/uploadImage';
+import { RazorpayCheckout } from '@/components/payments/RazorpayCheckout';
 
 interface CertificateDetailsModalProps {
   isOpen: boolean;
@@ -24,13 +25,14 @@ interface UpdateHistory {
 }
 
 interface PaymentHistory {
-  amount: string;
+  id: string;
+  amountMinor: number;
+  currency: string;
   status: string;
   purpose: string;
-  paymentType: string;
-  transactionId: string;
-  paymentMethod: string;
-  paymentDate: string;
+  category: string;
+  createdAt: string;
+  paidAt: string | null;
 }
 
 interface CertificateData {
@@ -55,13 +57,6 @@ interface CertificateData {
   updateHistory: UpdateHistory[];
 }
 
-interface UploadResultObj {
-  success?: boolean;
-  message?: string;
-  urls: string[];
-  publicIds?: string[];
-}
-
 const statusConfig = {
   PENDING: { color: 'bg-yellow-500', icon: Clock, label: 'Pending' },
   UNDER_REVIEW: { color: 'bg-blue-500', icon: Clock, label: 'Under Review' },
@@ -84,7 +79,6 @@ export default function CertificateDetailsModal({
   const [isUploading, setIsUploading] = useState(false);
   const [message, setMessage] = useState('');
   const [isSubmittingDoc, setIsSubmittingDoc] = useState(false);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   
   
   useEffect(() => {
@@ -111,31 +105,6 @@ export default function CertificateDetailsModal({
     }
   };
 
-  const handlePayment = async () => {
-    if (!data?.latestUpdate?.chargesRequired) return;
-
-    setIsProcessingPayment(true);
-    try {
-      const response = await secureApi.post('/api/v1/certificate/pay', {
-        requestNo: data.requestNo,
-        amount: parseFloat(data.latestUpdate.chargesRequired),
-        paymentType: 'ADDITIONAL',
-      });
-
-      if (response.data.success && response.data.redirectUrl) {
-        window.open(response.data.redirectUrl, '_blank');
-        // Refresh data after initiating payment
-        setTimeout(() => {
-          fetchCertificateDetails();
-        }, 2000);
-      }
-    } catch (err: any) {
-      alert(err.response?.data?.message || 'Payment initiation failed');
-    } finally {
-      setIsProcessingPayment(false);
-    }
-  };
-
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setSelectedFiles(Array.from(e.target.files));
@@ -143,8 +112,6 @@ export default function CertificateDetailsModal({
   };
 
 
-
-// async function uploadImages(files: File[], onProgress?: (p:number)=>void): Promise<string[]|UploadResultObj>
 
 const handleDocumentSubmit = async () => {
   if (!message.trim() && selectedFiles.length === 0) {
@@ -155,57 +122,25 @@ const handleDocumentSubmit = async () => {
   setIsSubmittingDoc(true);
 
   try {
-    let attachmentUrl: string | undefined = undefined;
-    let attachmentPublicId: string | undefined = undefined;
+    let attachmentAssetId: string | undefined;
 
     if (selectedFiles.length > 0) {
       setIsUploading(true);
 
-      // Tell TS we don't know the exact return type (narrow later)
-      const uploadResult = (await uploadImages(
+      const uploadedAssets = await uploadImages(
         selectedFiles,
         setUploadProgress
-      )) as unknown;
-
-      console.log("Uploaded =>", uploadResult);
-
-      // runtime narrowing: handle both shapes
-      if (Array.isArray(uploadResult)) {
-        // legacy: uploadImages returned string[] (urls only)
-        const uploadedUrls = uploadResult as string[];
-        if (uploadedUrls.length > 0) {
-          attachmentUrl = uploadedUrls[0];
-          // publicId unknown in this shape
-          attachmentPublicId = "";
-        }
-      } else if (
-        typeof uploadResult === "object" &&
-        uploadResult !== null &&
-        Array.isArray((uploadResult as UploadResultObj).urls)
-      ) {
-        const obj = uploadResult as UploadResultObj;
-        const uploadedUrls = obj.urls;
-        const publicIds = obj.publicIds ?? [];
-
-        if (uploadedUrls.length > 0) {
-          attachmentUrl = uploadedUrls[0];
-          attachmentPublicId = publicIds[0] ?? "";
-        }
-      } else {
-        // unexpected shape
-        console.warn("Unexpected upload result shape:", uploadResult);
-      }
+      );
+      attachmentAssetId = uploadedAssets[0]?.assetId;
 
       setIsUploading(false);
     }
 
-    // FINAL API REQUEST (API expects single attachment fields)
     const response = await secureApi.put(
       `/api/v1/certificate/${requestNo}/update`,
       {
         message: message.trim(),
-        attachmentUrl,
-        attachmentPublicId,
+        attachmentAssetId,
       }
     );
 
@@ -316,13 +251,12 @@ const handleDocumentSubmit = async () => {
                       </p>
                       <p className="text-sm text-gray-600">{data.latestUpdate.message}</p>
                     </div>
-                    <button
-                      onClick={handlePayment}
-                      disabled={isProcessingPayment}
-                      className="bg-brand-orange hover:bg-brand-orange/90 text-deep-blue font-semibold px-6 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isProcessingPayment ? 'Processing...' : 'Pay Now'}
-                    </button>
+                    {data.paymentHistory.find((payment) => payment.status === "OPEN") ? (
+                      <RazorpayCheckout
+                        chargeId={data.paymentHistory.find((payment) => payment.status === "OPEN")!.id}
+                        onComplete={() => fetchCertificateDetails()}
+                      />
+                    ) : <p className="text-sm text-red-600">No payable charge is available.</p>}
                   </div>
                 </div>
               )}
@@ -474,17 +408,17 @@ const handleDocumentSubmit = async () => {
                         className="bg-green-50 border border-green-200 rounded-lg p-3 flex justify-between items-center"
                       >
                         <div>
-                          <p className="font-medium text-gray-800">₹{payment.amount}</p>
+                          <p className="font-medium text-gray-800">₹{(payment.amountMinor / 100).toFixed(2)}</p>
                           <p className="text-sm text-gray-600">{payment.purpose}</p>
                           <p className="text-xs text-gray-500">
-                            {payment.paymentMethod} • {formatDate(payment.paymentDate)}
+                            {payment.category} • {formatDate(payment.createdAt)}
                           </p>
                         </div>
                         <span
                           className={`px-3 py-1 rounded-full text-xs font-medium ${
                             payment.status === 'PENDING'
                               ? 'bg-yellow-200 text-yellow-800'
-                              : payment.status === 'COMPLETED'
+                              : payment.status === 'PAID'
                               ? 'bg-green-200 text-green-800'
                               : 'bg-gray-200 text-gray-800'
                           }`}

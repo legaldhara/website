@@ -307,7 +307,7 @@ export default function InternationTrademark() {
         </p>
       
         <Link
-          href="#"
+          href="/contact"
           className="inline-block bg-white text-[#071B34] px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-lg"
         >
           Apply for International Trademark

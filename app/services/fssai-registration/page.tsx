@@ -867,7 +867,7 @@ export default function FSSAIRegistrationPage() {
               with LegalDhara and keep your food business fully compliant.
             </p>
             <Link 
-              href='#'
+              href='/contact'
              className="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
               Start Your FSSAI Registration Process Now
             </Link>

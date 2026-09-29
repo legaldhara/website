@@ -6,7 +6,7 @@ import ServiceHeroForm from "@/components/service-hero-form"
 import SectionNavigation from "@/components/section-navigation";
 import Link from "next/link";
 
-function nidhiCompanyRegistrationpage() {
+function NidhiCompanyRegistrationPage() {
 
     const [openFaq, setOpenFaq] = useState(null);
     
@@ -297,7 +297,7 @@ function nidhiCompanyRegistrationpage() {
             Get started with expert guidance and complete your registration in just {service.timeline?.toLowerCase()}
           </p>
           <Link
-          href='#'
+          href='/contact'
            className="bg-white text-deep-blue px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-600 transition-colors duration-300 shadow-lg hover:shadow-xl">
             Start Registration Now
           </Link>
@@ -315,4 +315,4 @@ function nidhiCompanyRegistrationpage() {
   )
 }
 
-export default nidhiCompanyRegistrationpage
+export default NidhiCompanyRegistrationPage
