@@ -1,5 +1,7 @@
 export function getApiBaseUrl(
-  environment: Record<string, string | undefined> = process.env,
+  environment: Record<string, string | undefined> = {
+    NEXT_PUBLIC_BACKEND_API_URL: process.env.NEXT_PUBLIC_BACKEND_API_URL,
+  },
   nodeEnv = process.env.NODE_ENV,
 ): string {
   const configuredUrl = environment.NEXT_PUBLIC_BACKEND_API_URL?.trim().replace(/\/+$/, "");

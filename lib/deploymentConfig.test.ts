@@ -34,6 +34,12 @@ describe("website production configuration", () => {
     expect(wranglerConfig).toContain('"not_found_handling": "404-page"');
   });
 
+  it("uses a statically discoverable public API environment variable", () => {
+    expect(readFileSync("lib/getApiBaseUrl.ts", "utf8")).toContain(
+      "process.env.NEXT_PUBLIC_BACKEND_API_URL",
+    );
+  });
+
   it("does not ship placeholder call-to-action links", () => {
     const placeholderLinks = ["app", "components"]
       .flatMap(findTsxFiles)
