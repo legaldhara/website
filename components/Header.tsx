@@ -24,16 +24,22 @@ import {
   ReceiptIndianRupee,
   X
 } from "lucide-react"
-import { useAuthStore } from "@/store/useAuthStore"
+import { CUSTOMER_AUTH_CHANGED_EVENT, hasCustomerSessionHint } from "@/lib/customerSessionHint"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { isAuthenticated , fetchUser } = useAuthStore()
-  // console.log("login in ",isAuthenticated)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  useEffect(()=> {
-    fetchUser()
-  },[])
+  useEffect(() => {
+    const syncSessionHint = () => setIsAuthenticated(hasCustomerSessionHint())
+    syncSessionHint()
+    window.addEventListener(CUSTOMER_AUTH_CHANGED_EVENT, syncSessionHint)
+    window.addEventListener("storage", syncSessionHint)
+    return () => {
+      window.removeEventListener(CUSTOMER_AUTH_CHANGED_EVENT, syncSessionHint)
+      window.removeEventListener("storage", syncSessionHint)
+    }
+  }, [])
 
   
 

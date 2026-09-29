@@ -102,19 +102,19 @@ useEffect(() => {
         {/* Top Left Watermark */}
 
         <div className="absolute top-20 left-10 w-48 h-48 opacity-[0.03]">
-          <img src="/assets/LD2.jpg" alt="" className="w-full h-full object-contain animate-pulse" />
+          <img src="/assets/LD2.webp" alt="" width={192} height={192} className="w-full h-full object-contain animate-pulse" />
         </div>
         
         {/* Center Right Watermark */}
 
         <div className="absolute top-1/2 -translate-y-1/2 right-20 w-64 h-64 opacity-[0.04]">
-          <img src="/assets/LD2.jpg" alt="" className="w-full h-full object-contain animate-pulse" style={{ animationDelay: '1s' }} />
+          <img src="/assets/LD2.webp" alt="" width={256} height={256} className="w-full h-full object-contain animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         
         {/* Bottom Left Watermark */}
 
         <div className="absolute bottom-20 left-1/4 w-40 h-40 opacity-[0.03]">
-          <img src="/assets/LD2.jpg" alt="" className="w-full h-full object-contain animate-pulse" style={{ animationDelay: '2s' }} />
+          <img src="/assets/LD2.webp" alt="" width={160} height={160} loading="lazy" className="w-full h-full object-contain animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
       
       </div>

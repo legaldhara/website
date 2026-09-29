@@ -59,10 +59,12 @@ vi.mock("@/config/customerAuthApi", () => ({
 vi.mock("@/config/apiClient", () => ({ secureApi: { get: mocks.getSession } }));
 
 import { useAuthStore } from "./useAuthStore";
+import { hasCustomerSessionHint } from "@/lib/customerSessionHint";
 
 describe("customer auth store", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    localStorage.clear();
     currentUser.emailVerified = false;
     currentUser.getIdToken.mockResolvedValue("refreshed-token");
     mocks.getSession.mockResolvedValue({ data: { user: { name: "User", email: "user@example.com", phone: "+919876543210", role: "USER" } } });
@@ -157,6 +159,7 @@ describe("customer auth store", () => {
     expect(mocks.verifyLoginOtp).toHaveBeenCalledWith("9876543210", "login-challenge", "123456");
     expect(mocks.signInCustomToken).toHaveBeenCalledWith(expect.anything(), "firebase-custom-token");
     expect(useAuthStore.getState().isAuthenticated).toBe(true);
+    expect(hasCustomerSessionHint()).toBe(true);
   });
 
   it("requires verified email before creating an API session", async () => {
@@ -174,6 +177,12 @@ describe("customer auth store", () => {
     const state = JSON.stringify(useAuthStore.getState());
     expect(state).not.toContain("strong-password");
     expect(state).not.toContain("123456");
+  });
+
+  it("clears the session hint on logout", async () => {
+    localStorage.setItem("legaldhara.customer-session", "1");
+    await useAuthStore.getState().logout();
+    expect(hasCustomerSessionHint()).toBe(false);
   });
 });
 

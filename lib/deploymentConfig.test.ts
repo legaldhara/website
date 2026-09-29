@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
@@ -60,5 +60,27 @@ describe("website production configuration", () => {
       .filter((path) => /href=[{]?["']#["']/.test(readFileSync(path, "utf8")));
 
     expect(placeholderLinks).toEqual([]);
+  });
+
+  it("keeps Firebase out of the anonymous header path", () => {
+    const header = readFileSync("components/Header.tsx", "utf8");
+    expect(header).not.toContain("/store/useAuthStore");
+    expect(header).toContain("hasCustomerSessionHint");
+  });
+
+  it("does not publish unused legacy images", () => {
+    for (const path of [
+      "public/vv.png",
+      "public/assets/ISO.png",
+      "public/assets/fullLogo.png",
+      "public/assets/IP.jpg",
+      "public/assets/LD.png",
+      "public/assets/lD.jpg",
+      "public/assets/MSME.png",
+    ]) {
+      expect(existsSync(path), path).toBe(false);
+    }
+    expect(statSync("public/assets/android-chrome-512x512.png").size).toBeLessThan(80_000);
+    expect(readFileSync("components/service-hero-form.tsx", "utf8")).not.toContain("/assets/LD2.jpg");
   });
 });

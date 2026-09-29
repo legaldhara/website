@@ -16,6 +16,7 @@ import {
 import { auth } from "@/config/firebaseConfig";
 import { secureApi } from "@/config/apiClient";
 import { customerAuthApi, SignupProfile } from "@/config/customerAuthApi";
+import { setCustomerSessionHint } from "@/lib/customerSessionHint";
 
 export interface SessionUser {
   name: string;
@@ -214,6 +215,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         loginPhone: null,
         loading: false,
       });
+      setCustomerSessionHint(true);
     } catch {
       const message = "Verification code is invalid or expired.";
       set({ loading: false, error: message });
@@ -233,6 +235,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       }
       const user = await loadSession();
       set({ user, isAuthenticated: true, loading: false });
+      setCustomerSessionHint(true);
       return { success: true, message: "Logged in", user };
     } catch (error) {
       if (error instanceof Error && error.message === "Verify your email before signing in.") throw error;
@@ -253,6 +256,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   logout: async () => {
     await signOut(auth);
+    setCustomerSessionHint(false);
     set({
       user: null,
       isAuthenticated: false,
@@ -271,14 +275,17 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       return;
     }
     if (!auth.currentUser) {
+      setCustomerSessionHint(false);
       set({ user: null, isAuthenticated: false, loading: false });
       return;
     }
     try {
       const user = await loadSession();
       set({ user, isAuthenticated: true, loading: false });
+      setCustomerSessionHint(true);
     } catch {
       await signOut(auth);
+      setCustomerSessionHint(false);
       set({ user: null, isAuthenticated: false, loading: false });
     }
   },
