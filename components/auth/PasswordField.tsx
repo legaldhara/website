@@ -15,12 +15,12 @@ export function PasswordField({ label, onChange, ...inputProps }: PasswordFieldP
   const Icon = visible ? EyeOff : Eye;
 
   return (
-    <div className="text-sm font-semibold text-main-text">
+    <div className="text-sm font-semibold text-slate-800">
       <label htmlFor={inputId}>{label}</label>
       <div className="relative mt-2">
         <input
           {...inputProps}
-          className="w-full rounded-md border border-ledger-border bg-white px-4 py-3 pr-12 text-base text-main-text outline-none transition placeholder:text-secondary-text focus:border-legal-gold focus:ring-4 focus:ring-[#F4EBD8] disabled:bg-warm-paper"
+          className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 pr-12 text-base text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 disabled:bg-slate-100"
           id={inputId}
           onChange={(event) => onChange(event.target.value)}
           type={visible ? "text" : "password"}
@@ -28,7 +28,7 @@ export function PasswordField({ label, onChange, ...inputProps }: PasswordFieldP
         <button
           aria-label={actionLabel}
           aria-pressed={visible}
-          className="absolute inset-y-0 right-1 grid w-11 place-items-center rounded text-secondary-text transition hover:bg-warm-paper hover:text-ink focus:outline-none focus:ring-2 focus:ring-inset focus:ring-legal-gold"
+          className="absolute inset-y-0 right-1 grid w-11 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-[#0b3b75] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
           onClick={() => setVisible((current) => !current)}
           type="button"
         >

@@ -10,20 +10,10 @@ const config: Config = {
   theme: {
     extend: {
        fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['ui-serif', 'Georgia', 'Cambria', 'serif'],
-        urbanist: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        urbanist: ['ui-sans-serif', 'system-ui', 'sans-serif'],
         },
 
       colors: {
-        'ink': 'var(--color-ink)',
-        'charcoal': 'var(--color-charcoal)',
-        'legal-gold': 'var(--color-legal-gold)',
-        'warm-paper': 'var(--color-warm-paper)',
-        'paper-card': 'var(--color-paper-card)',
-        'body-text': 'var(--color-body-text)',
-        'secondary-text': 'var(--color-secondary-text)',
-        'ledger-border': 'var(--color-ledger-border)',
         'deep-blue': '#071B34',
         'brand-orange': '#EAB308',
         'brand-orange3': '#d69004',

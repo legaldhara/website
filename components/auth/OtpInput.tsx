@@ -9,12 +9,12 @@ interface OtpInputProps {
 
 export function OtpInput({ value, onChange, label, disabled = false }: OtpInputProps) {
   return (
-    <label className="block text-sm font-semibold text-main-text">
+    <label className="block text-sm font-semibold text-slate-800">
       {label}
       <input
         aria-label={label}
         autoComplete="one-time-code"
-        className="mt-2 w-full rounded-md border border-ledger-border bg-white px-4 py-3 text-center text-2xl font-semibold tracking-[0.35em] text-main-text outline-none transition focus:border-legal-gold focus:ring-4 focus:ring-[#F4EBD8] disabled:bg-warm-paper"
+        className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-center text-2xl font-semibold tracking-[0.35em] text-slate-950 outline-none transition focus:border-blue-700 focus:ring-4 focus:ring-blue-100 disabled:bg-slate-100"
         disabled={disabled}
         inputMode="numeric"
         maxLength={6}

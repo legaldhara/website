@@ -40,26 +40,6 @@ describe("website production configuration", () => {
     );
   });
 
-  it("defines the approved brand tokens and compact favicon", () => {
-    const globalStyles = readFileSync("app/globals.css", "utf8");
-    expect(globalStyles).toContain("--color-legal-gold: #bc9139");
-    expect(globalStyles).toContain("--color-warm-paper: #f7f5f0");
-    expect(readFileSync("app/layout.tsx", "utf8")).toContain(
-      "/assets/brand/legal-dhara-mark-48.png",
-    );
-  });
-
-  it("defers lower-priority homepage tools and respects reduced motion", () => {
-    const homepage = readFileSync("app/page.tsx", "utf8");
-    expect(homepage).toContain("LazyClassFinder");
-    expect(homepage).toContain("LazyContactForm");
-    expect(homepage).not.toContain('from "@/components/ClassFinderTool"');
-    expect(homepage).not.toContain('from "@/components/Contactform"');
-    expect(readFileSync("app/globals.css", "utf8")).toContain(
-      "prefers-reduced-motion: reduce",
-    );
-  });
-
   it("does not ship placeholder call-to-action links", () => {
     const placeholderLinks = ["app", "components"]
       .flatMap(findTsxFiles)

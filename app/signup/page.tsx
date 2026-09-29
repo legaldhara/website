@@ -105,13 +105,13 @@ export default function SignupPage() {
           <PasswordField label="Create password" autoComplete="new-password" value={password} onChange={setPassword} minLength={8} required />
           <PrimaryButton disabled={auth.loading}>Create account</PrimaryButton>
           <div className="flex items-center gap-3" aria-hidden="true">
-            <span className="h-px flex-1 bg-ledger-border" />
-            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary-text">or</span>
-            <span className="h-px flex-1 bg-ledger-border" />
+            <span className="h-px flex-1 bg-slate-200" />
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">or</span>
+            <span className="h-px flex-1 bg-slate-200" />
           </div>
           <button
             aria-label="Continue with Google"
-            className="flex w-full items-center justify-center gap-3 rounded-md border border-ledger-border bg-white px-5 py-3.5 font-semibold text-ink transition hover:border-legal-gold hover:bg-warm-paper focus:outline-none focus:ring-4 focus:ring-[#F4EBD8] disabled:cursor-not-allowed disabled:bg-warm-paper disabled:text-secondary-text"
+            className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-semibold text-[#0b1f3a] transition hover:border-[#0b3b75] hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400"
             disabled={auth.loading}
             onClick={createGoogleAccount}
             type="button"
@@ -129,9 +129,9 @@ export default function SignupPage() {
 
       {stage === 1 && (
         <div className="mt-7 space-y-5">
-          <div className="border-y border-ledger-border py-5">
-            <p className="font-semibold text-main-text">Sent to {email}</p>
-            <p className="mt-2 text-sm leading-6 text-secondary-text">Use the verification link in the latest Firebase email, then confirm here.</p>
+          <div className="border-y border-slate-200 py-5">
+            <p className="font-semibold text-slate-900">Sent to {email}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Use the verification link in the latest Firebase email, then confirm here.</p>
           </div>
           <PrimaryButton disabled={auth.loading} onClick={confirmEmail} type="button">I verified my email</PrimaryButton>
         </div>
@@ -146,7 +146,7 @@ export default function SignupPage() {
             <>
               <OtpInput label="Verification code" value={code} onChange={setCode} />
               <PrimaryButton disabled={auth.loading || code.length !== 6}>Verify phone</PrimaryButton>
-              <button className="w-full text-sm font-semibold text-ink underline decoration-legal-gold decoration-2 underline-offset-4 disabled:text-secondary-text disabled:no-underline" disabled={countdown > 0 || auth.loading} onClick={requestOtp} type="button">
+              <button className="w-full text-sm font-semibold text-blue-800 underline decoration-blue-300 underline-offset-4 disabled:text-slate-400 disabled:no-underline" disabled={countdown > 0 || auth.loading} onClick={requestOtp} type="button">
                 {countdown > 0 ? `Resend in ${countdown}s` : "Resend verification code"}
               </button>
             </>
@@ -158,16 +158,16 @@ export default function SignupPage() {
         <form className="mt-7 space-y-5" onSubmit={finishSignup}>
           <Field label="Full name" type="text" autoComplete="name" value={fullName} onChange={setFullName} />
           <Field label="City" type="text" autoComplete="address-level2" value={city} onChange={setCity} required={false} />
-          <label className="flex items-start gap-3 text-sm leading-6 text-main-text">
-            <input className="mt-1 h-4 w-4 rounded border-ledger-border text-legal-gold focus:ring-legal-gold" checked={termsAccepted} onChange={(event) => setTermsAccepted(event.target.checked)} required type="checkbox" />
+          <label className="flex items-start gap-3 text-sm leading-6 text-slate-700">
+            <input className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-800 focus:ring-blue-700" checked={termsAccepted} onChange={(event) => setTermsAccepted(event.target.checked)} required type="checkbox" />
             <span>I accept the terms and privacy policy</span>
           </label>
           <PrimaryButton disabled={auth.loading || !termsAccepted}>Finish signup</PrimaryButton>
         </form>
       )}
 
-      <p className="mt-8 text-center text-sm text-secondary-text">
-        Already registered? <Link className="font-semibold text-ink underline decoration-legal-gold decoration-2 underline-offset-4" href="/login">Sign in</Link>
+      <p className="mt-8 text-center text-sm text-slate-600">
+        Already registered? <Link className="font-semibold text-blue-800 underline decoration-blue-300 underline-offset-4" href="/login">Sign in</Link>
       </p>
     </AuthShell>
   );
@@ -189,16 +189,16 @@ function Field({ hint, label, onChange, required = true, ...inputProps }: FieldP
   const inputId = useId();
   const hintId = useId();
   return (
-    <div className="block text-sm font-semibold text-main-text">
+    <div className="block text-sm font-semibold text-slate-800">
       <label htmlFor={inputId}>{label}</label>
-      <input aria-describedby={hint ? hintId : undefined} className="mt-2 w-full rounded-md border border-ledger-border bg-white px-4 py-3 text-base text-main-text outline-none transition placeholder:text-secondary-text focus:border-legal-gold focus:ring-4 focus:ring-[#F4EBD8] disabled:bg-warm-paper" id={inputId} onChange={(event) => onChange(event.target.value)} required={required} {...inputProps} />
-      {hint && <span className="mt-2 block text-xs font-normal leading-5 text-secondary-text" id={hintId}>{hint}</span>}
+      <input aria-describedby={hint ? hintId : undefined} className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-blue-700 focus:ring-4 focus:ring-blue-100 disabled:bg-slate-100" id={inputId} onChange={(event) => onChange(event.target.value)} required={required} {...inputProps} />
+      {hint && <span className="mt-2 block text-xs font-normal leading-5 text-slate-500" id={hintId}>{hint}</span>}
     </div>
   );
 }
 
 function PrimaryButton({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button className="w-full rounded-md bg-legal-gold px-5 py-3.5 font-semibold text-ink transition hover:bg-[#A77D2E] focus:outline-none focus:ring-4 focus:ring-[#F4EBD8] disabled:cursor-not-allowed disabled:bg-ledger-border disabled:text-secondary-text" {...props}>{children}</button>;
+  return <button className="w-full rounded-xl bg-[#0b3b75] px-5 py-3.5 font-semibold text-white shadow-[0_12px_24px_-14px_rgba(11,59,117,0.9)] transition hover:bg-[#082d59] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none" {...props}>{children}</button>;
 }
 
 
