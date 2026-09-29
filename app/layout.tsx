@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <head>
-        <link rel="icon" href="assets/favicon.ico" />
+        <link rel="icon" href="/assets/legal-dhara-mark-48.png" />
       </head>
       <body className="font-sans">
         {/* <PageLoader /> */}

@@ -111,7 +111,7 @@ export default function SignupPage() {
           </div>
           <button
             aria-label="Continue with Google"
-            className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-semibold text-[#0b1f3a] transition hover:border-[#0b3b75] hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400"
+            className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-semibold text-[#111111] transition hover:border-[#BC9139] hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-blue-100 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400"
             disabled={auth.loading}
             onClick={createGoogleAccount}
             type="button"
@@ -198,7 +198,7 @@ function Field({ hint, label, onChange, required = true, ...inputProps }: FieldP
 }
 
 function PrimaryButton({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  return <button className="w-full rounded-xl bg-[#0b3b75] px-5 py-3.5 font-semibold text-white shadow-[0_12px_24px_-14px_rgba(11,59,117,0.9)] transition hover:bg-[#082d59] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none" {...props}>{children}</button>;
+  return <button className="w-full rounded-xl bg-[#BC9139] px-5 py-3.5 font-semibold text-[#111111] shadow-[0_12px_24px_-14px_rgba(17,17,17,0.35)] transition hover:bg-[#BC9139] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none" {...props}>{children}</button>;
 }
 
 

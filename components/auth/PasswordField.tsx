@@ -28,7 +28,7 @@ export function PasswordField({ label, onChange, ...inputProps }: PasswordFieldP
         <button
           aria-label={actionLabel}
           aria-pressed={visible}
-          className="absolute inset-y-0 right-1 grid w-11 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-[#0b3b75] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+          className="absolute inset-y-0 right-1 grid w-11 place-items-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-[#111111] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
           onClick={() => setVisible((current) => !current)}
           type="button"
         >

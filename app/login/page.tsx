@@ -82,7 +82,7 @@ export default function LoginPage() {
       <div className="grid grid-cols-2 border-b border-slate-200" role="tablist" aria-label="Sign in method">
         <button
           aria-selected={mode === "email"}
-          className={mode === "email" ? "border-b-2 border-[#d5a643] px-3 py-3 font-semibold text-[#0b1f3a]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
+          className={mode === "email" ? "border-b-2 border-[#BC9139] px-3 py-3 font-semibold text-[#111111]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
           onClick={() => selectMode("email")}
           role="tab"
           type="button"
@@ -91,7 +91,7 @@ export default function LoginPage() {
         </button>
         <button
           aria-selected={mode === "phone"}
-          className={mode === "phone" ? "border-b-2 border-[#d5a643] px-3 py-3 font-semibold text-[#0b1f3a]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
+          className={mode === "phone" ? "border-b-2 border-[#BC9139] px-3 py-3 font-semibold text-[#111111]" : "px-3 py-3 font-semibold text-slate-500 hover:text-slate-800"}
           onClick={() => selectMode("phone")}
           role="tab"
           type="button"
@@ -168,7 +168,7 @@ function Field({ label, onChange, ...inputProps }: FieldProps) {
 function PrimaryButton({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
-      className="w-full rounded-xl bg-[#0b3b75] px-5 py-3.5 font-semibold text-white shadow-[0_12px_24px_-14px_rgba(11,59,117,0.9)] transition hover:bg-[#082d59] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none"
+      className="w-full rounded-xl bg-[#BC9139] px-5 py-3.5 font-semibold text-[#111111] shadow-[0_12px_24px_-14px_rgba(17,17,17,0.35)] transition hover:bg-[#BC9139] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none"
       {...props}
     >
       {children}

@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
@@ -37,6 +37,20 @@ describe("website production configuration", () => {
   it("uses a statically discoverable public API environment variable", () => {
     expect(readFileSync("lib/getApiBaseUrl.ts", "utf8")).toContain(
       "process.env.NEXT_PUBLIC_BACKEND_API_URL",
+    );
+  });
+
+  it("uses the approved palette and logo without replacing the existing layout", () => {
+    const tailwindConfig = readFileSync("tailwind.config.ts", "utf8");
+    expect(tailwindConfig).toContain("'deep-blue': '#111111'");
+    expect(tailwindConfig).toContain("'brand-orange': '#BC9139'");
+    expect(tailwindConfig).toContain("'light-orange': '#F7F5F0'");
+    expect(readFileSync("components/Header.tsx", "utf8")).toContain(
+      'src="/assets/LD2.webp"',
+    );
+    expect(statSync("public/assets/LD2.webp").size).toBe(13_014);
+    expect(readFileSync("app/layout.tsx", "utf8")).toContain(
+      "/assets/legal-dhara-mark-48.png",
     );
   });
 
