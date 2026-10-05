@@ -5,7 +5,7 @@ import { fadeInUp, motion } from "@/lib/motion";
 import { ChevronDown, MessageCircle, Headphones, Shield, Send } from "lucide-react";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import { secureApi } from "@/config/apiClient";
+import { publicApi } from "@/config/publicApi";
 
 interface FormData {
   name: string;
@@ -40,7 +40,7 @@ export default function ContactForm(): JSX.Element {
     setLoading(true);
 
     try {
-      const res = await secureApi.post(
+      const res = await publicApi.post(
         "/api/v1/query/postquery",
         {
           fullName: formData.name,
@@ -66,7 +66,6 @@ export default function ContactForm(): JSX.Element {
         toast.error("Something went wrong. Please try again.");
       }
     } catch (error: any) {
-      console.error(error);
       toast.error(
         error.response?.data?.message ||
           error.message ||

@@ -68,7 +68,6 @@ const CertificateApplications: React.FC = () => {
         throw new Error("Failed to fetch applications");
       }
     } catch (err: any) {
-      console.error("Error fetching applications:", err);
       setError(err?.response?.data?.message || "Failed to load applications. Please try again later.");
     } finally {
       setLoading(false);

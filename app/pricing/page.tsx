@@ -67,8 +67,7 @@ export default function PricingPage(): JSX.Element {
       if (data.success) {
         setPlans(data.data);
       }
-    } catch (error) {
-      console.error('Error fetching plans:', error);
+    } catch {
     } finally {
       setLoading(false);
     }
@@ -104,7 +103,6 @@ export default function PricingPage(): JSX.Element {
       const response = await secureApi.post(`/api/v1/plan/${selectedPlan.id}/charge`);
       setPurchaseChargeId(response.data.data.chargeId);
     } catch (error: any) {
-      console.error('Error:', error);
       alert(error.message || 'Failed to process payment');
     } finally {
       setSubmitting(false);

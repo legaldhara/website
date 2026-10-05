@@ -521,7 +521,6 @@ export default function DocumentationPage() {
         subject: formData.document,
       });
       
-      console.log(res)
       if (res.data.success) {
         toast.success("Your query has been submitted successfully !");
         setFormData({
@@ -534,8 +533,7 @@ export default function DocumentationPage() {
       } else {
         toast.error("❌ Something went wrong. Please try again.");
       }
-    } catch (error) {
-      console.error("API Error:", error);
+    } catch {
       toast.error("⚠️ Unable to submit. Please try again later.");
     } finally {
       setLoading(false);

@@ -62,10 +62,32 @@ describe("website production configuration", () => {
     expect(placeholderLinks).toEqual([]);
   });
 
+const findSourceFiles = (directory: string): string[] =>
+  readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) return findSourceFiles(path);
+    return entry.isFile() && /\.(ts|tsx)$/.test(entry.name) && !entry.name.includes(".test.")
+      ? [path]
+      : [];
+  });
+
   it("keeps Firebase out of the anonymous header path", () => {
     const header = readFileSync("components/Header.tsx", "utf8");
     expect(header).not.toContain("/store/useAuthStore");
     expect(header).toContain("hasCustomerSessionHint");
+  });
+
+  it("loads public homepage services without importing Firebase", () => {
+    const publicApi = readFileSync("config/publicApi.ts", "utf8");
+    const servicesStore = readFileSync("store/useServicesStore.ts", "utf8");
+    const contactForm = readFileSync("components/Contactform.tsx", "utf8");
+
+    expect(publicApi).not.toContain("firebase");
+    expect(publicApi).not.toContain("./apiClient");
+    expect(servicesStore).toContain('from "@/config/publicApi"');
+    expect(servicesStore).not.toContain('from "@/config/apiClient"');
+    expect(contactForm).toContain('from "@/config/publicApi"');
+    expect(contactForm).not.toContain('from "@/config/apiClient"');
   });
 
   it("does not publish unused legacy images", () => {
@@ -82,5 +104,13 @@ describe("website production configuration", () => {
     }
     expect(statSync("public/assets/android-chrome-512x512.png").size).toBeLessThan(80_000);
     expect(readFileSync("components/service-hero-form.tsx", "utf8")).not.toContain("/assets/LD2.jpg");
+  });
+
+  it("does not ship production debug logging", () => {
+    const debugLogs = ["app", "components", "config", "lib", "store"]
+      .flatMap(findSourceFiles)
+      .filter((path) => /console\.\w+\s*\(/.test(readFileSync(path, "utf8")));
+
+    expect(debugLogs).toEqual([]);
   });
 });

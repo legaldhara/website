@@ -94,7 +94,6 @@ export default function CertificateDetailsModal({
       const response = await secureApi.get(`/api/v1/certificate/${requestNo}`);
       if (response.data.success) {
         setData(response.data.data);
-        console.log(response.data);
       } else {
         setError(response.data.message || 'Failed to fetch details');
       }

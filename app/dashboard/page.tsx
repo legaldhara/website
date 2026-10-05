@@ -207,7 +207,6 @@ const fetchApplicationDetails = async () => {
       throw new Error(data.message || "Failed to fetch application details");
     }
   } catch (error: any) {
-    console.error("Error fetching application details:", error);
     alert(error.message || "Failed to fetch application details");
   } finally {
     setLoading(false);
@@ -234,8 +233,7 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setDocuments((previous) => [...previous, ...uploadedAssets]);
     toast.dismiss(toastId);
     toast.success("Files uploaded successfully!");
-  } catch (error: any) {
-    console.error("Error uploading:", error);
+  } catch {
     toast.dismiss(toastId);
     toast.error("Upload failed.");
   } finally {
@@ -270,8 +268,6 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
       payload.meta = { documents: documents.map(({ assetId }) => ({ assetId })) };
     }
     
-    console.log("payload",payload);
-    // 
     const response = await secureApi.post(
       `/api/v1/application/update/${ticketNo}`,
       payload
@@ -288,7 +284,6 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
       throw new Error(data.message || "Failed to submit update");
     }
   } catch (error: any) {
-    console.error("Error submitting update:", error);
     alert(error.message || "Failed to submit update");
   } finally {
     setSubmitting(false);
@@ -877,12 +872,10 @@ export default function DashboardPage() {
       const response = await secureApi.get(`/api/v1/application/my?page=1&limit=30`, {
         withCredentials: true,
       });
-      console.log("apploications ::", response);
       if (response) {
         setApplications(response.data.data || []);
       }
-    } catch (error) {
-      console.error('Error fetching applications:', error);
+    } catch {
     } finally {
       setLoading(false);
     }
@@ -895,8 +888,7 @@ export default function DashboardPage() {
       if (response) {
         setServices(response.data.services || []);
       }
-    } catch (error) {
-      console.error('Error fetching services:', error);
+    } catch {
     } finally {
       setServicesLoading(false);
     }
@@ -946,7 +938,6 @@ export default function DashboardPage() {
           const response = await secureApi.post("/api/v1/document", payload);
           return response.data;
         } catch (err: any) {
-          console.error("Error saving document:", err);
           toast.error(err.response?.data?.message || "Failed to save document.");
           return null;
         }
@@ -958,7 +949,6 @@ export default function DashboardPage() {
 
     return uploadResults.filter(Boolean);
   } catch (error: any) {
-    console.error("Error uploading files:", error);
     toast.dismiss(toastId);
     toast.error(error.message || "Upload failed. Try again.");
     return [];

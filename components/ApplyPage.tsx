@@ -42,10 +42,6 @@ export default function ApplyPage() {
         }
       );
 
-      const data = response.data;
-
-      console.log("Service Name ::: :> >>", data.application.serviceName);
-      
       if (response.data.success) {
         const ticketNo = response.data.application.ticketNo;
         const serviceNameFromResponse = response.data.application.serviceName;
@@ -53,7 +49,6 @@ export default function ApplyPage() {
         
         setSuccess('Application submitted successfully!');
         toast.success("Application submitted successfully! Redirecting...");
-        console.log(response.data);
         
         // Small delay to show success state
         setTimeout(() => {
@@ -71,7 +66,6 @@ export default function ApplyPage() {
         setError(response.data.message || 'Something went wrong');
       }
     } catch (err: any) {
-      console.log(err);
       setError(err.response?.data?.message || err.message || 'Error submitting application');
     } finally {
       setLoading(false);

@@ -1,7 +1,7 @@
 "use client"; // Required in Next.js 13 App Router
 
 import { create } from "zustand";
-import { secureApi } from "@/config/apiClient";
+import { publicApi } from "@/config/publicApi";
 
 interface Service {
   governmentCharges: string;
@@ -25,8 +25,6 @@ interface ServicesStore {
   fetchServices: () => Promise<void>;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL ;
-
 export const useServicesStore = create<ServicesStore>((set) => ({
   services: [],
   loading: false,
@@ -36,11 +34,10 @@ export const useServicesStore = create<ServicesStore>((set) => ({
     set({ loading: true, error: null });
 
     try {
-      const res = await secureApi.get(`/api/v1/service/services?page=1&limit=50`);
+      const res = await publicApi.get(`/api/v1/service/services?page=1&limit=50`);
       if (!res) throw new Error("Failed to fetch services");
 
       const data = res.data
-      console.log("services ", data)
       if (data.success) {
         set({ services: data.services, loading: false });
       } else {

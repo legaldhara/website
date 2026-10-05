@@ -32,7 +32,6 @@ useEffect(() => {
       (s: any) => s.name.toLowerCase().trim() === service.name.toLowerCase().trim()
     );
     setMatchedService(match || null);
-    console.log("Matched service:", match);
   }
 }, [services, service]);
   
@@ -48,20 +47,13 @@ useEffect(() => {
   const city = formData.get("city") as string;
   const BusinessName = formData.get("BusinessName") as string | null;
 
-  console.log("Consultation Request Received:", { fullName, email, phone, city, BusinessName });
-  console.log("services:", services);
-  console.log("service name client side:", service.name);
-
   // ✅ Step 1: Find matching service
   // const matchedService = services.find(
   //   (s: any) => s.name.toLowerCase().trim() === service.name.toLowerCase().trim()
   // );
 
-  // console.log("Matched service:", matchedService);
-
  if (!matchedService) {
     toast.error("Service not found in list!");
-    console.error("Service not found!");
     setLoad(false);
     return;
   }
@@ -70,8 +62,6 @@ useEffect(() => {
   const price = parseFloat(matchedService.price) || 0;
   const govtCharges = parseFloat(matchedService.governmentCharges) || 0;
   const totalprice = price + govtCharges;
-
-  console.log("Total Price:", totalprice);
 
   // ✅ Step 3: Prepare query params
   const query = new URLSearchParams({
