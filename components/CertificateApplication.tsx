@@ -21,7 +21,7 @@ interface CertificateApplication {
   requestNo: string;
   subject: string;
   description: string;
-  status: 'PENDING' | 'UNDER_REVIEW' |'PAYMENT_REQUIRED' | 'APPROVED' | 'REJECTED' | 'COMPLETED' | 'CLOSED';
+  status: 'PENDING' | 'SUBMITTED' | 'UNDER_REVIEW' | 'ACTION_REQUIRED' | 'PAYMENT_REQUIRED' | 'APPROVED' | 'REJECTED' | 'COMPLETED' | 'CLOSED';
   isResolved: boolean;
   createdAt: string;
   resolvedAt: string | null;
@@ -40,7 +40,7 @@ interface StatusConfig {
   label: string;
 }
 
-type FilterStatus = 'ALL' | 'PENDING' | 'UNDER_REVIEW' | 'APPROVED' | 'REJECTED'| 'COMPLETED' | 'CLOSED' |'PAYMENT_REQUIRED';
+type FilterStatus = 'ALL' | CertificateApplication['status'];
 
 const CertificateApplications: React.FC = () => {
   const [applications, setApplications] = useState<CertificateApplication[]>([]);
@@ -83,10 +83,20 @@ const getStatusConfig = (
       icon: Clock,
       label: "Pending",
     },
+    SUBMITTED: {
+      color: "bg-yellow-50 text-yellow-700 border-yellow-200",
+      icon: Clock,
+      label: "Submitted",
+    },
     UNDER_REVIEW: {
       color: "bg-blue-50 text-blue-700 border-blue-200",
       icon: AlertCircle,
       label: "Under Review",
+    },
+    ACTION_REQUIRED: {
+      color: "bg-orange-50 text-orange-700 border-orange-200",
+      icon: AlertCircle,
+      label: "Action Required",
     },
     APPROVED: {
       color: "bg-emerald-50 text-emerald-700 border-emerald-200",
