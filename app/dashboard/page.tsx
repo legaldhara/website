@@ -38,6 +38,7 @@ import {
 } from 'lucide-react';
 import CertificateApplications from '@/components/CertificateApplication';
 import { RazorpayCheckout } from '@/components/payments/RazorpayCheckout';
+import ApplicationDetailModal from '@/components/cases/ApplicationDetailModal';
 
 // TypeScript Interfaces
 interface Service {
@@ -174,11 +175,10 @@ const ServiceCardSkeleton = () => (
 );
 
 // Application Detail Modal Component
-function ApplicationDetailModal({ ticketNo, onClose }: ApplicationDetailModalProps) {
+function LegacyApplicationDetailModal({ ticketNo, onClose }: ApplicationDetailModalProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [applicationData, setApplicationData] = useState<ApplicationData | null>(null);
-  
   const [message, setMessage] = useState('');
   const [documents, setDocuments] = useState<UploadedAsset[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -213,82 +213,40 @@ const fetchApplicationDetails = async () => {
   }
 };
 
-
 const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
   const files = e.target.files;
   if (!files || files.length === 0) return;
-
   setUploading(true);
-  const fileArray = Array.from(files);
   const toastId = toast.loading("Uploading files...");
-
   try {
-    const uploadedAssets = await uploadImages(fileArray);
-    if (uploadedAssets.length === 0) {
-      toast.dismiss(toastId);
-      toast.error("No files were uploaded. Please try again.");
-      return;
-    }
-
+    const uploadedAssets = await uploadImages(Array.from(files));
+    if (uploadedAssets.length === 0) throw new Error("No files were uploaded");
     setDocuments((previous) => [...previous, ...uploadedAssets]);
-    toast.dismiss(toastId);
-    toast.success("Files uploaded successfully!");
+    toast.success("Files uploaded successfully!", { id: toastId });
   } catch {
-    toast.dismiss(toastId);
-    toast.error("Upload failed.");
+    toast.error("Upload failed.", { id: toastId });
   } finally {
     setUploading(false);
   }
 };
 
-
-
-  const handleSubmitUpdate = async () => {
-  if (!message.trim()) {
-    alert("Please enter a message");
-    return;
-  }
-
-  const currentStatus = applicationData?.applicationStatus;
-
-  if (currentStatus === "DATA_REQUIRED" && documents.length === 0) {
-    alert("Please upload required documents");
-    return;
-  }
-
+const handleSubmitUpdate = async () => {
+  if (!message.trim()) return;
   setSubmitting(true);
-
   try {
-    const payload: any = {
+    await secureApi.post(`/api/v1/application/update/${ticketNo}`, {
       message: message.trim(),
       updateType: "USER_MESSAGE",
-    };
-
-    if (currentStatus === "DATA_REQUIRED" && documents.length > 0) {
-      payload.meta = { documents: documents.map(({ assetId }) => ({ assetId })) };
-    }
-    
-    const response = await secureApi.post(
-      `/api/v1/application/update/${ticketNo}`,
-      payload
-    );
-
-    const data = response.data;
-
-    if (data.success) {
-      setMessage("");
-      setDocuments([]);
-      await fetchApplicationDetails();
-      toast.success("Update submitted successfully");
-    } else {
-      throw new Error(data.message || "Failed to submit update");
-    }
-  } catch (error: any) {
-    alert(error.message || "Failed to submit update");
+      ...(documents.length ? { meta: { documents: documents.map(({ assetId }) => ({ assetId })) } } : {}),
+    });
+    setMessage("");
+    setDocuments([]);
+    await fetchApplicationDetails();
   } finally {
     setSubmitting(false);
   }
 };
+
 
   // Major Milestones - Simplified to 4 phases
   const getMajorMilestones = (status: string) => {
@@ -430,8 +388,7 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     });
   };
 
-  const canUserRespond = applicationData?.applicationStatus === 'DATA_REQUIRED' || 
-                         applicationData?.applicationStatus === 'PAYMENT_REQUIRED';
+  const canUserRespond = applicationData?.applicationStatus === 'DATA_REQUIRED' || applicationData?.applicationStatus === 'PAYMENT_REQUIRED';
 
   if (loading) {
     return (
@@ -827,6 +784,8 @@ const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     </div>
   );
 }
+
+void LegacyApplicationDetailModal;
 
 
 // Main Dashboard Component
