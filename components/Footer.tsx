@@ -136,7 +136,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-deep-blue text-white">
-      <div className="px-4 md:px-6 lg:px-24 py-12">
+      <div className="px-4 sm:px-6 lg:px-10 xl:px-20 py-12">
         {/* Main Footer Content  //grid grid-cols-1 lg:grid-cols-12 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-12"> 
           {/* Left Column: Company Info - 3 columns   //lg:col-span-3 */}

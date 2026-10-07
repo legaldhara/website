@@ -1,0 +1,135 @@
+.section {
+  --black: #111111;
+  --gold: #bc9139;
+  --gold-light: #dab15e;
+  --ivory: #f7f5f0;
+  --muted-dark: #b9b9b7;
+  --muted: #747474;
+  padding: var(--home1-section-space) var(--home1-gutter);
+  background: var(--black);
+  color: var(--ivory);
+  font-family: var(--font-home1), "Avenir Next", Arial, sans-serif;
+}
+
+.section * { box-sizing: border-box; }
+.section h2, .section h3, .section p { margin: 0; }
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(480px, 0.95fr);
+  max-width: var(--home1-content-max);
+  min-height: 760px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #171717;
+}
+
+.visual {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.visual > img { z-index: -2; object-fit: cover; object-position: 52% center; }
+.shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(6, 6, 6, 0.88) 0%, rgba(6, 6, 6, 0.2) 52%, rgba(6, 6, 6, 0.65) 100%); }
+.visualCopy {
+  position: absolute;
+  right: 0;
+  bottom: 92px;
+  left: 0;
+  padding: clamp(40px, 4vw, 64px);
+}
+
+.eyebrow {
+  margin-bottom: 16px !important;
+  color: var(--gold-light);
+  font-size: var(--home1-eyebrow-size);
+  font-weight: 600;
+  letter-spacing: var(--home1-eyebrow-spacing);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.eyebrow::before { display: block; width: 56px; height: 2px; margin-bottom: 14px; background: var(--gold-light); content: ""; }
+.visualCopy h2 { max-width: 740px; font-size: var(--home1-section-title); font-weight: var(--home1-section-title-weight); letter-spacing: var(--home1-section-title-spacing); line-height: var(--home1-section-title-line); }
+.visualCopy h2 span { display: block; color: var(--gold-light); }
+.visualCopy > p:last-child { max-width: 560px; margin-top: 18px; color: var(--muted-dark); font-size: var(--home1-lead-size); line-height: var(--home1-lead-line); }
+.visualNote { position: absolute; right: 52px; bottom: 34px; left: 52px; display: flex; gap: 18px; align-items: center; color: #d3d3cf; font-size: 14px; }
+.visualNote::before { width: 52px; height: 2px; flex: none; background: var(--gold-light); content: ""; }
+
+.form {
+  margin: 34px;
+  padding: clamp(32px, 3.4vw, 52px);
+  border-radius: 8px;
+  background: var(--ivory);
+  color: #121721;
+}
+
+.formRule { display: block; width: 56px; height: 2px; margin-bottom: 18px; background: var(--gold); }
+.form h3 { font-size: clamp(32px, 3vw, 46px); font-weight: 750; letter-spacing: -0.04em; line-height: 1.08; }
+.formLead { margin-top: 4px !important; margin-bottom: 24px !important; color: var(--muted); font-size: clamp(18px, 1.5vw, 24px); font-weight: 600; }
+.form label { display: block; margin-top: 16px; }
+.form label > span:first-child { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 600; }
+.form input, .form select, .form textarea { width: 100%; border: 1px solid #cbc8c1; border-radius: 6px; background: #ffffff; color: #151515; font: inherit; font-size: 15px; }
+.form input, .form select { height: 50px; padding: 0 16px; }
+.form textarea { min-height: 98px; padding: 14px 16px 28px; resize: vertical; }
+.form input::placeholder, .form textarea::placeholder { color: #929292; opacity: 1; }
+.form input:focus-visible, .form select:focus-visible, .form textarea:focus-visible, .form button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.phoneRow { display: grid; grid-template-columns: minmax(145px, 0.42fr) minmax(0, 1fr); gap: 16px; }
+.messageField { position: relative; display: block; }
+.messageField > span { position: absolute; right: 12px; bottom: 9px; color: var(--muted); font-size: 12px; }
+
+.form button {
+  display: flex;
+  width: 100%;
+  min-height: 56px;
+  margin-top: 18px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 6px;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-light);
+  color: #111111;
+  cursor: pointer;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form button:disabled { cursor: wait; opacity: 0.68; }
+.form button svg { width: 22px; height: 22px; transition: transform 180ms ease; }
+.form button:hover:not(:disabled) svg { transform: translateX(4px); }
+.privacy { display: flex; margin-top: 14px !important; gap: 8px; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; text-align: center; }
+.privacy svg { width: 20px; height: 20px; flex: none; }
+
+@media (max-width: 1050px) {
+  .inner { grid-template-columns: 1fr; }
+  .visual { min-height: 680px; }
+  .form { margin: 0; border-radius: 0; }
+}
+
+@media (max-width: 700px) {
+  .inner { border-radius: 0; }
+  .visual { min-height: 660px; }
+  .visualCopy { bottom: 76px; padding: 32px 20px; }
+  .visualNote { right: 20px; bottom: 24px; left: 20px; font-size: 13px; }
+  .visualNote::before { width: 40px; }
+  .form { padding: 32px 20px 24px; }
+  .form h3 { font-size: 34px; }
+  .formLead { font-size: 20px; }
+  .phoneRow { grid-template-columns: minmax(115px, 0.45fr) minmax(0, 1fr); gap: 10px; }
+  .form input, .form select { padding-inline: 12px; font-size: 14px; }
+}
+
+@media (max-width: 430px) {
+  .visual { min-height: 590px; }
+  .phoneRow { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form button svg { transition: none; }
+}

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg"><symbol id="lawyer" viewBox="0 0 160 160" fill="none"><g stroke="#111111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H20V114H54" />
+    <path d="M36 40H70M36 54H60M36 82H57M36 96H50" />
+  </g>
+  <g stroke="#BC9139" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H98V40M36 68H65" />
+    <circle cx="111" cy="54" r="5" />
+    <path d="M106 57L78 64M116 57L145 64M111 60V138M95 140H128" />
+    <path d="M78 64L63 105H94L78 64M63 105C65 119 91 119 94 105" />
+    <path d="M143 64L128 105H158L143 64M128 105C130 119 156 119 158 105" />
+  </g>
+</symbol><symbol id="chartered-accountant" viewBox="0 0 160 160" fill="none"><g stroke="#111111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H20V114H64M36 40H70M36 68H64M36 96H54" />
+    <rect x="78" y="50" width="68" height="92" rx="1" />
+  </g>
+  <g stroke="#BC9139" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H98V40M36 54H60M36 82H57" />
+    <rect x="89" y="61" width="46" height="15" />
+    <rect x="90" y="89" width="7" height="7" />
+    <rect x="108" y="89" width="7" height="7" />
+    <rect x="126" y="89" width="7" height="7" />
+    <rect x="90" y="106" width="7" height="7" />
+    <rect x="108" y="106" width="7" height="7" />
+    <rect x="126" y="106" width="7" height="7" />
+    <rect x="90" y="123" width="7" height="7" />
+    <rect x="108" y="123" width="7" height="7" />
+    <rect x="126" y="123" width="7" height="7" />
+  </g>
+</symbol><symbol id="company-secretary" viewBox="0 0 160 160" fill="none"><g stroke="#111111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 142H94M23 142V85H47M47 142V42H90V142M33 97V104M33 115V122" />
+    <path d="M98 64H144V129H136M98 64V129H105M108 76H132M108 87H128M108 98H121" />
+  </g>
+  <g stroke="#BC9139" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 42V35A20 20 0 0 1 88 35V42M59 57V66M77 57V66M59 77V86M77 77V86M59 97V106M77 97V106M62 142V121H76V142" />
+    <path d="M109 130V150L121 143L133 150V130" />
+    <circle cx="121" cy="120" r="15" />
+    <circle cx="121" cy="120" r="9" />
+  </g>
+</symbol><symbol id="ip-lawyer" viewBox="0 0 160 160" fill="none"><g stroke="#111111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H20V114H58M36 40H70M36 68H62M36 96H51" />
+    <path d="M104 47L141 61V92C141 117 126 130 104 143C82 130 67 117 67 92V61L104 47Z" />
+  </g>
+  <g stroke="#BC9139" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 20H98V38M36 54H60M36 82H55" />
+    <circle cx="104" cy="87" r="19" />
+    <path d="M97 98V76H105C116 76 116 88 105 88H97M105 88L113 98" />
+  </g>
+</symbol></svg>

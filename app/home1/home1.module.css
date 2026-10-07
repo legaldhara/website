@@ -1,0 +1,534 @@
+.page {
+  --home1-gutter: 80px;
+  --home1-content-max: 1440px;
+  --home1-section-space: 56px;
+  --home1-eyebrow-size: 12px;
+  --home1-eyebrow-spacing: 0.22em;
+  --home1-section-title: clamp(40px, 4.4vw, 68px);
+  --home1-section-title-weight: 700;
+  --home1-section-title-spacing: -0.04em;
+  --home1-section-title-line: 1.06;
+  --home1-lead-size: clamp(16px, 1.25vw, 20px);
+  --home1-lead-line: 1.5;
+  font-family: var(--font-home1), "Avenir Next", Arial, sans-serif;
+}
+
+.hero {
+  --hero-gold: #d8a63f;
+  --hero-white: #f7f7f5;
+  --hero-muted: #b7b7b4;
+  background: #0b0b0b;
+  color: var(--hero-white);
+  font-family: var(--font-home1), "Avenir Next", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.heroStage {
+  position: relative;
+  min-height: 650px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  isolation: isolate;
+}
+
+.backdrop,
+.shade {
+  position: absolute;
+  inset: 0;
+}
+
+.backdrop {
+  z-index: -2;
+  background-image: url("/assets/legal-hero-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.shade {
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(8, 8, 8, 0.94) 0%, rgba(8, 8, 8, 0.82) 36%, rgba(8, 8, 8, 0.08) 67%),
+    linear-gradient(0deg, rgba(6, 6, 6, 0.24), transparent 35%);
+}
+
+.content {
+  width: min(100%, calc(var(--home1-content-max) + (var(--home1-gutter) * 2)));
+  margin: 0 auto;
+  padding: 62px var(--home1-gutter) 70px;
+}
+
+@media (max-width: 1279px) {
+  .page {
+    --home1-gutter: 40px;
+  }
+}
+
+.brandNote {
+  display: grid;
+  width: fit-content;
+  color: var(--hero-white);
+}
+
+.brandRule {
+  width: 62px;
+  height: 3px;
+  margin-bottom: 13px;
+  background: var(--hero-gold);
+}
+
+.brandNote p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.brandNote span:last-child {
+  margin-top: 4px;
+  color: #c8c8c5;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+.headline {
+  display: grid;
+  gap: 0;
+  margin: 45px 0 0;
+  font-size: clamp(52px, 4.8vw, 80px);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.headline strong {
+  color: var(--hero-gold);
+  font-weight: 750;
+}
+
+.zeroFees {
+  display: flex;
+  gap: 28px;
+  margin: 27px 0 0;
+  font-size: clamp(22px, 1.7vw, 29px);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.supportingCopy {
+  margin: 20px 0 0;
+  color: var(--hero-muted);
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.45;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-top: 34px;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 62px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.primaryAction {
+  min-width: 315px;
+  padding: 0 28px;
+  border: 1px solid #e3b24c;
+  border-radius: 5px;
+  background: linear-gradient(100deg, #d9a43c, #e6b84f);
+  color: #0b0b0b;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.secondaryAction {
+  min-width: 210px;
+  color: var(--hero-white);
+}
+
+.primaryAction svg,
+.secondaryAction svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.6;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateX(3px);
+}
+
+.primaryAction:focus-visible,
+.secondaryAction:focus-visible,
+.serviceRow:focus-visible {
+  outline: 2px solid var(--hero-gold);
+  outline-offset: 4px;
+}
+
+.mobileArtworkSpace {
+  display: none;
+}
+
+.serviceChooser {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.68fr) 1.65fr;
+  gap: clamp(45px, 7vw, 120px);
+  width: min(100%, calc(var(--home1-content-max) + (var(--home1-gutter) * 2)));
+  margin: 0 auto;
+  padding: 31px var(--home1-gutter) 40px;
+  background: radial-gradient(circle at 45% 0%, #171717 0%, #0b0b0b 46%);
+}
+
+.chooserHeading {
+  padding: 8px clamp(25px, 4vw, 62px) 0 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.chooserHeading p {
+  margin: 0 0 10px;
+  color: var(--hero-gold);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.chooserHeading h2 {
+  max-width: 430px;
+  margin: 0;
+  font-size: clamp(30px, 2.5vw, 42px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.17;
+}
+
+.serviceList {
+  --service-row-height: 62px;
+  height: calc(var(--service-row-height) * 3);
+  overflow: hidden;
+}
+
+.serviceTrack {
+  display: grid;
+  transform: translateY(calc(var(--ticker-index) * var(--service-row-height) * -1));
+  transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.serviceTrackStatic {
+  transition: none;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: 68px minmax(240px, 1.2fr) minmax(150px, 0.8fr) 30px;
+  align-items: center;
+  height: var(--service-row-height);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.serviceRow:last-child {
+  border-bottom: 0;
+}
+
+.serviceIcon {
+  color: var(--hero-gold);
+  width: 23px;
+  height: 23px;
+  stroke-width: 1.6;
+}
+
+.serviceName {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.serviceDescription {
+  color: #a8a8a5;
+  font-size: 17px;
+}
+
+.serviceArrow {
+  width: 24px;
+  height: 24px;
+  justify-self: end;
+  stroke-width: 1.5;
+  transition: transform 180ms ease;
+}
+
+.serviceRow:hover {
+  color: var(--hero-gold);
+  border-color: rgba(216, 166, 63, 0.62);
+}
+
+.serviceRow:hover .serviceArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1023px) {
+  .page {
+    --home1-gutter: 24px;
+    --home1-section-space: 44px;
+    --home1-section-title: clamp(36px, 5.5vw, 52px);
+  }
+
+  .heroStage {
+    min-height: 1420px;
+  }
+
+  .backdrop {
+    background-image: url("/assets/legal-hero-mobile.png");
+    background-position: center top;
+  }
+
+  .shade {
+    background:
+      linear-gradient(180deg, rgba(7, 7, 7, 0.34) 0%, rgba(7, 7, 7, 0.08) 56%, rgba(7, 7, 7, 0.62) 76%, rgba(7, 7, 7, 0.92) 100%),
+      linear-gradient(90deg, rgba(7, 7, 7, 0.34), transparent 52%, rgba(7, 7, 7, 0.2));
+  }
+
+  .content {
+    padding: 48px var(--home1-gutter) 0;
+  }
+
+  .headline {
+    max-width: 760px;
+    margin-top: 38px;
+    font-size: clamp(52px, 9.1vw, 68px);
+    line-height: 1.06;
+  }
+
+  .headline strong {
+    font-size: 0.94em;
+    white-space: nowrap;
+  }
+
+  .headline > span {
+    font-size: 1.1em;
+  }
+
+  .zeroFees {
+    flex-direction: column;
+    gap: 2px;
+    font-size: clamp(27px, 4.35vw, 34px);
+  }
+
+  .supportingCopy {
+    font-size: clamp(21px, 3.35vw, 27px);
+  }
+
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .primaryAction {
+    width: min(100%, 600px);
+    font-size: 26px;
+  }
+
+  .secondaryAction {
+    min-height: 52px;
+    font-size: 26px;
+  }
+
+  .mobileArtworkSpace {
+    display: block;
+    height: 610px;
+  }
+
+  .serviceChooser {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 45px var(--home1-gutter) 60px;
+  }
+
+  .chooserHeading {
+    padding: 0;
+    border-right: 0;
+  }
+
+  .chooserHeading h2 {
+    max-width: 650px;
+    font-size: clamp(46px, 8vw, 61px);
+  }
+
+  .serviceList {
+    --service-row-height: 104px;
+  }
+
+  .serviceRow {
+    grid-template-columns: 76px 1fr 30px;
+    grid-template-rows: auto auto;
+    height: var(--service-row-height);
+    padding: 16px 0;
+  }
+
+  .serviceIcon {
+    grid-row: 1 / 3;
+    align-self: start;
+    padding-top: 3px;
+    width: 29px;
+    height: 29px;
+  }
+
+  .serviceName {
+    font-size: 27px;
+  }
+
+  .serviceDescription {
+    grid-column: 2;
+    color: #a8a8a5;
+    font-size: 22px;
+  }
+
+  .serviceArrow {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    align-self: center;
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    --home1-gutter: 16px;
+    --home1-section-space: 36px;
+    --home1-eyebrow-size: 11px;
+    --home1-section-title: clamp(34px, 9vw, 44px);
+    --home1-lead-size: 15px;
+  }
+
+  .heroStage {
+    min-height: 1210px;
+  }
+
+  .content {
+    padding: 30px var(--home1-gutter) 0;
+  }
+
+  .brandRule {
+    width: 36px;
+    height: 2px;
+    margin-bottom: 9px;
+  }
+
+  .brandNote p {
+    font-size: 12px;
+  }
+
+  .brandNote span:last-child {
+    font-size: 12px;
+  }
+
+  .headline {
+    margin-top: 31px;
+    font-size: clamp(35px, 9.6vw, 45px);
+    line-height: 1.12;
+  }
+
+  .headline strong {
+    font-size: clamp(25px, 6.8vw, 31px);
+    letter-spacing: -0.055em;
+  }
+
+  .headline > span {
+    font-size: 1.08em;
+  }
+
+  .zeroFees {
+    margin-top: 20px;
+    font-size: clamp(21px, 6.4vw, 29px);
+    line-height: 1.38;
+  }
+
+  .supportingCopy {
+    margin-top: 16px;
+    font-size: clamp(16px, 4.7vw, 21px);
+    line-height: 1.45;
+  }
+
+  .actions {
+    margin-top: 25px;
+  }
+
+  .primaryAction {
+    min-width: 0;
+    min-height: 56px;
+    padding: 0 20px;
+    font-size: 17px;
+  }
+
+  .secondaryAction {
+    min-height: 44px;
+    font-size: 17px;
+  }
+
+  .mobileArtworkSpace {
+    height: 485px;
+  }
+
+  .serviceChooser {
+    gap: 29px;
+    padding: 40px var(--home1-gutter) 52px;
+  }
+
+  .chooserHeading p {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+  }
+
+  .chooserHeading h2 {
+    font-size: clamp(34px, 10vw, 46px);
+  }
+
+  .serviceList {
+    --service-row-height: 91px;
+  }
+
+  .serviceRow {
+    grid-template-columns: 54px 1fr 25px;
+    height: var(--service-row-height);
+  }
+
+  .serviceIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .serviceName {
+    font-size: 18px;
+  }
+
+  .serviceDescription {
+    font-size: 16px;
+  }
+
+  .serviceArrow {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryAction,
+  .secondaryAction,
+  .serviceTrack,
+  .serviceRow,
+  .serviceArrow {
+    transition: none;
+  }
+}
