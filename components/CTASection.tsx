@@ -7,9 +7,9 @@ const CTASection = () => {
     <section className="py-16 md:py-24 bg-deep-blue relative overflow-hidden">
       {/* Background Elements - Enhanced for attractiveness */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-[#FFC24F]/10 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-[#BC9139]/10 rounded-full mix-blend-screen filter blur-3xl animate-blob"></div>
         <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-white/10 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-[#FFC24F]/10 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-56 h-56 bg-[#BC9139]/10 rounded-full mix-blend-screen filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"></div>
 
@@ -28,7 +28,7 @@ const CTASection = () => {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-[#FFC24F] to-[#FFC24F]/90 hover:from-deep-blue hover:to-deep-blue/90 hover:text-white text-deep-blue px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold hover:scale-105"
+              className="bg-gradient-to-r from-[#BC9139] to-[#BC9139]/90 hover:from-deep-blue hover:to-deep-blue/90 hover:text-white text-deep-blue px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold hover:scale-105"
             >
               <Link href="/contact">
                 <MessageCircle className="mr-2 h-5 w-5" />
@@ -51,12 +51,12 @@ const CTASection = () => {
           {/* Contact Info - Enhanced presentation */}
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-white mt-12 pt-8 border-t border-white/10">
             <div className="flex items-center space-x-3">
-              <Phone className="h-6 w-6 text-[#FFC24F]" />
+              <Phone className="h-6 w-6 text-[#BC9139]" />
               <span className="text-xl font-semibold">+91 9424440004</span>
             </div>
             <div className="hidden sm:block w-px h-8 bg-white/30"></div>
             <div className="flex items-center space-x-3">
-              <MessageCircle className="h-6 w-6 text-[#FFC24F]" />
+              <MessageCircle className="h-6 w-6 text-[#BC9139]" />
               <span className="text-xl font-semibold">WhatsApp Support Available</span>
             </div>
           </div>

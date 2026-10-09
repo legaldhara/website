@@ -81,7 +81,7 @@ export default function ExpertConsultation() {
       <div className={styles.inner}>
         <div className={styles.visual}>
           <Image
-            src="/assets/home1-consultation/legal-consultant.png"
+            src="/assets/home1-consultation/legal-consultant.webp"
             fill
             sizes="(max-width: 800px) 100vw, 54vw"
             alt="Legal consultant reviewing a document with a client"

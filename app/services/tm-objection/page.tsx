@@ -757,7 +757,7 @@ export default function TrademarkObjectionPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="text-center space-y-8 py-16 bg-gradient-to-r from-deep-blue via-deep-blue to-[#0a2847] rounded-2xl text-white mx-4">
+        <section className="text-center space-y-8 py-16 bg-gradient-to-r from-deep-blue via-deep-blue to-[#252525] rounded-2xl text-white mx-4">
   <div className="space-y-4">
     <h2 className="text-3xl font-bold">Don't Let Objections Stop Your Brand</h2>
     <p className="text-xl opacity-90 max-w-2xl mx-auto">
@@ -771,7 +771,7 @@ export default function TrademarkObjectionPage() {
         <Button
           size="lg"
           variant="secondary"
-          className="bg-white text-[#071B34] hover:bg-gray-100 flex items-center"
+          className="bg-white text-[#111111] hover:bg-gray-100 flex items-center"
         >
           <MessageSquare className="w-5 h-5 mr-2" />
           Start Your Objection Reply
@@ -782,7 +782,7 @@ export default function TrademarkObjectionPage() {
         <Button
           size="lg"
           variant="outline"
-          className="border-white text-white hover:bg-white hover:text-[#071B34] bg-transparent flex items-center"
+          className="border-white text-white hover:bg-white hover:text-[#111111] bg-transparent flex items-center"
         >
           <Phone className="w-5 h-5 mr-2" />
           Call Legal Expert

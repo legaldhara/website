@@ -360,7 +360,7 @@ export default function patentRegistration() {
    
      
       {/* Final CTA Section */}
-      {/* <section className="py-20 bg-gradient-to-r from-[#0A2342] via-[#0A2342] to-gray-700 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-[#111111] via-[#111111] to-gray-700 text-white">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-4xl lg:text-5xl font-bold">Protect Your Invention with Patent Registration</h2>
@@ -373,7 +373,7 @@ export default function patentRegistration() {
             <Link href="/contact" passHref>
               <Button
                 size="lg"
-                className="bg-white text-[#0A2342] hover:bg-gray-100 font-bold px-12 py-6 rounded-2xl text-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white text-[#111111] hover:bg-gray-100 font-bold px-12 py-6 rounded-2xl text-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Apply for Patent Registration
                 <ArrowRight className="ml-3 h-6 w-6" />
@@ -384,7 +384,7 @@ export default function patentRegistration() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0A2342] font-bold px-12 py-6 rounded-2xl text-xl bg-transparent"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#111111] font-bold px-12 py-6 rounded-2xl text-xl bg-transparent"
               >
                 <Phone className="mr-3 h-6 w-6" />
                 94244-40004

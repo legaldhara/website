@@ -76,6 +76,7 @@
 }
 
 .step {
+  --step-progress: 1;
   position: relative;
   min-width: 0;
 }
@@ -88,6 +89,7 @@
   height: 1px;
   background: var(--gold-tint);
   content: "";
+  transform: scaleX(var(--step-progress));
   transform-origin: left center;
 }
 
@@ -103,6 +105,7 @@
   height: 24px;
   background: url("/assets/home1-process/arrow.svg") center / 24px no-repeat;
   content: "";
+  opacity: var(--step-progress);
 }
 
 .node {
@@ -196,36 +199,6 @@
   content: "";
 }
 
-.revealed .step::before {
-  animation: drawLine 600ms ease both;
-  animation-delay: calc(var(--process-order) * 200ms);
-}
-
-.revealed .content {
-  animation: revealContent 500ms ease both;
-  animation-delay: calc(150ms + var(--process-order) * 200ms);
-}
-
-@keyframes drawLine {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes revealContent {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 1099px) {
   .header {
     gap: 36px;
@@ -310,6 +283,7 @@
     left: 16px;
     width: 1px;
     height: 100%;
+    transform: scaleY(var(--step-progress));
     transform-origin: center top;
   }
 
@@ -370,18 +344,6 @@
     letter-spacing: 0.13em;
   }
 
-  .revealed .step::before {
-    animation-name: drawLineMobile;
-  }
-}
-
-@keyframes drawLineMobile {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
 }
 
 @media (max-width: 419px) {
@@ -409,7 +371,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .process * {
+  .process *,
+  .process *::before,
+  .process *::after {
     animation: none !important;
     transition: none !important;
   }

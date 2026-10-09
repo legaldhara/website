@@ -563,7 +563,7 @@ export default function DocumentationPage() {
       viewport={{ once: true }}
       className="text-center mb-10"
     >
-      <h2 className="text-3xl md:text-4xl font-semibold text-[#071B34] mb-2">
+      <h2 className="text-3xl md:text-4xl font-semibold text-[#111111] mb-2">
         Browse Our Document Library
       </h2>
       <p className="text-lg text-gray-600 mb-6">
@@ -579,7 +579,7 @@ export default function DocumentationPage() {
             placeholder="Search for a document..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EAB308] focus:border-transparent text-base"
+            className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#BC9139] focus:border-transparent text-base"
           />
         </div>
       </div>
@@ -596,7 +596,7 @@ export default function DocumentationPage() {
             onClick={() => setSelectedCategory(category.id)}
             className={`flex items-center px-5 py-2.5 rounded-lg font-medium whitespace-nowrap transition-all ${
               active
-                ? 'bg-gradient-to-r from-[#EAB308] to-[#F2C79A] text-[#071B34] shadow-md'
+                ? 'bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] text-[#111111] shadow-md'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -623,7 +623,7 @@ export default function DocumentationPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.25, delay: i * 0.05 }}
-            className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-[#EAB308] relative group"
+            className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-5 shadow-md hover:shadow-xl transition-all border border-gray-100 hover:border-[#BC9139] relative group"
           >
             {doc.popular && (
               <div className="absolute -top-3 -right-3 bg-gradient-to-r from-red-500 to-pink-500 text-white px-2.5 py-1 rounded-full text-[10px] font-semibold shadow-md flex items-center">
@@ -632,7 +632,7 @@ export default function DocumentationPage() {
             )}
 
             <div className="mb-3">
-              <h3 className="text-lg font-semibold text-[#071B34] mb-2 group-hover:text-[#EAB308] transition-colors">
+              <h3 className="text-lg font-semibold text-[#111111] mb-2 group-hover:text-[#BC9139] transition-colors">
                 {doc.name}
               </h3>
               <div className="flex items-center gap-2 mb-2">
@@ -659,7 +659,7 @@ export default function DocumentationPage() {
 
             <Link
               href="#FormSection"
-              className="w-full bg-gradient-to-r from-[#071B34] to-[#0a2847] text-white py-2.5 rounded-lg font-medium hover:from-[#0a2847] hover:to-[#071B34] flex items-center justify-center transition-all"
+              className="w-full bg-gradient-to-r from-[#111111] to-[#252525] text-white py-2.5 rounded-lg font-medium hover:from-[#252525] hover:to-[#111111] flex items-center justify-center transition-all"
             >
               Get This Document
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -692,7 +692,7 @@ export default function DocumentationPage() {
       viewport={{ once: true }}
       className="text-center mb-10"
     >
-      <h2 className="text-3xl md:text-5xl font-semibold text-[#071B34] mb-2">
+      <h2 className="text-3xl md:text-5xl font-semibold text-[#111111] mb-2">
         How It Works
       </h2>
       <p className="text-lg text-gray-600">
@@ -702,7 +702,7 @@ export default function DocumentationPage() {
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
       {/* Connection Line */}
-      <div className="hidden md:block absolute top-20 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-[#EAB308] to-[#F2C79A]" />
+      <div className="hidden md:block absolute top-20 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-[#BC9139] to-[#E7E2D8]" />
 
       {[
         {
@@ -737,16 +737,16 @@ export default function DocumentationPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border hover:border-[#EAB308]/70">
-              <div className="absolute -top-5 left-6 bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm shadow-md">
+            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border hover:border-[#BC9139]/70">
+              <div className="absolute -top-5 left-6 bg-gradient-to-br from-[#111111] to-[#252525] text-white w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm shadow-md">
                 {step.step}
               </div>
               <div className="flex justify-center mb-4 mt-3">
-                <div className="bg-gradient-to-br from-[#EAB308] to-[#F2C79A] p-4 rounded-xl">
-                  <Icon className="w-8 h-8 text-[#071B34]" />
+                <div className="bg-gradient-to-br from-[#BC9139] to-[#E7E2D8] p-4 rounded-xl">
+                  <Icon className="w-8 h-8 text-[#111111]" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#071B34] mb-2 text-center">
+              <h3 className="text-xl font-semibold text-[#111111] mb-2 text-center">
                 {step.title}
               </h3>
               <p className="text-gray-600 text-sm text-center leading-relaxed">
@@ -763,19 +763,19 @@ export default function DocumentationPage() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.6 }}
       viewport={{ once: true }}
-      className="mt-10 bg-gradient-to-r from-[#071B34] to-[#0a2847] rounded-2xl p-6 md:p-8 text-center"
+      className="mt-10 bg-gradient-to-r from-[#111111] to-[#252525] rounded-2xl p-6 md:p-8 text-center"
     >
       <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
         <div className="flex items-center text-white text-sm md:text-base">
-          <Timer className="h-5 w-5 text-[#EAB308] mr-2" />
+          <Timer className="h-5 w-5 text-[#BC9139] mr-2" />
           <span className="font-medium">Instant Downloads Available</span>
         </div>
         <div className="flex items-center text-white text-sm md:text-base">
-          <Clock className="h-5 w-5 text-[#EAB308] mr-2" />
+          <Clock className="h-5 w-5 text-[#BC9139] mr-2" />
           <span className="font-medium">Complex Docs: 1–30 Days</span>
         </div>
       </div>
-      <p className="text-[#F2C79A] text-sm md:text-base max-w-3xl mx-auto">
+      <p className="text-[#E7E2D8] text-sm md:text-base max-w-3xl mx-auto">
         Simple documents like NDAs, rental agreements, and employment letters are available for instant download. Complex
         documents requiring customization are delivered within 1–30 days after expert consultation.
       </p>
@@ -787,20 +787,20 @@ export default function DocumentationPage() {
       {/* Hero Section */}
   <section
       id="FormSection"
-      className="relative overflow-hidden bg-gradient-to-br from-[#071B34] via-[#0a2847] to-[#071B34] py-10 md:py-12"
+      className="relative overflow-hidden bg-gradient-to-br from-[#111111] via-[#252525] to-[#111111] py-10 md:py-12"
     >
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAB308] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#F2C79A] rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#BC9139] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#E7E2D8] rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div>
-            <div className="inline-flex items-center px-3 py-1 bg-[#EAB308]/20 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 text-[#EAB308] mr-1.5" />
-              <span className="text-[#F2C79A] font-medium text-xs">
+            <div className="inline-flex items-center px-3 py-1 bg-[#BC9139]/20 rounded-full mb-3">
+              <Star className="h-3.5 w-3.5 text-[#BC9139] mr-1.5" />
+              <span className="text-[#E7E2D8] font-medium text-xs">
                 Trusted by 15,000+ Clients
               </span>
             </div>
@@ -817,15 +817,15 @@ export default function DocumentationPage() {
 
             <div className="flex flex-col gap-2">
               <div className="flex items-center text-white text-sm">
-                <CheckCircle className="h-4 w-4 text-[#EAB308] mr-2 flex-shrink-0" />
+                <CheckCircle className="h-4 w-4 text-[#BC9139] mr-2 flex-shrink-0" />
                 <span>Free Documents Available</span>
               </div>
               <div className="flex items-center text-white text-sm">
-                <CheckCircle className="h-4 w-4 text-[#EAB308] mr-2 flex-shrink-0" />
+                <CheckCircle className="h-4 w-4 text-[#BC9139] mr-2 flex-shrink-0" />
                 <span>Expert Legal Support</span>
               </div>
               <div className="flex items-center text-white text-sm">
-                <CheckCircle className="h-4 w-4 text-[#EAB308] mr-2 flex-shrink-0" />
+                <CheckCircle className="h-4 w-4 text-[#BC9139] mr-2 flex-shrink-0" />
                 <span>100% Legally Valid</span>
               </div>
             </div>
@@ -834,7 +834,7 @@ export default function DocumentationPage() {
           {/* Right Form */}
           <div className="bg-white rounded-xl shadow-2xl p-4 sm:p-5 md:p-6">
   <div className="text-center mb-3 sm:mb-4">
-    <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-0.5">
+    <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-0.5">
       Get Your Document
     </h3>
     <p className="text-gray-600 text-xs">
@@ -847,7 +847,7 @@ export default function DocumentationPage() {
     <div>
       <label
         htmlFor="name"
-        className="block text-xs font-semibold text-[#071B34] mb-1"
+        className="block text-xs font-semibold text-[#111111] mb-1"
       >
         Full Name *
       </label>
@@ -858,7 +858,7 @@ export default function DocumentationPage() {
         value={formData.name}
         onChange={handleChange}
         placeholder="Enter your full name"
-        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all"
+        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all"
         required
         minLength={2}
       />
@@ -868,7 +868,7 @@ export default function DocumentationPage() {
     <div>
       <label
         htmlFor="phone"
-        className="block text-xs font-semibold text-[#071B34] mb-1"
+        className="block text-xs font-semibold text-[#111111] mb-1"
       >
         Phone Number *
       </label>
@@ -881,7 +881,7 @@ export default function DocumentationPage() {
         placeholder="+91 XXXXX XXXXX"
         pattern="[0-9]{10}"
         title="Please enter a valid 10-digit phone number"
-        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all"
+        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all"
         required
         maxLength={10}
       />
@@ -892,7 +892,7 @@ export default function DocumentationPage() {
     <div>
       <label
         htmlFor="email"
-        className="block text-xs font-semibold text-[#071B34] mb-1"
+        className="block text-xs font-semibold text-[#111111] mb-1"
       >
         Email Address *
       </label>
@@ -905,7 +905,7 @@ export default function DocumentationPage() {
         placeholder="your.email@example.com"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         title="Please enter a valid email address"
-        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all"
+        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all"
         required
       />
     </div>
@@ -914,7 +914,7 @@ export default function DocumentationPage() {
     <div>
       <label
         htmlFor="document"
-        className="block text-xs font-semibold text-[#071B34] mb-1"
+        className="block text-xs font-semibold text-[#111111] mb-1"
       >
         Document Required *
       </label>
@@ -923,7 +923,7 @@ export default function DocumentationPage() {
         name="document"
         value={formData.document}
         onChange={handleChange}
-        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all"
+        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all"
         required
       >
         <option value="">Select a document type</option>
@@ -941,7 +941,7 @@ export default function DocumentationPage() {
     <div>
       <label
         htmlFor="description"
-        className="block text-xs font-semibold text-[#071B34] mb-1"
+        className="block text-xs font-semibold text-[#111111] mb-1"
       >
         Description *
       </label>
@@ -954,7 +954,7 @@ export default function DocumentationPage() {
         rows={2}
         minLength={10}
         maxLength={500}
-        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all resize-none"
+        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all resize-none"
         required
       />
       <p className="text-xs text-gray-500 mt-1">
@@ -966,7 +966,7 @@ export default function DocumentationPage() {
     <button
       type="submit"
       disabled={loading}
-      className="w-full bg-gradient-to-r from-[#EAB308] to-[#F2C79A] hover:from-[#d9a307] hover:to-[#EAB308] text-[#071B34] font-semibold py-2.5 text-sm rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+      className="w-full bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] hover:from-[#BC9139] hover:to-[#BC9139] text-[#111111] font-semibold py-2.5 text-sm rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
     >
       {loading ? (
         <>
@@ -1001,7 +1001,7 @@ export default function DocumentationPage() {
       viewport={{ once: true }}
       className="text-center mb-14"
     >
-      <h2 className="text-4xl font-semibold text-[#071B34] mb-3">
+      <h2 className="text-4xl font-semibold text-[#111111] mb-3">
         Why Choose Our Service
       </h2>
       <p className="text-lg text-gray-600">
@@ -1017,12 +1017,12 @@ export default function DocumentationPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
           viewport={{ once: true }}
-          className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-transparent hover:border-[#EAB308] transition-all"
+          className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl border border-transparent hover:border-[#BC9139] transition-all"
         >
-          <div className="bg-gradient-to-br from-[#EAB308] to-[#F2C79A] p-3 rounded-xl inline-block mb-5 group-hover:scale-110 transition-transform">
-            <Icon className="w-7 h-7 text-[#071B34]" />
+          <div className="bg-gradient-to-br from-[#BC9139] to-[#E7E2D8] p-3 rounded-xl inline-block mb-5 group-hover:scale-110 transition-transform">
+            <Icon className="w-7 h-7 text-[#111111]" />
           </div>
-          <h3 className="text-lg font-semibold text-[#071B34] mb-2">
+          <h3 className="text-lg font-semibold text-[#111111] mb-2">
             {title}
           </h3>
           <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
@@ -1043,7 +1043,7 @@ export default function DocumentationPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#071B34] mb-4">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#111111] mb-4">What Our Clients Say</h2>
             <p className="text-xl text-gray-600">Real experiences from satisfied customers</p>
           </motion.div>
 
@@ -1059,12 +1059,12 @@ export default function DocumentationPage() {
               >
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-[#EAB308] fill-current" />
+                    <Star key={i} className="h-5 w-5 text-[#BC9139] fill-current" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
                 <div className="border-t pt-4">
-                  <p className="font-semibold text-[#071B34]">{testimonial.name}</p>
+                  <p className="font-semibold text-[#111111]">{testimonial.name}</p>
                   {/* <p className="text-sm text-gray-600">{testimonial.role}</p> */}
                 </div>
               </motion.div>
@@ -1074,10 +1074,10 @@ export default function DocumentationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#071B34] via-[#0a2847] to-[#071B34] relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-[#111111] via-[#252525] to-[#111111] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#EAB308] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F2C79A] rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#BC9139] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E7E2D8] rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -1097,7 +1097,7 @@ export default function DocumentationPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
              <Link
   href="#FormSection" 
-  className="px-10 py-4 bg-gradient-to-r from-[#EAB308] to-[#F2C79A] text-[#071B34] font-semibold rounded-xl hover:shadow-2xl transition-all text-lg flex items-center"
+  className="px-10 py-4 bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] text-[#111111] font-semibold rounded-xl hover:shadow-2xl transition-all text-lg flex items-center"
 >
   Get Free Consultation
   <Phone className="ml-2 h-5 w-5" />
@@ -1111,7 +1111,7 @@ export default function DocumentationPage() {
   <SearchCheck className="ml-2 h-5 w-5" />
 </Link>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-[#F2C79A]">
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-[#E7E2D8]">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2" />
                 <span>Free Documents Available</span>
@@ -1139,7 +1139,7 @@ export default function DocumentationPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-semibold text-[#071B34] mb-4">
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#111111] mb-4">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -1175,7 +1175,7 @@ export default function DocumentationPage() {
                 viewport={{ once: true }}
                 className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-[#071B34] mb-2">{faq.q}</h3>
+                <h3 className="text-lg font-semibold text-[#111111] mb-2">{faq.q}</h3>
                 <p className="text-gray-600 leading-relaxed">{faq.a}</p>
               </motion.div>
             ))}

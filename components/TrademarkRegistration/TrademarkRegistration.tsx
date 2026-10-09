@@ -91,8 +91,8 @@ export default function TrademarkRegistrationPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#071B34]">
-                What is a <span className="text-[#EAB308]">Trademark?</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#111111]">
+                What is a <span className="text-[#BC9139]">Trademark?</span>
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
                 {service.details?.whatIsTrademark}
@@ -100,29 +100,29 @@ export default function TrademarkRegistrationPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-5 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
-                  <Globe className="h-8 w-8 text-[#071B34] mb-3" />
-                  <h3 className="text-base font-semibold text-[#071B34] mb-2">Legal Protection</h3>
+                  <Globe className="h-8 w-8 text-[#111111] mb-3" />
+                  <h3 className="text-base font-semibold text-[#111111] mb-2">Legal Protection</h3>
                   <p className="text-gray-600 text-sm">Nationwide exclusive rights to use your brand</p>
                 </div>
                 <div className="p-5 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
-                  <ShieldCheck className="h-8 w-8 text-[#EAB308] mb-3" />
-                  <h3 className="text-base font-semibold text-[#071B34] mb-2">Brand Value</h3>
+                  <ShieldCheck className="h-8 w-8 text-[#BC9139] mb-3" />
+                  <h3 className="text-base font-semibold text-[#111111] mb-2">Brand Value</h3>
                   <p className="text-gray-600 text-sm">Increases business credibility significantly</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-              <div className="aspect-video bg-gradient-to-br from-[#071B34]/5 to-[#EAB308]/5 rounded-xl flex items-center justify-center">
-                <Globe className="h-24 w-24 text-[#071B34]" />
+              <div className="aspect-video bg-gradient-to-br from-[#111111]/5 to-[#BC9139]/5 rounded-xl flex items-center justify-center">
+                <Globe className="h-24 w-24 text-[#111111]" />
               </div>
             </div>
           </div>
 
           {/* Trademark Act */}
-          <div className="bg-gradient-to-br from-[#071B34] to-[#0a2847] rounded-2xl p-8 text-white text-center shadow-xl">
-            <div className="w-16 h-16 bg-[#EAB308] rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Gavel className="h-8 w-8 text-[#071B34]" />
+          <div className="bg-gradient-to-br from-[#111111] to-[#252525] rounded-2xl p-8 text-white text-center shadow-xl">
+            <div className="w-16 h-16 bg-[#BC9139] rounded-xl flex items-center justify-center mx-auto mb-4">
+              <Gavel className="h-8 w-8 text-[#111111]" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Trademark Act of 1999</h3>
             <p className="text-base text-gray-200 max-w-3xl mx-auto">{service.details?.trademarkAct1999}</p>
@@ -134,11 +134,11 @@ export default function TrademarkRegistrationPage() {
       {service.details?.commonlyFiledTrademarks && service.details?.commonlyFiledTrademarks.length > 0 && (
         <section
           id="MCFT"
-          className="py-16 px-4 bg-gradient-to-br from-[#FFF9E5] to-white"
+          className="py-16 px-4 bg-gradient-to-br from-[#F7F5F0] to-white"
         >
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-[#071B34] mb-3">
+              <h2 className="text-4xl font-bold text-[#111111] mb-3">
                 Most Commonly Filed Trademarks
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto text-base">
@@ -150,7 +150,7 @@ export default function TrademarkRegistrationPage() {
               {service.details.commonlyFiledTrademarks.map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-gray-100 hover:border-[#EAB308] transition-all duration-300 transform hover:scale-105"
+                  className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-gray-100 hover:border-[#BC9139] transition-all duration-300 transform hover:scale-105"
                 >
                   {/* Image with subtle gradient hover */}
                   <div className="relative mb-4 flex items-center justify-center">
@@ -161,11 +161,11 @@ export default function TrademarkRegistrationPage() {
                       height={120}
                       className="object-contain rounded-xl transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[#EAB308]/20 to-[#F2C79A]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300"></div>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#BC9139]/20 to-[#E7E2D8]/20 rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300"></div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-[#071B34] text-center mb-2 group-hover:text-[#EAB308] transition-colors">
+                  <h3 className="text-lg font-bold text-[#111111] text-center mb-2 group-hover:text-[#BC9139] transition-colors">
                     {item.title}
                   </h3>
 
@@ -177,7 +177,7 @@ export default function TrademarkRegistrationPage() {
                   {/* Button */}
                   <Link
                     href="/contact"
-                    className="w-full bg-gradient-to-r from-[#EAB308] to-[#F2C79A] hover:from-[#d9a307] hover:to-[#EAB308] text-[#071B34] font-semibold py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1"
+                    className="w-full bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] hover:from-[#BC9139] hover:to-[#BC9139] text-[#111111] font-semibold py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-1"
                   >
                     Register Now
                     <ArrowRight className="h-4 w-4" />
@@ -195,7 +195,7 @@ export default function TrademarkRegistrationPage() {
         <section id="eligibility" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <div className="bg-[#EAB308] text-[#071B34] rounded-t-xl -m-8 mb-6 p-6 text-center">
+              <div className="bg-[#BC9139] text-[#111111] rounded-t-xl -m-8 mb-6 p-6 text-center">
                 <h2 className="text-2xl font-bold mb-2">Who Can Apply for Trademark Registration?</h2>
                 <p className="text-sm">The following entities are eligible to apply in India</p>
               </div>
@@ -203,7 +203,7 @@ export default function TrademarkRegistrationPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                 {service.details.whoCanApply.map((applicant, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-[#EAB308] rounded-full flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#BC9139] rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">{applicant}</span>
                   </div>
                 ))}
@@ -219,7 +219,7 @@ export default function TrademarkRegistrationPage() {
         <section id="types" className="py-12 bg-white">
   <div className="container mx-auto px-4 max-w-6xl">
     <div className="text-center mb-10">
-      <h2 className="text-3xl lg:text-4xl font-semibold text-[#071B34] mb-3">
+      <h2 className="text-3xl lg:text-4xl font-semibold text-[#111111] mb-3">
         Types of Trademarks in India
       </h2>
       <p className="text-gray-600 max-w-2xl mx-auto">
@@ -233,21 +233,21 @@ export default function TrademarkRegistrationPage() {
         return (
           <div
             key={index}
-            className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all hover:border-[#EAB308]"
+            className="group bg-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all hover:border-[#BC9139]"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-[#EAB308] to-[#F2C79A] rounded-lg flex items-center justify-center mb-4">
-              <IconComponent className="h-6 w-6 text-[#071B34]" />
+            <div className="w-12 h-12 bg-gradient-to-br from-[#BC9139] to-[#E7E2D8] rounded-lg flex items-center justify-center mb-4">
+              <IconComponent className="h-6 w-6 text-[#111111]" />
             </div>
-            <h3 className="text-lg font-bold text-[#071B34] mb-3 group-hover:text-[#EAB308] transition-colors">
+            <h3 className="text-lg font-bold text-[#111111] mb-3 group-hover:text-[#BC9139] transition-colors">
               {type.title}
             </h3>
             <p className="text-sm text-gray-600 leading-relaxed mb-3">
               {type.description}
             </p>
             {type.example && (
-              <div className="mt-3 p-3 bg-[#EAB308]/10 border-l-4 border-[#EAB308] rounded">
+              <div className="mt-3 p-3 bg-[#BC9139]/10 border-l-4 border-[#BC9139] rounded">
                 <p className="text-xs text-gray-700">
-                  <span className="font-semibold text-[#EAB308]">Example:</span> {type.example}
+                  <span className="font-semibold text-[#BC9139]">Example:</span> {type.example}
                 </p>
               </div>
             )}
@@ -261,10 +261,10 @@ export default function TrademarkRegistrationPage() {
 
 
       {/* Enhanced Benefits Section */}
-      <section id="benefits" className="py-12 bg-gradient-to-br from-[#071B34] to-[#0a2847] relative overflow-hidden">
+      <section id="benefits" className="py-12 bg-gradient-to-br from-[#111111] to-[#252525] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#EAB308] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-[#BC9139] rounded-full blur-3xl"></div>
         </div>
 
         <div className="relative z-10 container mx-auto px-4 max-w-6xl">
@@ -276,56 +276,56 @@ export default function TrademarkRegistrationPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {service.details?.whyRegisterDetailed?.map((reason, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center hover:bg-white/20 transition-all border border-white/20">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#EAB308] to-[#F2C79A] rounded-lg flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#BC9139] to-[#E7E2D8] rounded-lg flex items-center justify-center mx-auto mb-3">
   {/* Legal / Public / Record */}
-  {reason.title.includes("Public") && <ShieldCheck className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Record") && <FileText className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Legal") && <Scale className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Public") && <ShieldCheck className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Record") && <FileText className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Legal") && <Scale className="h-6 w-6 text-[#111111]" />}
 
   {/* Brand / Recognition / Distinction */}
-  {reason.title.includes("Brand") && <BadgeCheck className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Recognition") && <Sparkles className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Distinction") && <Stars className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Brand") && <BadgeCheck className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Recognition") && <Sparkles className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Distinction") && <Stars className="h-6 w-6 text-[#111111]" />}
 
   {/* Trust / Credibility */}
-  {reason.title.includes("Trust") && <Handshake className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Credibility") && <ThumbsUp className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Trust") && <Handshake className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Credibility") && <ThumbsUp className="h-6 w-6 text-[#111111]" />}
 
   {/* Value / Investment / Asset */}
-  {reason.title.includes("Value") && <TrendingUp className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Investment") && <Coins className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Asset") && <Gem className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Value") && <TrendingUp className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Investment") && <Coins className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Asset") && <Gem className="h-6 w-6 text-[#111111]" />}
 
   {/* Counterfeiting / Protection */}
-  {reason.title.includes("Protects") && <Shield className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Counterfeiting") && <GlobeLock className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Imitation") && <LockKeyhole className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Protects") && <Shield className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Counterfeiting") && <GlobeLock className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Imitation") && <LockKeyhole className="h-6 w-6 text-[#111111]" />}
 
   {/* Licensing / Revenue */}
-  {reason.title.includes("Licensing") && <StampIcon className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Revenue") && <Banknote className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Licensing") && <StampIcon className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Revenue") && <Banknote className="h-6 w-6 text-[#111111]" />}
 
   {/* Symbol */}
-  {reason.title.includes("Symbol") && <Copyright className="h-6 w-6 text-[#071B34]" />}
-  {/* {reason.title.includes("®") && <Registered className="h-6 w-6 text-[#071B34]" />} */}
+  {reason.title.includes("Symbol") && <Copyright className="h-6 w-6 text-[#111111]" />}
+  {/* {reason.title.includes("®") && <Registered className="h-6 w-6 text-[#111111]" />} */}
 
   {/* Global / International */}
-  {reason.title.includes("Global") && <Globe className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("International") && <Globe2 className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Foundation") && <Network className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Global") && <Globe className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("International") && <Globe2 className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Foundation") && <Network className="h-6 w-6 text-[#111111]" />}
 
   {/* Legal Enforcement */}
-  {reason.title.includes("Enforcement") && <Gavel className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Powers") && <Zap className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Enforcement") && <Gavel className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Powers") && <Zap className="h-6 w-6 text-[#111111]" />}
 
   {/* Deterrent / Infringers */}
-  {reason.title.includes("Deterrent") && <AlertTriangle className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Infringers") && <ShieldAlert className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Deterrent") && <AlertTriangle className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Infringers") && <ShieldAlert className="h-6 w-6 text-[#111111]" />}
 
   {/* Customer / Market / Attraction */}
-  {reason.title.includes("Customer") && <Users className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Market") && <Store className="h-6 w-6 text-[#071B34]" />}
-  {reason.title.includes("Attraction") && <HeartHandshake className="h-6 w-6 text-[#071B34]" />}
+  {reason.title.includes("Customer") && <Users className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Market") && <Store className="h-6 w-6 text-[#111111]" />}
+  {reason.title.includes("Attraction") && <HeartHandshake className="h-6 w-6 text-[#111111]" />}
 </div>
 
                 <h3 className="text-sm font-bold text-white mb-2">{reason.title}</h3>
@@ -405,18 +405,18 @@ export default function TrademarkRegistrationPage() {
         <section id="documents" className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-              <div className="bg-gradient-to-r from-[#071B34] to-[#0a2847] text-white text-center py-6">
+              <div className="bg-gradient-to-r from-[#111111] to-[#252525] text-white text-center py-6">
                 <h2 className="text-3xl lg:text-4xl font-semibold mb-2">Required Documents</h2>
                 <p className="text-sm text-gray-300">Everything needed for registration</p>
               </div>
 
               <div className="p-6 space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-[#071B34] mb-4 text-center">Initial Details</h3>
+                  <h3 className="text-lg font-bold text-[#111111] mb-4 text-center">Initial Details</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {service.details.requiredDocuments?.initialDetails?.map((detail, index) => (
                       <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                        <CheckCircle className="h-4 w-4 text-[#EAB308] flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-[#BC9139] flex-shrink-0" />
                         <span className="text-sm text-gray-700">{detail}</span>
                       </div>
                     ))}
@@ -424,11 +424,11 @@ export default function TrademarkRegistrationPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-[#071B34] mb-4 text-center">By Applicant Type</h3>
+                  <h3 className="text-lg font-bold text-[#111111] mb-4 text-center">By Applicant Type</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {service.details?.requiredDocuments?.documentTypes?.map((type, index) => (
                       <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <h4 className="text-sm font-bold text-[#071B34] mb-3 text-center">{type.type}</h4>
+                        <h4 className="text-sm font-bold text-[#111111] mb-3 text-center">{type.type}</h4>
                         <ul className="space-y-2">
                           {type.documents.map((doc, docIndex) => (
                             <li key={docIndex} className="flex items-center gap-2">
@@ -448,7 +448,7 @@ export default function TrademarkRegistrationPage() {
       )}
 
       {/* Enhanced Process Steps */}
-      <section id="how-to-register" className="py-12 bg-gradient-to-br from-[#071B34] to-[#0a2847]">
+      <section id="how-to-register" className="py-12 bg-gradient-to-br from-[#111111] to-[#252525]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-white mb-3">Registration Process</h2>
@@ -461,7 +461,7 @@ export default function TrademarkRegistrationPage() {
                 key={index}
                 className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/20 transition-all"
               >
-                <div className="w-10 h-10 bg-[#EAB308] rounded-full flex items-center justify-center text-[#071B34] font-bold flex-shrink-0">
+                <div className="w-10 h-10 bg-[#BC9139] rounded-full flex items-center justify-center text-[#111111] font-bold flex-shrink-0">
                   {index + 1}
                 </div>
                 <div className="flex-1">
@@ -479,17 +479,17 @@ export default function TrademarkRegistrationPage() {
         <section id="trademark-symbols" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-8">
-              <h2 className="lg:text-4xl text-3xl font-semibold text-[#071B34] mb-3">Trademark Symbols</h2>
+              <h2 className="lg:text-4xl text-3xl font-semibold text-[#111111] mb-3">Trademark Symbols</h2>
               <p className="text-sm text-gray-600">Understanding proper symbol usage</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
               {service.details.trademarkSymbols.map((symbol, index) => (
                 <div key={index} className="bg-white rounded-xl p-5 shadow-md border border-gray-200 text-center hover:shadow-lg transition-all">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#071B34] to-[#0a2847] rounded-lg flex items-center justify-center mx-auto mb-3 text-white text-3xl font-bold">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#111111] to-[#252525] rounded-lg flex items-center justify-center mx-auto mb-3 text-white text-3xl font-bold">
                     {symbol.symbol}
                   </div>
-                  <h3 className="text-base font-bold text-[#071B34] mb-2">{symbol.name}</h3>
+                  <h3 className="text-base font-bold text-[#111111] mb-2">{symbol.name}</h3>
                   <p className="text-xs text-gray-600 mb-3">{symbol.description}</p>
                   <div className="p-3 bg-gray-50 rounded-lg">
                     <p className="text-xs text-gray-600">
@@ -503,11 +503,11 @@ export default function TrademarkRegistrationPage() {
             </div>
 
             {/* Legal Notice - Compressed */}
-            <div className="bg-gradient-to-r from-[#071B34] to-[#0a2847] text-white rounded-xl p-6">
+            <div className="bg-gradient-to-r from-[#111111] to-[#252525] text-white rounded-xl p-6">
               <h3 className="text-lg font-bold mb-4 text-center">Important Legal Notice</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                 <div>
-                  <h4 className="font-semibold mb-2 text-[#EAB308]">Usage Guidelines:</h4>
+                  <h4 className="font-semibold mb-2 text-[#BC9139]">Usage Guidelines:</h4>
                   <ul className="space-y-1">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-3 w-3 text-green-400 flex-shrink-0 mt-0.5" />
@@ -520,7 +520,7 @@ export default function TrademarkRegistrationPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-[#EAB308]">Legal Consequences:</h4>
+                  <h4 className="font-semibold mb-2 text-[#BC9139]">Legal Consequences:</h4>
                   <ul className="space-y-1">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="h-3 w-3 text-red-400 flex-shrink-0 mt-0.5" />
@@ -544,14 +544,14 @@ export default function TrademarkRegistrationPage() {
         <section id="differences" className="py-12 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-8">
-              <h2 className="lg:text-4xl text-3xl font-semibold text-[#071B34] mb-3">Trademark vs Copyright vs Patent</h2>
+              <h2 className="lg:text-4xl text-3xl font-semibold text-[#111111] mb-3">Trademark vs Copyright vs Patent</h2>
               <p className="text-sm text-gray-600">Understanding IP protection types</p>
             </div>
 
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="bg-[#071B34] text-white">
+                  <thead className="bg-[#111111] text-white">
                     <tr>
                       <th className="p-3 text-left font-semibold">Type</th>
                       <th className="p-3 text-left font-semibold">Protection</th>
@@ -563,7 +563,7 @@ export default function TrademarkRegistrationPage() {
                   <tbody>
                     {service.details.ipComparison.map((item, index) => (
                       <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                        <td className="p-3 font-bold text-[#071B34]">{item.category}</td>
+                        <td className="p-3 font-bold text-[#111111]">{item.category}</td>
                         <td className="p-3 text-gray-600">{item.protection}</td>
                         <td className="p-3 text-gray-600">{item.duration}</td>
                         <td className="p-3 text-gray-600">{item.application}</td>
@@ -814,7 +814,7 @@ export default function TrademarkRegistrationPage() {
       {service.details?.howWeAssist && service.details?.howWeAssist.length > 0 && (
         <section
           id="why-choose-us"
-          className="py-12 bg-gradient-to-br from-[#071B34] via-[#071B34] to-gray-900 text-white relative overflow-hidden"
+          className="py-12 bg-gradient-to-br from-[#111111] via-[#111111] to-gray-900 text-white relative overflow-hidden"
         >
           {/* Background Elements */}
           <div className="absolute inset-0 opacity-5">
@@ -837,8 +837,8 @@ export default function TrademarkRegistrationPage() {
                 >
                   <CardContent className="p-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-[#EAB308] rounded-lg flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="h-6 w-6 text-[#071B34]" />
+                      <div className="w-12 h-12 bg-[#BC9139] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-6 w-6 text-[#111111]" />
                       </div>
                       <div>
                         <h3 className="text-base font-bold text-white mb-2">{assist.title}</h3>

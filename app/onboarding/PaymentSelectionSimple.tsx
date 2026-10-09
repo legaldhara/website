@@ -33,7 +33,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
       <div className="max-w-5xl mx-auto">
         {/* Title */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl lg:text-4xl font-bold text-[#071B34] mb-2">
+          <h1 className="text-3xl lg:text-4xl font-bold text-[#111111] mb-2">
             Choose the right plan for {serviceName}
           </h1>
           <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
@@ -54,7 +54,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
                 </span>
               </div>
 
-              <h2 className="text-xl font-bold text-[#071B34] mb-2">
+              <h2 className="text-xl font-bold text-[#111111] mb-2">
                 Standard {serviceName}
               </h2>
               <p className="text-sm text-gray-600 mb-6">
@@ -71,7 +71,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
                 </div>
 
                 <div className="flex items-baseline gap-2 relative">
-                  <span className="text-3xl font-bold text-[#071B34]">
+                  <span className="text-3xl font-bold text-[#111111]">
                     ₹{servicePrice.toLocaleString('en-IN')}
                   </span>
                   <button
@@ -92,14 +92,14 @@ const PaymentSelectionSimple: React.FC<Props> = ({
 
               <button
                 onClick={() => handleProceed('standard', servicePrice)}
-                className="w-full mt-6 py-3 rounded-lg bg-deep-blue text-white font-semibold hover:bg-[#0a2545] transition-colors"
+                className="w-full mt-6 py-3 rounded-lg bg-deep-blue text-white font-semibold hover:bg-[#252525] transition-colors"
               >
                 Proceed to Pay
               </button>
             </div>
 
             <div className="p-6">
-              <h3 className="font-semibold mb-4 text-[#071B34]">What you'll get</h3>
+              <h3 className="font-semibold mb-4 text-[#111111]">What you'll get</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-600" />
@@ -161,7 +161,7 @@ const PaymentSelectionSimple: React.FC<Props> = ({
 
               <button
                 onClick={() => handleProceed('express', servicePrice + 1000)}
-                className="w-full mt-6 py-3 rounded-lg bg-brand-orange text-deep-blue font-semibold hover:bg-[#d4a307] transition-colors"
+                className="w-full mt-6 py-3 rounded-lg bg-brand-orange text-deep-blue font-semibold hover:bg-[#BC9139] transition-colors"
               >
                 Proceed to Pay
               </button>

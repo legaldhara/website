@@ -227,27 +227,27 @@ export default function PricingPage(): JSX.Element {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#071B34] via-[#0a2442] to-[#071B34] flex items-center justify-center">
-        <Loader2 className="h-12 w-12 text-[#EAB308] animate-spin" />
+      <div className="min-h-screen bg-gradient-to-br from-[#111111] via-[#111111] to-[#111111] flex items-center justify-center">
+        <Loader2 className="h-12 w-12 text-[#BC9139] animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#071B34] via-[#0a2442] to-[#071B34] py-12 md:py-16 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#111111] via-[#111111] to-[#111111] py-12 md:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-[#EAB308]/30">
-            <svg className="w-4 h-4 text-[#EAB308]" fill="currentColor" viewBox="0 0 20 20">
+          <div className="inline-flex items-center gap-2 bg-[#BC9139]/20 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-[#BC9139]/30">
+            <svg className="w-4 h-4 text-[#BC9139]" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
-            <span className="text-[#EAB308] font-semibold text-sm tracking-wide">PRICING PLANS</span>
+            <span className="text-[#BC9139] font-semibold text-sm tracking-wide">PRICING PLANS</span>
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
             Choose Our Annual{' '}
-            <span className="text-[#EAB308]">Service Plan</span>
+            <span className="text-[#BC9139]">Service Plan</span>
           </h1>
           
           <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed px-4">
@@ -260,7 +260,7 @@ export default function PricingPage(): JSX.Element {
         <div className="flex justify-center mb-12 md:mb-16">
           <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-1.5 inline-flex border border-white/10 shadow-2xl">
             <div 
-              className={`absolute top-1.5 bottom-1.5 rounded-xl bg-[#EAB308] transition-all duration-500 ease-out ${
+              className={`absolute top-1.5 bottom-1.5 rounded-xl bg-[#BC9139] transition-all duration-500 ease-out ${
                 planType === 'one-year' ? 'left-1.5 right-[50%]' : 'left-[50%] right-1.5'
               }`}
             />
@@ -268,8 +268,8 @@ export default function PricingPage(): JSX.Element {
               onClick={() => setPlanType('one-year')}
               className={`relative z-10 px-8 md:px-12 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 text-sm md:text-base ${
                 planType === 'one-year'
-                  ? 'text-[#071B34]'
-                  : 'text-white hover:text-[#EAB308]'
+                  ? 'text-[#111111]'
+                  : 'text-white hover:text-[#BC9139]'
               }`}
             >
               ONE YEAR
@@ -278,8 +278,8 @@ export default function PricingPage(): JSX.Element {
               onClick={() => setPlanType('two-year')}
               className={`relative z-10 px-8 md:px-12 py-3 md:py-4 rounded-xl font-bold transition-all duration-300 text-sm md:text-base ${
                 planType === 'two-year'
-                  ? 'text-[#071B34]'
-                  : 'text-white hover:text-[#EAB308]'
+                  ? 'text-[#111111]'
+                  : 'text-white hover:text-[#BC9139]'
               }`}
             >
               TWO YEAR
@@ -301,14 +301,14 @@ export default function PricingPage(): JSX.Element {
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#071B34] mb-1">Silver</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#111111] mb-1">Silver</h3>
                     <p className="text-gray-500 text-xs md:text-sm">Essential Package</p>
                   </div>
                 </div>
                 
                 <div className="mb-6 pb-6 border-b border-gray-200">
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl md:text-4xl font-bold text-[#071B34]">₹{formatPrice(silverPlan.price)}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-[#111111]">₹{formatPrice(silverPlan.price)}</span>
                     <span className="text-lg text-gray-500">/-</span>
                   </div>
                   <div className="flex items-center gap-2 mb-2">
@@ -327,7 +327,7 @@ export default function PricingPage(): JSX.Element {
                   <div className="max-h-60 overflow-y-auto pr-2 space-y-2.5 custom-scrollbar">
                     {features.silver.map((feature: string, idx: number) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-[#EAB308] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-[#BC9139] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <span className="text-gray-700 text-xs leading-relaxed">{feature}</span>
@@ -338,7 +338,7 @@ export default function PricingPage(): JSX.Element {
 
                 <button 
                   onClick={() => handleBuyNow(silverPlan)}
-                  className="w-full bg-[#071B34] hover:bg-[#0a2442] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                  className="w-full bg-[#111111] hover:bg-[#111111] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                 >
                   BUY NOW
                 </button>
@@ -349,36 +349,36 @@ export default function PricingPage(): JSX.Element {
           {/* Gold Plan - Featured */}
           {goldPlan && (
             <div className="relative group lg:scale-105">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#EAB308] to-[#fbbf24] rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#BC9139] to-[#BC9139] rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                <div className="bg-gradient-to-r from-[#EAB308] to-[#fbbf24] text-[#071B34] px-4 py-1.5 rounded-full text-xs font-bold shadow-xl">
+                <div className="bg-gradient-to-r from-[#BC9139] to-[#BC9139] text-[#111111] px-4 py-1.5 rounded-full text-xs font-bold shadow-xl">
                   MOST POPULAR
                 </div>
               </div>
-              <div className="relative bg-white rounded-2xl p-6 border-2 border-[#EAB308] transition-all duration-500 shadow-2xl h-full flex flex-col">
+              <div className="relative bg-white rounded-2xl p-6 border-2 border-[#BC9139] transition-all duration-500 shadow-2xl h-full flex flex-col">
                 <div className="flex items-start justify-between mb-5">
                   <div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#EAB308] to-[#d9a507] rounded-xl flex items-center justify-center mb-3 shadow-lg shadow-[#EAB308]/30">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#BC9139] to-[#BC9139] rounded-xl flex items-center justify-center mb-3 shadow-lg shadow-[#BC9139]/30">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#071B34] mb-1">Gold</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#111111] mb-1">Gold</h3>
                     <p className="text-gray-500 text-xs md:text-sm">Popular Choice</p>
                   </div>
-                  <div className="bg-[#EAB308] text-white px-2.5 py-1 rounded-lg text-xs font-bold">
+                  <div className="bg-[#BC9139] text-white px-2.5 py-1 rounded-lg text-xs font-bold">
                     Best Value
                   </div>
                 </div>
                 
-                <div className="mb-6 pb-6 border-b border-[#EAB308]/30">
+                <div className="mb-6 pb-6 border-b border-[#BC9139]/30">
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl md:text-4xl font-bold text-[#071B34]">₹{formatPrice(goldPlan.price)}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-[#111111]">₹{formatPrice(goldPlan.price)}</span>
                     <span className="text-lg text-gray-500">/-</span>
                   </div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-gray-400 line-through text-sm">₹{calculateDiscount(goldPlan.price).original}</span>
-                    <span className="bg-[#EAB308]/20 text-[#EAB308] px-2 py-0.5 rounded-md text-xs font-bold">
+                    <span className="bg-[#BC9139]/20 text-[#BC9139] px-2 py-0.5 rounded-md text-xs font-bold">
                       {calculateDiscount(goldPlan.price).discount}
                     </span>
                   </div>
@@ -392,7 +392,7 @@ export default function PricingPage(): JSX.Element {
                   <div className="max-h-60 overflow-y-auto pr-2 space-y-2.5 custom-scrollbar">
                     {features.gold.map((feature: string, idx: number) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-[#EAB308] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-[#BC9139] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <span className="text-gray-700 text-xs leading-relaxed font-medium">{feature}</span>
@@ -403,7 +403,7 @@ export default function PricingPage(): JSX.Element {
 
                 <button 
                   onClick={() => handleBuyNow(goldPlan)}
-                  className="w-full bg-gradient-to-r from-[#EAB308] to-[#fbbf24] hover:from-[#fbbf24] hover:to-[#EAB308] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-xl shadow-[#EAB308]/30 hover:shadow-[#EAB308]/50 hover:scale-[1.02]"
+                  className="w-full bg-gradient-to-r from-[#BC9139] to-[#BC9139] hover:from-[#BC9139] hover:to-[#BC9139] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-xl shadow-[#BC9139]/30 hover:shadow-[#BC9139]/50 hover:scale-[1.02]"
                 >
                   BUY NOW
                 </button>
@@ -414,23 +414,23 @@ export default function PricingPage(): JSX.Element {
           {/* Diamond Plan */}
           {diamondPlan && (
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#EAB308] to-[#fbbf24] rounded-2xl blur opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div className="relative bg-white rounded-2xl p-6 border border-[#EAB308]/30 hover:border-[#EAB308] transition-all duration-500 shadow-xl h-full flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#BC9139] to-[#BC9139] rounded-2xl blur opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-6 border border-[#BC9139]/30 hover:border-[#BC9139] transition-all duration-500 shadow-xl h-full flex flex-col">
                 <div className="flex items-start justify-between mb-5">
                   <div>
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#EAB308]/20 to-[#fbbf24]/20 rounded-xl flex items-center justify-center mb-3 border border-[#EAB308]/30">
-                      <svg className="w-6 h-6 text-[#EAB308]" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#BC9139]/20 to-[#BC9139]/20 rounded-xl flex items-center justify-center mb-3 border border-[#BC9139]/30">
+                      <svg className="w-6 h-6 text-[#BC9139]" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-[#071B34] mb-1">Diamond</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#111111] mb-1">Diamond</h3>
                     <p className="text-gray-500 text-xs md:text-sm">Premium Package</p>
                   </div>
                 </div>
                 
                 <div className="mb-6 pb-6 border-b border-gray-200">
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-3xl md:text-4xl font-bold text-[#071B34]">₹{formatPrice(diamondPlan.price)}</span>
+                    <span className="text-3xl md:text-4xl font-bold text-[#111111]">₹{formatPrice(diamondPlan.price)}</span>
                     <span className="text-lg text-gray-500">/-</span>
                   </div>
                   <div className="flex items-center gap-2 mb-2">
@@ -449,7 +449,7 @@ export default function PricingPage(): JSX.Element {
                   <div className="max-h-60 overflow-y-auto pr-2 space-y-2.5 custom-scrollbar">
                     {features.diamond.map((feature: string, idx: number) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <svg className="w-4 h-4 text-[#EAB308] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-[#BC9139] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <span className="text-gray-700 text-xs leading-relaxed">{feature}</span>
@@ -460,7 +460,7 @@ export default function PricingPage(): JSX.Element {
 
                 <button 
                   onClick={() => handleBuyNow(diamondPlan)}
-                  className="w-full bg-[#071B34] hover:bg-[#0a2442] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                  className="w-full bg-[#111111] hover:bg-[#111111] text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]"
                 >
                   BUY NOW
                 </button>
@@ -499,7 +499,7 @@ export default function PricingPage(): JSX.Element {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-[#EAB308] to-[#fbbf24] p-6 rounded-t-2xl">
+            <div className="bg-gradient-to-r from-[#BC9139] to-[#BC9139] p-6 rounded-t-2xl">
               <div className="flex justify-between items-center">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">Complete Purchase</h3>
@@ -525,7 +525,7 @@ export default function PricingPage(): JSX.Element {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600 text-sm">Amount:</span>
-                  <span className="text-2xl font-bold text-[#EAB308]">₹{formatPrice(selectedPlan.price)}</span>
+                  <span className="text-2xl font-bold text-[#BC9139]">₹{formatPrice(selectedPlan.price)}</span>
                 </div>
               </div>
 
@@ -541,7 +541,7 @@ export default function PricingPage(): JSX.Element {
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   placeholder="Enter your full name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
                 />
               </div>
 
@@ -557,7 +557,7 @@ export default function PricingPage(): JSX.Element {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="Enter your email"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
                 />
               </div>
 
@@ -575,7 +575,7 @@ export default function PricingPage(): JSX.Element {
                   placeholder="Enter your phone number"
                   pattern="[0-9]{10}"
                   maxLength={10}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all disabled:bg-gray-100 text-sm"
                 />
                 <p className="text-xs text-gray-500 mt-1">Enter 10-digit mobile number</p>
               </div>
@@ -596,7 +596,7 @@ export default function PricingPage(): JSX.Element {
               ) : <button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-gradient-to-r from-[#EAB308] to-[#fbbf24] hover:from-[#fbbf24] hover:to-[#EAB308] text-white font-bold py-3 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-[#BC9139] to-[#BC9139] hover:from-[#BC9139] hover:to-[#BC9139] text-white font-bold py-3 rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {submitting ? (
                   <>

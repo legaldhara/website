@@ -46,8 +46,12 @@ describe("website production configuration", () => {
     expect(tailwindConfig).toContain("'brand-orange': '#BC9139'");
     expect(tailwindConfig).toContain("'light-orange': '#F7F5F0'");
     expect(readFileSync("components/Header.tsx", "utf8")).toContain(
-      'src="/assets/LD2.webp"',
+      'src="/assets/ld-monogram-dark.webp"',
     );
+    expect(readFileSync("components/Footer.tsx", "utf8")).toContain(
+      'src="/assets/ld-monogram-dark.webp"',
+    );
+    expect(statSync("public/assets/ld-monogram-dark.webp").size).toBeLessThan(50_000);
     expect(statSync("public/assets/LD2.webp").size).toBe(13_014);
     expect(readFileSync("app/layout.tsx", "utf8")).toContain(
       "/assets/legal-dhara-mark-48.png",

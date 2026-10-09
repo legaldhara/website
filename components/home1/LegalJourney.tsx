@@ -1,8 +1,14 @@
 "use client";
 
-import type { CSSProperties } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./LegalJourney.module.css";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 const steps = [
   {
@@ -33,29 +39,63 @@ const steps = [
 
 export default function LegalJourney() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isRevealed, setIsRevealed] = useState(false);
 
-  useEffect(() => {
+  useGSAP(() => {
     const section = sectionRef.current;
     if (!section || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry?.isIntersecting) return;
-        setIsRevealed(true);
-        observer.disconnect();
-      },
-      { threshold: 0.08 },
-    );
+    const createTimeline = (pin: boolean) => {
+      const stepElements = gsap.utils.toArray<HTMLElement>("[data-journey-step]", section);
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: pin ? "top top+=72" : "top 78%",
+          end: pin ? "+=1800" : "bottom 24%",
+          scrub: 0.7,
+          pin,
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
 
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
+      stepElements.forEach((step, index) => {
+        const node = step.querySelector<HTMLElement>("[data-journey-node]");
+        const content = step.querySelector<HTMLElement>("[data-journey-content]");
+
+        timeline
+          .fromTo(
+            step,
+            { "--step-progress": 0 },
+            { "--step-progress": 1, duration: 0.72, ease: "none" },
+            index,
+          )
+          .fromTo(
+            node,
+            { autoAlpha: 0, scale: 0.65 },
+            { autoAlpha: 1, scale: 1, duration: 0.34, ease: "none" },
+            index + 0.08,
+          )
+          .fromTo(
+            content,
+            { autoAlpha: 0, y: 24 },
+            { autoAlpha: 1, y: 0, duration: 0.54, ease: "none" },
+            index + 0.18,
+          );
+      });
+    };
+
+    const media = gsap.matchMedia();
+    media.add("(min-width: 900px)", () => createTimeline(true));
+    media.add("(max-width: 899px)", () => createTimeline(false));
+
+    return () => media.revert();
+  }, { scope: sectionRef });
 
   return (
     <section
       ref={sectionRef}
-      className={`${styles.process} ${isRevealed ? styles.revealed : ""}`}
+      className={styles.process}
       aria-labelledby="legal-journey-title"
     >
       <header className={styles.header}>
@@ -78,12 +118,12 @@ export default function LegalJourney() {
           <li
             key={step.icon}
             className={styles.step}
-            style={{ "--process-order": index } as CSSProperties}
+            data-journey-step
           >
-            <span className={styles.node} aria-hidden="true">
+            <span className={styles.node} data-journey-node aria-hidden="true">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <div className={styles.content}>
+            <div className={styles.content} data-journey-content>
               <svg className={styles.graphic} viewBox="0 0 180 180" aria-hidden="true">
                 <use href={`/assets/home1-process/process-sprite.svg#${step.icon}`} />
               </svg>

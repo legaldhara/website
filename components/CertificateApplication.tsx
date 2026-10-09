@@ -164,8 +164,8 @@ const getStatusConfig = (
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#EAB308]"></div>
-          <p className="mt-4 text-[#071B34] text-lg font-medium">Loading your applications...</p>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#BC9139]"></div>
+          <p className="mt-4 text-[#111111] text-lg font-medium">Loading your applications...</p>
         </div>
       </div>
     );
@@ -196,7 +196,7 @@ const getStatusConfig = (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <div className="bg-white rounded-lg p-4 shadow-md border border-gray-200">
               <p className="text-gray-600 text-sm mb-1">Total Applications</p>
-              <p className="text-3xl font-bold text-[#071B34]">{applications.length}</p>
+              <p className="text-3xl font-bold text-[#111111]">{applications.length}</p>
             </div>
             <div className="bg-white rounded-lg p-4 shadow-md border border-yellow-200">
               <p className="text-gray-600 text-sm mb-1">Pending</p>
@@ -220,8 +220,8 @@ const getStatusConfig = (
                 onClick={() => setFilterStatus(status)}
                 className={`px-4 py-2 rounded-lg font-medium transition ${
                   filterStatus === status
-                    ? 'bg-[#EAB308] text-white shadow-md'
-                    : 'bg-white text-[#071B34] border border-gray-200 hover:border-[#EAB308] hover:shadow-md'
+                    ? 'bg-[#BC9139] text-white shadow-md'
+                    : 'bg-white text-[#111111] border border-gray-200 hover:border-[#BC9139] hover:shadow-md'
                 }`}
               >
                 {status.replace('_', ' ')}
@@ -244,15 +244,15 @@ const getStatusConfig = (
                 return (
                   <div 
                     key={app.requestNo}
-                    className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[#EAB308] transition"
+                    className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:border-[#BC9139] transition"
                   >
                     <div className="p-4 sm:p-6">
                       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                         <div className="flex-1">
                           <div className="flex items-start gap-3 mb-3">
-                            <FileText className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+                            <FileText className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-1" />
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-lg sm:text-xl font-bold text-[#071B34] mb-1 break-words">
+                              <h3 className="text-lg sm:text-xl font-bold text-[#111111] mb-1 break-words">
                                 {app.subject}
                               </h3>
                               <p className="text-gray-500 text-sm font-mono">
@@ -271,9 +271,9 @@ const getStatusConfig = (
                               <span className="text-xs sm:text-sm">{formatDate(app.createdAt)}</span>
                             </div>
                             {app?.updates?.length > 0 && (
-                              <div className="flex items-center gap-1 bg-[#F2C79A] px-2 py-1 rounded">
-                                <AlertCircle className="w-4 h-4 text-[#071B34]" />
-                                <span className="text-[#071B34] text-xs sm:text-sm font-medium">
+                              <div className="flex items-center gap-1 bg-[#E7E2D8] px-2 py-1 rounded">
+                                <AlertCircle className="w-4 h-4 text-[#111111]" />
+                                <span className="text-[#111111] text-xs sm:text-sm font-medium">
                                   {app?.updates?.length} Update{app.updates.length !== 1 ? 's' : ''}
                                 </span>
                               </div>
@@ -289,7 +289,7 @@ const getStatusConfig = (
 
                           <button
                             onClick={() => handleViewDetails(app.requestNo)}
-                            className="px-4 py-2 bg-[#EAB308] hover:bg-[#d9a307] text-[#071B34] font-semibold rounded-lg transition text-sm whitespace-nowrap"
+                            className="px-4 py-2 bg-[#BC9139] hover:bg-[#BC9139] text-[#111111] font-semibold rounded-lg transition text-sm whitespace-nowrap"
                           >
                             View Details
                           </button>

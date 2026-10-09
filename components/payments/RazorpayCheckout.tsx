@@ -55,7 +55,7 @@ export function RazorpayCheckout({
           await confirmCheckout(proof);
           onComplete(attempt.chargeId);
         },
-        theme: { color: "#0a2847" },
+        theme: { color: "#252525" },
       });
       checkout.open();
     } catch (checkoutError) {

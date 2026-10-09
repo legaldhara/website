@@ -38,10 +38,7 @@
 
 .backdrop {
   z-index: -2;
-  background-image: url("/assets/legal-hero-desktop.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #0b0b0b url("/assets/legal-hero-desktop.webp") center / cover no-repeat;
 }
 
 .shade {
@@ -288,7 +285,7 @@
   }
 
   .backdrop {
-    background-image: url("/assets/legal-hero-mobile.png");
+    background-image: url("/assets/legal-hero-mobile.webp");
     background-position: center top;
   }
 

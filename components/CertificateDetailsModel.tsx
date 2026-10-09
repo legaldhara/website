@@ -45,7 +45,7 @@ export default function CertificateDetailsModal({ isOpen, onClose, requestNo }: 
           <section><h3 className="mb-3 text-lg font-bold">Open requirements</h3><CaseRequirements lifecycle={lifecycle} onRefresh={refresh} /></section>
           <section><h3 className="mb-3 text-lg font-bold">Message the LegalDhara team</h3><CaseReplyForm lifecycle={lifecycle} onRefresh={refresh} /></section>
           <section><h3 className="mb-3 text-lg font-bold">Activity timeline</h3><CaseTimeline events={lifecycle.timeline} /></section>
-          {lifecycle.deliverables.length > 0 && <section><h3 className="mb-3 text-lg font-bold">Certificate files</h3><ul>{lifecycle.deliverables.map((asset) => <li key={asset.id}><a className="text-[#8A681E] underline" href={asset.secureUrl} target="_blank" rel="noreferrer">{asset.label || asset.originalName}</a></li>)}</ul></section>}
+          {lifecycle.deliverables.length > 0 && <section><h3 className="mb-3 text-lg font-bold">Certificate files</h3><ul>{lifecycle.deliverables.map((asset) => <li key={asset.id}><a className="text-[#252525] underline" href={asset.secureUrl} target="_blank" rel="noreferrer">{asset.label || asset.originalName}</a></li>)}</ul></section>}
         </>}
       </div>
     </div>

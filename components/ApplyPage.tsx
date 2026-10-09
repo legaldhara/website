@@ -83,7 +83,7 @@ export default function ApplyPage() {
           <p className="text-gray-600 text-sm mb-5">Please go back and try again.</p>
           <Button 
             onClick={() => router.back()}
-            className="w-full bg-[#EAB308] hover:bg-[#d4a007] text-white"
+            className="w-full bg-[#BC9139] hover:bg-[#BC9139] text-white"
           >
             Go Back
           </Button>
@@ -137,7 +137,7 @@ export default function ApplyPage() {
                 required
                 disabled={loading}
                 placeholder="Enter your business name"
-                className="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
+                className="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
               />
             </div>
 
@@ -154,7 +154,7 @@ export default function ApplyPage() {
                 required
                 disabled={loading}
                 placeholder="What is this service for?"
-                className="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EAB308] focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
+                className="w-full border border-gray-300 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#BC9139] focus:border-transparent transition-all disabled:bg-gray-100 disabled:cursor-not-allowed text-sm"
               />
             </div>
 
@@ -203,7 +203,7 @@ export default function ApplyPage() {
             <div className="bg-white rounded-xl shadow-2xl p-8 max-w-sm mx-4 text-center">
               <div className="relative w-16 h-16 mx-auto mb-4">
                 <div className="absolute inset-0 border-4 border-gray-200 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-[#EAB308] rounded-full border-t-transparent animate-spin"></div>
+                <div className="absolute inset-0 border-4 border-[#BC9139] rounded-full border-t-transparent animate-spin"></div>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Processing Application</h3>
               <p className="text-gray-500 text-sm">Please wait while we submit your application...</p>

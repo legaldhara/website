@@ -9,7 +9,7 @@ export default function ExpertGuidance() {
       <div className={styles.grid}>
         <article className={styles.lawyerCard}>
           <Image
-            src="/assets/home1-guidance/lawyer.png"
+            src="/assets/home1-guidance/lawyer.webp"
             width={1024}
             height={1536}
             sizes="(max-width: 700px) calc(100vw - 32px), 37vw"
@@ -39,7 +39,7 @@ export default function ExpertGuidance() {
           <article className={styles.expertCard}>
             <div className={styles.landscapeImage}>
               <Image
-                src="/assets/home1-guidance/chartered-accountant.png"
+                src="/assets/home1-guidance/chartered-accountant.webp"
                 width={1448}
                 height={1086}
                 sizes="(max-width: 700px) calc(100vw - 32px), 30vw"
@@ -61,7 +61,7 @@ export default function ExpertGuidance() {
           <article className={styles.expertCard}>
             <div className={styles.landscapeImage}>
               <Image
-                src="/assets/home1-guidance/company-secretary.png"
+                src="/assets/home1-guidance/company-secretary.webp"
                 width={1449}
                 height={1086}
                 sizes="(max-width: 700px) calc(100vw - 32px), 30vw"

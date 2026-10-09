@@ -146,12 +146,12 @@ const TrademarkOppositionPage = () => {
     <SectionNavigation sections={sectionss} />
     <div className="min-h-screen bg-deep-blue">
       {/* Hero Section */}
-      <div className="bg-[#071B34] text-white">
+      <div className="bg-[#111111] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#EAB308] rounded-2xl mb-6">
-                <PenTool className="w-8 h-8 sm:w-10 sm:h-10 text-[#071B34]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#BC9139] rounded-2xl mb-6">
+                <PenTool className="w-8 h-8 sm:w-10 sm:h-10 text-[#111111]" />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 {service?.title || 'Trademark Opposition'}
@@ -163,13 +163,13 @@ const TrademarkOppositionPage = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Scale className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">Section 21</div>
+                <Scale className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">Section 21</div>
                 <div className="text-sm text-gray-300">Trademark Act</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Shield className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">Legal</div>
+                <Shield className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">Legal</div>
                 <div className="text-sm text-gray-300">Compliance</div>
               </div>
             </div>
@@ -181,7 +181,7 @@ const TrademarkOppositionPage = () => {
         
         {/* Overview Section */}
         <section id="overview" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34] mb-6">Overview</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">Overview</h2>
           
           <div className="space-y-4">
             {introduction.length > 0 && introduction.map((para, idx) => (
@@ -191,11 +191,11 @@ const TrademarkOppositionPage = () => {
             ))}
           </div>
 
-          <div className="bg-[#EAB308]/10 border-l-4 border-[#EAB308] p-6 rounded-r-xl mt-6">
+          <div className="bg-[#BC9139]/10 border-l-4 border-[#BC9139] p-6 rounded-r-xl mt-6">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+              <AlertCircle className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold text-[#071B34] mb-2">Important Note</h3>
+                <h3 className="text-lg font-semibold text-[#111111] mb-2">Important Note</h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Trademark Opposition must be approached carefully as it can result in cancellation of the trademark registration in some cases. Ensure all information is accurate and consult with legal experts before proceeding.
                 </p>
@@ -221,8 +221,8 @@ const TrademarkOppositionPage = () => {
 
           return (
             <section key={sectionIdx} id={sectionId} className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-                <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+                <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
                 {section?.title || 'Section'}
               </h2>
 
@@ -235,12 +235,12 @@ const TrademarkOppositionPage = () => {
                     return (
                       <div key={idx} className="flex gap-4 sm:gap-6">
                         <div className="flex-shrink-0">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#EAB308] rounded-full flex items-center justify-center text-[#071B34] font-bold text-base sm:text-lg shadow-md">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#BC9139] rounded-full flex items-center justify-center text-[#111111] font-bold text-base sm:text-lg shadow-md">
                             {stepNumber}
                           </div>
                         </div>
                         <div className="flex-1 pt-1">
-                          <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-2">{title.trim()}</h3>
+                          <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-2">{title.trim()}</h3>
                           {desc.length > 0 && desc[0].trim() && (
                             <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                               {desc.join(': ').trim()}
@@ -257,9 +257,9 @@ const TrademarkOppositionPage = () => {
                   {sectionList.map((item: string, idx: number) => {
                     const [formName, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6 hover:shadow-lg transition-shadow">
-                        <FileText className="w-10 h-10 text-[#EAB308] mb-4" />
-                        <h3 className="text-lg font-bold text-[#EAB308] mb-3">{formName.trim()}</h3>
+                      <div key={idx} className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <FileText className="w-10 h-10 text-[#BC9139] mb-4" />
+                        <h3 className="text-lg font-bold text-[#BC9139] mb-3">{formName.trim()}</h3>
                         {desc.length > 0 && (
                           <p className="text-sm text-gray-300 leading-relaxed">
                             {desc.join(': ').trim()}
@@ -275,9 +275,9 @@ const TrademarkOppositionPage = () => {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-br from-[#F2C79A]/20 to-[#EAB308]/10 rounded-xl p-6 border border-[#EAB308]/30 hover:shadow-lg transition-shadow">
-                        <Users className="w-10 h-10 text-[#EAB308] mb-4" />
-                        <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-3">{title.trim()}</h3>
+                      <div key={idx} className="bg-gradient-to-br from-[#E7E2D8]/20 to-[#BC9139]/10 rounded-xl p-6 border border-[#BC9139]/30 hover:shadow-lg transition-shadow">
+                        <Users className="w-10 h-10 text-[#BC9139] mb-4" />
+                        <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-3">{title.trim()}</h3>
                         {desc.length > 0 && (
                           <p className="text-sm text-gray-700 leading-relaxed">
                             {desc.join(': ').trim()}
@@ -296,11 +296,11 @@ const TrademarkOppositionPage = () => {
                     if (hasDescription) {
                       const [title, ...desc] = item.split(':');
                       return (
-                        <div key={idx} className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
+                        <div key={idx} className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
                           <div className="flex items-start gap-3">
-                            <CheckCircle2 className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                             <div className="flex-1">
-                              <h3 className="text-base font-semibold text-[#071B34] mb-2">{title.trim()}</h3>
+                              <h3 className="text-base font-semibold text-[#111111] mb-2">{title.trim()}</h3>
                               {desc.length > 0 && desc[0].trim() && (
                                 <p className="text-sm text-gray-700 leading-relaxed">{desc.join(':').trim()}</p>
                               )}
@@ -311,8 +311,8 @@ const TrademarkOppositionPage = () => {
                     }
 
                     return (
-                      <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#F2C79A]/5 to-transparent rounded-lg">
-                        <CheckCircle2 className="w-5 h-5 text-[#EAB308] flex-shrink-0 mt-1" />
+                      <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#E7E2D8]/5 to-transparent rounded-lg">
+                        <CheckCircle2 className="w-5 h-5 text-[#BC9139] flex-shrink-0 mt-1" />
                         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</p>
                       </div>
                     );
@@ -324,15 +324,15 @@ const TrademarkOppositionPage = () => {
         })}
 
         {/* Key Information Section */}
-        <section id="key-information" className="bg-gradient-to-br from-[#071B34] to-[#0a2847] rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8 text-white">
+        <section id="key-information" className="bg-gradient-to-br from-[#111111] to-[#252525] rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8 text-white">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Key Trademark Offices in India
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {['Mumbai', 'Chennai', 'Kolkata', 'Delhi', 'Ahmedabad'].map((city, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
-                <Scale className="w-8 h-8 text-[#EAB308] mx-auto mb-2" />
+                <Scale className="w-8 h-8 text-[#BC9139] mx-auto mb-2" />
                 <p className="text-sm font-semibold">{city}</p>
               </div>
             ))}
@@ -341,33 +341,33 @@ const TrademarkOppositionPage = () => {
 
         {/* Why Choose Us Highlight */}
         <section id="why-choose-us-highlight" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Our Trademark Opposition Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#F2C79A]/10 to-transparent rounded-xl border border-[#EAB308]/20">
-              <Shield className="w-10 h-10 text-[#EAB308] flex-shrink-0" />
+            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#E7E2D8]/10 to-transparent rounded-xl border border-[#BC9139]/20">
+              <Shield className="w-10 h-10 text-[#BC9139] flex-shrink-0" />
               <div>
-                <h3 className="text-base font-semibold text-[#071B34] mb-2">Legal Expertise</h3>
+                <h3 className="text-base font-semibold text-[#111111] mb-2">Legal Expertise</h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Specialized IP attorneys with extensive trademark law experience
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#F2C79A]/10 to-transparent rounded-xl border border-[#EAB308]/20">
-              <Clock className="w-10 h-10 text-[#EAB308] flex-shrink-0" />
+            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#E7E2D8]/10 to-transparent rounded-xl border border-[#BC9139]/20">
+              <Clock className="w-10 h-10 text-[#BC9139] flex-shrink-0" />
               <div>
-                <h3 className="text-base font-semibold text-[#071B34] mb-2">Timely Filing</h3>
+                <h3 className="text-base font-semibold text-[#111111] mb-2">Timely Filing</h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Quick and efficient submission of all required documentation
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#F2C79A]/10 to-transparent rounded-xl border border-[#EAB308]/20">
-              <Award className="w-10 h-10 text-[#EAB308] flex-shrink-0" />
+            <div className="flex items-start gap-4 p-5 bg-gradient-to-br from-[#E7E2D8]/10 to-transparent rounded-xl border border-[#BC9139]/20">
+              <Award className="w-10 h-10 text-[#BC9139] flex-shrink-0" />
               <div>
-                <h3 className="text-base font-semibold text-[#071B34] mb-2">Success Rate</h3>
+                <h3 className="text-base font-semibold text-[#111111] mb-2">Success Rate</h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   High success rate in trademark Opposition applications
                 </p>
@@ -377,15 +377,15 @@ const TrademarkOppositionPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section id="cta" className="bg-gradient-to-r from-[#EAB308] to-[#F2C79A] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#071B34] mb-4">
+        <section id="cta" className="bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#111111] mb-4">
             Facing a Trademark Opposition?
           </h2>
-          <p className="text-base sm:text-lg text-[#071B34]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#111111]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Get expert legal assistance to correct errors in your trademark registration. Ensure your brand remains protected and compliant.
           </p>
         <Link href="/contact">
-        <button className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
+        <button className="bg-[#111111] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#252525] transition-colors shadow-lg">
           Start Trademark Opposition
         </button>
       </Link>

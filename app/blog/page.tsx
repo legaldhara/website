@@ -26,29 +26,29 @@ const BlogListingPage = ({ onBlogSelect }: any) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Hero Section */}
-      <div className="relative bg-[#071B34] text-white py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071B34] to-[#0a2847] opacity-90"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#EAB308]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#EAB308]/10 rounded-full blur-3xl"></div>
+      <div className="relative bg-[#111111] text-white py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-[#252525] opacity-90"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#BC9139]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#BC9139]/10 rounded-full blur-3xl"></div>
         
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-            <BookOpen className="w-5 h-5 text-[#EAB308]" />
-            <span className="text-[#EAB308] font-semibold text-sm">Knowledge Hub</span>
+          <div className="inline-flex items-center gap-2 bg-[#BC9139]/20 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+            <BookOpen className="w-5 h-5 text-[#BC9139]" />
+            <span className="text-[#BC9139] font-semibold text-sm">Knowledge Hub</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Legal Insights & <span className="text-[#EAB308]">Updates</span>
+            Legal Insights & <span className="text-[#BC9139]">Updates</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed">
             Stay informed with expert articles on trademark, taxation, company registration, and more
           </p>
           <div className="flex items-center gap-6 mt-8 text-sm">
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-[#EAB308]" />
+              <TrendingUp className="w-5 h-5 text-[#BC9139]" />
               <span className="text-gray-300">Weekly Updates</span>
             </div>
             <div className="flex items-center gap-2">
-              <User className="w-5 h-5 text-[#EAB308]" />
+              <User className="w-5 h-5 text-[#BC9139]" />
               <span className="text-gray-300">Expert Authors</span>
             </div>
           </div>
@@ -65,8 +65,8 @@ const BlogListingPage = ({ onBlogSelect }: any) => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2.5 rounded-full whitespace-nowrap transition-all font-medium ${
                   selectedCategory === category
-                    ? 'bg-[#EAB308] text-[#071B34] shadow-lg shadow-[#EAB308]/30 scale-105'
-                    : 'bg-white text-gray-600 hover:bg-gray-50 border-2 border-gray-200 hover:border-[#EAB308]/30'
+                    ? 'bg-[#BC9139] text-[#111111] shadow-lg shadow-[#BC9139]/30 scale-105'
+                    : 'bg-white text-gray-600 hover:bg-gray-50 border-2 border-gray-200 hover:border-[#BC9139]/30'
                 }`}
               >
                 {category}
@@ -93,7 +93,7 @@ const BlogListingPage = ({ onBlogSelect }: any) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 bg-[#EAB308] text-[#071B34] px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                  <span className="inline-flex items-center gap-1.5 bg-[#BC9139] text-[#111111] px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
                     {getCategoryIcon(blog.category)}
                     {blog.category}
                   </span>
@@ -101,7 +101,7 @@ const BlogListingPage = ({ onBlogSelect }: any) => {
               </div>
               
               <div className="p-6">
-                <h2 className="text-xl font-bold text-[#071B34] mb-3 group-hover:text-[#EAB308] transition-colors line-clamp-2 leading-snug">
+                <h2 className="text-xl font-bold text-[#111111] mb-3 group-hover:text-[#BC9139] transition-colors line-clamp-2 leading-snug">
                   {blog.title}
                 </h2>
                 
@@ -119,12 +119,12 @@ const BlogListingPage = ({ onBlogSelect }: any) => {
                 
                 <div className="flex items-center justify-between">
                   <span className="flex items-center gap-2 text-sm text-gray-600">
-                    <div className="w-8 h-8 bg-[#EAB308]/10 rounded-full flex items-center justify-center">
-                      <User className="w-4 h-4 text-[#EAB308]" />
+                    <div className="w-8 h-8 bg-[#BC9139]/10 rounded-full flex items-center justify-center">
+                      <User className="w-4 h-4 text-[#BC9139]" />
                     </div>
                     <span className="font-medium">{blog.author}</span>
                   </span>
-                  <span className="text-[#EAB308] flex items-center gap-1.5 font-bold text-sm group-hover:gap-2.5 transition-all">
+                  <span className="text-[#BC9139] flex items-center gap-1.5 font-bold text-sm group-hover:gap-2.5 transition-all">
                     Read More <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -147,19 +147,19 @@ const BlogDetailPage = ({ blog, onBack }: any) => {
           alt={blog.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071B34] via-[#071B34]/80 to-[#071B34]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/80 to-[#111111]/40" />
         
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-4xl mx-auto">
             <button
               onClick={onBack}
-              className="group flex items-center gap-2 text-white hover:text-[#EAB308] mb-6 transition-all bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20"
+              className="group flex items-center gap-2 text-white hover:text-[#BC9139] mb-6 transition-all bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/20"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">Back to Blogs</span>
             </button>
             
-            <span className="inline-flex items-center gap-2 bg-[#EAB308] text-[#071B34] px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg">
+            <span className="inline-flex items-center gap-2 bg-[#BC9139] text-[#111111] px-5 py-2.5 rounded-full text-sm font-bold mb-6 shadow-lg">
               <Scale className="w-4 h-4" />
               {blog.category}
             </span>
@@ -170,11 +170,11 @@ const BlogDetailPage = ({ blog, onBack }: any) => {
             
             <div className="flex flex-wrap items-center gap-4 md:gap-6 text-gray-200">
               <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <User className="w-5 h-5 text-[#EAB308]" />
+                <User className="w-5 h-5 text-[#BC9139]" />
                 <span className="font-medium">{blog.author}</span>
               </span>
               <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Calendar className="w-5 h-5 text-[#EAB308]" />
+                <Calendar className="w-5 h-5 text-[#BC9139]" />
                 <span className="font-medium">{blog.date}</span>
               </span>
               <span className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full font-medium">{blog.readTime}</span>
@@ -187,28 +187,28 @@ const BlogDetailPage = ({ blog, onBack }: any) => {
       <div className="max-w-4xl mx-auto px-4 md:px-8 py-12">
         <div 
           className="prose prose-lg max-w-none
-            prose-headings:text-[#071B34] prose-headings:font-bold
+            prose-headings:text-[#111111] prose-headings:font-bold
             prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
             prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
-            prose-a:text-[#EAB308] prose-a:no-underline hover:prose-a:underline"
+            prose-a:text-[#BC9139] prose-a:no-underline hover:prose-a:underline"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
         {/* Call to Action */}
-        <div className="mt-12 p-8 bg-[#071B34] rounded-lg text-white">
+        <div className="mt-12 p-8 bg-[#111111] rounded-lg text-white">
           <h3 className="text-2xl font-bold mb-4">Need Professional Assistance?</h3>
           <p className="text-gray-300 mb-6">
             Our legal experts are here to help you with all your {blog.category.toLowerCase()} needs. 
             Get personalized guidance and ensure complete compliance.
           </p>
-          <button className="bg-[#EAB308] text-[#071B34] px-6 py-3 rounded-lg font-semibold hover:bg-[#d49d07] transition-colors">
+          <button className="bg-[#BC9139] text-[#111111] px-6 py-3 rounded-lg font-semibold hover:bg-[#BC9139] transition-colors">
             Contact Our Experts
           </button>
         </div>
 
         {/* Related Articles */}
         <div className="mt-12">
-          <h3 className="text-2xl font-bold text-[#071B34] mb-6">Related Articles</h3>
+          <h3 className="text-2xl font-bold text-[#111111] mb-6">Related Articles</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blogData
               .filter(b => b.id !== blog.id && b.category === blog.category)
@@ -219,7 +219,7 @@ const BlogDetailPage = ({ blog, onBack }: any) => {
                   className="border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow cursor-pointer"
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                  <h4 className="font-bold text-[#071B34] mb-2 hover:text-[#EAB308] transition-colors">
+                  <h4 className="font-bold text-[#111111] mb-2 hover:text-[#BC9139] transition-colors">
                     {relatedBlog.title}
                   </h4>
                   <p className="text-gray-600 text-sm line-clamp-2">

@@ -43,12 +43,12 @@ export default function privateLimitedCompany() {
 
        <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-[#071B34] text-white">
+      <div className="bg-[#111111] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#EAB308] rounded-2xl mb-6">
-                <Building2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#071B34]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#BC9139] rounded-2xl mb-6">
+                <Building2 className="w-8 h-8 sm:w-10 sm:h-10 text-[#111111]" />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 {service.title}
@@ -61,13 +61,13 @@ export default function privateLimitedCompany() {
             {/* Quick Info Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Clock className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">7-10</div>
+                <Clock className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">7-10</div>
                 <div className="text-sm text-gray-300">Days Process</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <FileText className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">100%</div>
+                <FileText className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">100%</div>
                 <div className="text-sm text-gray-300">Compliance</div>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function privateLimitedCompany() {
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
   {/* Overview Section */}
   <div id="overview" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8 sm:mb-12">
-    <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34] mb-6">Overview</h2>
+    <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">Overview</h2>
     <div className="space-y-4 sm:space-y-6">
       {service.details?.overview111?.map((para, idx) => (
         <p key={idx} className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -102,8 +102,8 @@ export default function privateLimitedCompany() {
         id={sectionId}
         className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8"
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-          <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+          <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
           {section.title}
         </h2>
 
@@ -121,9 +121,9 @@ export default function privateLimitedCompany() {
                   <div
                     key={subIdx}
                     id={`${sectionId}-sub-${subIdx}`}
-                    className="bg-gradient-to-br from-[#F2C79A]/20 to-[#EAB308]/10 rounded-xl p-4 sm:p-6 border border-[#EAB308]/30 hover:shadow-lg transition-shadow"
+                    className="bg-gradient-to-br from-[#E7E2D8]/20 to-[#BC9139]/10 rounded-xl p-4 sm:p-6 border border-[#BC9139]/30 hover:shadow-lg transition-shadow"
                   >
-                    <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-3">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-3">
                       {sub.subtitle}
                     </h3>
                     <p className="text-sm text-gray-700 leading-relaxed">{sub.content}</p>
@@ -137,7 +137,7 @@ export default function privateLimitedCompany() {
               <div className="mt-6 space-y-3">
                 {(section as any).list.map((item: any, listIdx: number) => (
                   <div key={listIdx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+                    <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#BC9139] flex-shrink-0 mt-1" />
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</p>
                   </div>
                 ))}
@@ -155,14 +155,14 @@ export default function privateLimitedCompany() {
                 <div key={listIdx} className="flex items-start gap-3">
                   {item.startsWith("•") ? (
                     <>
-                      <span className="text-[#EAB308] text-lg flex-shrink-0 mt-1">•</span>
+                      <span className="text-[#BC9139] text-lg flex-shrink-0 mt-1">•</span>
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         {item.substring(2)}
                       </p>
                     </>
                   ) : (
                     <>
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#BC9139] flex-shrink-0 mt-1" />
                       <p
                         className={`text-sm sm:text-base text-gray-700 leading-relaxed ${
                           isBold ? "font-semibold" : ""
@@ -186,12 +186,12 @@ export default function privateLimitedCompany() {
               return (
                 <div key={stepIdx} id={`${sectionId}-step-${stepIdx}`} className="flex gap-4 sm:gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#EAB308] rounded-full flex items-center justify-center text-[#071B34] font-bold text-base sm:text-lg">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#BC9139] rounded-full flex items-center justify-center text-[#111111] font-bold text-base sm:text-lg">
                       {stepIdx + 1}
                     </div>
                   </div>
                   <div className="flex-1 pt-1 sm:pt-2">
-                    <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-2">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-2">
                       {stepTitle}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -201,7 +201,7 @@ export default function privateLimitedCompany() {
                 </div>
               );
             })}
-            <div className="mt-6 bg-[#EAB308]/10 border-l-4 border-[#EAB308] p-4 sm:p-6 rounded-r-lg">
+            <div className="mt-6 bg-[#BC9139]/10 border-l-4 border-[#BC9139] p-4 sm:p-6 rounded-r-lg">
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
                 {section.content?.[section.content.length - 1] ?? ""}
               </p>

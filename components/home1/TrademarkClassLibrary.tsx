@@ -50,7 +50,7 @@ export default function TrademarkClassLibrary() {
         <div className={styles.content}>
           <figure className={styles.artwork}>
             <Image
-              src="/assets/home1-classes/class-library.png"
+              src="/assets/home1-classes/class-library.webp"
               width={1456}
               height={976}
               sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 55vw, 56vw"

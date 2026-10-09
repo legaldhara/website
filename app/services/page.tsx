@@ -11,11 +11,11 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#071B34] via-[#0a2442] to-[#071B34] text-white overflow-hidden">
+      <section className="relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#111111] via-[#111111] to-[#111111] text-white overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 z-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#EAB308] rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#EAB308] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#BC9139] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#BC9139] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         
         <div className="absolute inset-0 z-0 opacity-5">
@@ -30,14 +30,14 @@ export default function ServicesPage() {
         </div>
         
         <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-[#EAB308]/20 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-[#EAB308]/30">
-            <CheckCircle className="w-4 h-4 text-[#EAB308]" />
-            <span className="text-[#EAB308] font-semibold text-sm tracking-wide">COMPREHENSIVE SOLUTIONS</span>
+          <div className="inline-flex items-center gap-2 bg-[#BC9139]/20 backdrop-blur-sm px-5 py-2.5 rounded-full mb-6 border border-[#BC9139]/30">
+            <CheckCircle className="w-4 h-4 text-[#BC9139]" />
+            <span className="text-[#BC9139] font-semibold text-sm tracking-wide">COMPREHENSIVE SOLUTIONS</span>
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
             Empowering Your Business with
-            <span className="text-[#EAB308]"> Expert Services</span>
+            <span className="text-[#BC9139]"> Expert Services</span>
           </h1>
           
           <p className="mt-6 text-base md:text-lg lg:text-xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
@@ -46,7 +46,7 @@ export default function ServicesPage() {
           
           <div className="mt-10">
             <Link href="#services">
-              <Button size="lg" className="bg-[#EAB308] hover:bg-[#d9a307] text-[#071B34] font-bold px-8 h-12 text-base shadow-lg hover:shadow-xl transition-all group">
+              <Button size="lg" className="bg-[#BC9139] hover:bg-[#BC9139] text-[#111111] font-bold px-8 h-12 text-base shadow-lg hover:shadow-xl transition-all group">
                 Explore All Services
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -67,11 +67,11 @@ export default function ServicesPage() {
                   <div className="text-center max-w-3xl mx-auto">
                     <div className="flex items-center justify-center gap-4 mb-4">
                       {MainIconComponent && (
-                        <div className="p-3 bg-[#EAB308]/10 rounded-xl">
-                          <MainIconComponent className="w-8 h-8 md:w-10 md:h-10 text-[#EAB308]" />
+                        <div className="p-3 bg-[#BC9139]/10 rounded-xl">
+                          <MainIconComponent className="w-8 h-8 md:w-10 md:h-10 text-[#BC9139]" />
                         </div>
                       )}
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#071B34]">
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#111111]">
                         {mainCategoryData.mainCategory}
                       </h2>
                     </div>
@@ -89,11 +89,11 @@ export default function ServicesPage() {
                           key={categoryData.title}
                           className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-0 bg-white flex flex-col h-full"
                         >
-                          <CardHeader className="bg-gradient-to-r from-[#071B34] to-[#0a2442] p-6 flex-shrink-0">
+                          <CardHeader className="bg-gradient-to-r from-[#111111] to-[#111111] p-6 flex-shrink-0">
                             <div className="flex items-center gap-3">
                               {CategoryIconComponent && (
-                                <div className="p-2 bg-[#EAB308]/20 rounded-lg flex-shrink-0">
-                                  <CategoryIconComponent className="w-6 h-6 text-[#EAB308]" />
+                                <div className="p-2 bg-[#BC9139]/20 rounded-lg flex-shrink-0">
+                                  <CategoryIconComponent className="w-6 h-6 text-[#BC9139]" />
                                 </div>
                               )}
                               <CardTitle className="text-xl md:text-2xl font-bold text-white">
@@ -112,10 +112,10 @@ export default function ServicesPage() {
                                     value={service.name}
                                     className="border rounded-lg px-4 hover:bg-gray-50 transition-colors"
                                   >
-                                    <AccordionTrigger className="flex items-center justify-between py-4 text-base font-semibold text-[#071B34] hover:text-[#EAB308] hover:no-underline">
+                                    <AccordionTrigger className="flex items-center justify-between py-4 text-base font-semibold text-[#111111] hover:text-[#BC9139] hover:no-underline">
                                       <div className="flex items-center gap-3">
                                         {ServiceIconComponent && (
-                                          <ServiceIconComponent className="h-5 w-5 text-[#EAB308] flex-shrink-0" />
+                                          <ServiceIconComponent className="h-5 w-5 text-[#BC9139] flex-shrink-0" />
                                         )}
                                         <span className="text-left">{service.name}</span>
                                       </div>
@@ -130,13 +130,13 @@ export default function ServicesPage() {
                                         <div className="flex items-center justify-between gap-4 p-3 bg-gray-50 rounded-lg">
                                           <div>
                                             <p className="text-xs text-gray-500 mb-1">Starting at</p>
-                                            <Badge className="bg-[#EAB308] hover:bg-[#d9a307] text-[#071B34] px-3 py-1 text-sm font-bold">
+                                            <Badge className="bg-[#BC9139] hover:bg-[#BC9139] text-[#111111] px-3 py-1 text-sm font-bold">
                                               {service.price}
                                             </Badge>
                                           </div>
                                           <div className="text-right">
                                             <p className="text-xs text-gray-500 mb-1">Timeline</p>
-                                            <span className="text-sm font-semibold text-[#071B34]">
+                                            <span className="text-sm font-semibold text-[#111111]">
                                               {service.timeline}
                                             </span>
                                           </div>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                                           <Button 
                                             variant="outline" 
                                             size="sm" 
-                                            className="w-full border-2 border-[#071B34] text-[#071B34] hover:bg-[#071B34] hover:text-white font-semibold transition-all group"
+                                            className="w-full border-2 border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white font-semibold transition-all group"
                                           >
                                             Learn More
                                             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -173,9 +173,9 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#EAB308]/10 via-[#EAB308]/5 to-transparent rounded-2xl p-8 md:p-12 lg:p-16 text-center border-2 border-[#EAB308]/20 shadow-xl">
+          <div className="bg-gradient-to-br from-[#BC9139]/10 via-[#BC9139]/5 to-transparent rounded-2xl p-8 md:p-12 lg:p-16 text-center border-2 border-[#BC9139]/20 shadow-xl">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#071B34] mb-4">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#111111] mb-4">
                 Need Help Choosing the Right Service?
               </h3>
               <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed">
@@ -183,7 +183,7 @@ export default function ServicesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <Button size="lg" className="bg-[#EAB308] hover:bg-[#d9a307] text-[#071B34] font-bold px-8 h-12 text-base shadow-lg hover:shadow-xl transition-all">
+                  <Button size="lg" className="bg-[#BC9139] hover:bg-[#BC9139] text-[#111111] font-bold px-8 h-12 text-base shadow-lg hover:shadow-xl transition-all">
                     Talk to Expert
                   </Button>
                 </Link>
@@ -191,7 +191,7 @@ export default function ServicesPage() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-[#071B34] text-[#071B34] hover:bg-[#071B34] hover:text-white font-bold px-8 h-12 text-base transition-all"
+                  className="border-2 border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white font-bold px-8 h-12 text-base transition-all"
                 >
                   Schedule Consultation
                 </Button>

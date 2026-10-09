@@ -136,7 +136,7 @@ export default function ContactForm(): JSX.Element {
           >
             <div className="bg-white rounded-2xl shadow-lg p-5 md:p-6 border border-gray-100 w-full max-w-md">
               <div className="text-center mb-4">
-                <div className="inline-flex items-center justify-center w-11 h-11 bg-gradient-to-br from-deep-blue to-[#1B4061] rounded-xl mb-2 shadow-lg">
+                <div className="inline-flex items-center justify-center w-11 h-11 bg-gradient-to-br from-deep-blue to-[#252525] rounded-xl mb-2 shadow-lg">
                   <Headphones className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-deep-blue mb-0.5">

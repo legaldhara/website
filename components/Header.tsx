@@ -233,8 +233,8 @@ const Header = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 shrink-0">
            <Image
-             src="/assets/LD2.webp"
-             alt="LOGO"
+             src="/assets/ld-monogram-dark.webp"
+             alt="Legal Dhara"
              width={40}
              height={40}
              className="object-contain rounded-md w-10 h-10" // 👈 lock visual size
@@ -249,10 +249,6 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-3 xl:gap-6 2xl:gap-8">
-          <Link href="/home1" className="text-sm xl:text-base text-white hover:text-brand-orange transition-colors">
-            Home1
-          </Link>
-
           {Object.entries(navigationData).map(([mainItem, mainData]) => (
             <div key={mainItem} className="relative group">
               <div className="flex items-center text-sm xl:text-base text-white hover:text-brand-orange transition-colors cursor-pointer whitespace-nowrap">
@@ -334,10 +330,6 @@ const Header = () => {
 
           <SheetContent className="overflow-y-auto max-h-screen bg-white">
             <div className="flex flex-col space-y-4 mt-8 pb-8">
-              <Link href="/home1" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
-                Home1
-              </Link>
-
               {Object.entries(navigationData).map(([mainItem, mainData]) => (
                 <div key={mainItem} className="space-y-2">
                   <div className="flex items-center text-lg font-semibold text-deep-blue">

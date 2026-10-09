@@ -49,7 +49,7 @@ export default function TalkToExpertButton() {
       }}
     >
       <motion.button
-        className="relative bg-gradient-to-r from-deep-blue to-[#0a2347] text-white rounded-full shadow-lg hover:shadow-2xl transition-shadow flex items-center gap-0 overflow-hidden border-2 border-brand-orange"
+        className="relative bg-gradient-to-r from-deep-blue to-[#111111] text-white rounded-full shadow-lg hover:shadow-2xl transition-shadow flex items-center gap-0 overflow-hidden border-2 border-brand-orange"
         animate={{
           width: isExpanded || isHovered ? '200px' : '64px',
           height: '64px',

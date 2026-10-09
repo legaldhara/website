@@ -93,7 +93,7 @@ export default function ServiceDirectory() {
                 sizes="(max-width: 700px) calc(100vw - 44px), (max-width: 1100px) 45vw, 34vw"
               />
               <img
-                src="/assets/home1-services/folio-master.png"
+                src="/assets/home1-services/webp/folio-1470.webp"
                 width="1470"
                 height="1070"
                 alt="Open legal folio with a trademark certificate, gold registered seal, calendar and globe"

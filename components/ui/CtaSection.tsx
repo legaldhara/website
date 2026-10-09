@@ -31,7 +31,7 @@ export default function CtaSection({ title, serviceName, description }: CtaSecti
             <Link href="/contact" passHref>
               <Button
                 size="lg"
-                className="bg-white text-[#0A2342] hover:bg-gray-100 font-bold 
+                className="bg-white text-[#111111] hover:bg-gray-100 font-bold
                           px-6 sm:px-8 md:px-10 lg:px-12 
                           py-4 sm:py-5 md:py-6 
                           rounded-xl sm:rounded-2xl 
@@ -50,7 +50,7 @@ export default function CtaSection({ title, serviceName, description }: CtaSecti
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0A2342] 
+                className="border-2 border-white text-white hover:bg-white hover:text-[#111111]
                           font-bold 
                           px-6 sm:px-8 md:px-10 lg:px-12 
                           py-4 sm:py-5 md:py-6 

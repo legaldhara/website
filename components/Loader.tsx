@@ -19,7 +19,7 @@ export default function Loader({ loading = true, size = 55 }: LoaderProps) {
           transition={{ duration: 0.25 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(7,27,52,0.25)] backdrop-blur-sm"
         >
-          <ClipLoader color="#EAB308" loading={loading} size={size} />
+          <ClipLoader color="#BC9139" loading={loading} size={size} />
         </motion.div>
       )}
     </AnimatePresence>

@@ -148,12 +148,12 @@ const WellKnownTrademarkPage = () => {
 
     <div className="min-h-screen bg-gray-200">
       {/* Hero Section */}
-      <div className="bg-[#071B34] text-white">
+      <div className="bg-[#111111] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#EAB308] rounded-2xl mb-6">
-                <Star className="w-8 h-8 sm:w-10 sm:h-10 text-[#071B34]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#BC9139] rounded-2xl mb-6">
+                <Star className="w-8 h-8 sm:w-10 sm:h-10 text-[#111111]" />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 {service?.title || 'Well-Known Trademark Registration'}
@@ -163,17 +163,17 @@ const WellKnownTrademarkPage = () => {
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <IndianRupee className="w-5 h-5 text-[#EAB308]" />
+                  <IndianRupee className="w-5 h-5 text-[#BC9139]" />
                   <span className="text-sm font-semibold">Starting from ₹{service.price}</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
-                  <Clock className="w-5 h-5 text-[#EAB308]" />
+                  <Clock className="w-5 h-5 text-[#BC9139]" />
                   <span className="text-sm font-semibold">{service.timeline}</span>
                 </div>
                 {service.zeroServiceCharges && (
-                  <div className="flex items-center gap-2 bg-[#EAB308] px-4 py-2 rounded-lg">
-                    <CheckCircle2 className="w-5 h-5 text-[#071B34]" />
-                    <span className="text-sm font-semibold text-[#071B34]">Zero Hidden Charges</span>
+                  <div className="flex items-center gap-2 bg-[#BC9139] px-4 py-2 rounded-lg">
+                    <CheckCircle2 className="w-5 h-5 text-[#111111]" />
+                    <span className="text-sm font-semibold text-[#111111]">Zero Hidden Charges</span>
                   </div>
                 )}
               </div>
@@ -181,13 +181,13 @@ const WellKnownTrademarkPage = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Globe className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">All Classes</div>
+                <Globe className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">All Classes</div>
                 <div className="text-sm text-gray-300">Protection</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Award className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">Elite</div>
+                <Award className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">Elite</div>
                 <div className="text-sm text-gray-300">Status</div>
               </div>
             </div>
@@ -199,7 +199,7 @@ const WellKnownTrademarkPage = () => {
         
         {/* Overview Section */}
         <section id="overview" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34] mb-6">Overview</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">Overview</h2>
           
           <div className="space-y-4">
             {introduction.length > 0 && introduction.map((para, idx) => (
@@ -209,11 +209,11 @@ const WellKnownTrademarkPage = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-[#EAB308]/10 to-[#F2C79A]/20 border-l-4 border-[#EAB308] p-6 rounded-r-xl mt-6">
+          <div className="bg-gradient-to-r from-[#BC9139]/10 to-[#E7E2D8]/20 border-l-4 border-[#BC9139] p-6 rounded-r-xl mt-6">
             <div className="flex items-start gap-3">
-              <Star className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+              <Star className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold text-[#071B34] mb-2">Elite Brand Recognition</h3>
+                <h3 className="text-lg font-semibold text-[#111111] mb-2">Elite Brand Recognition</h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   Well-known trademark status represents the highest level of brand protection in India, offering cross-class protection and enhanced legal remedies against infringement.
                 </p>
@@ -224,23 +224,23 @@ const WellKnownTrademarkPage = () => {
 
         {/* Protection Scope Visual */}
         <section id="protection-scope" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Scope of Protection
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
-              <Shield className="w-16 h-16 mx-auto mb-4 text-[#EAB308]" />
+            <div className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
+              <Shield className="w-16 h-16 mx-auto mb-4 text-[#BC9139]" />
               <h3 className="text-xl font-bold mb-3">Cross-Class Protection</h3>
               <p className="text-sm text-gray-300">Protection across all goods and services classes</p>
             </div>
-            <div className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
-              <Globe className="w-16 h-16 mx-auto mb-4 text-[#EAB308]" />
+            <div className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
+              <Globe className="w-16 h-16 mx-auto mb-4 text-[#BC9139]" />
               <h3 className="text-xl font-bold mb-3">Global Recognition</h3>
               <p className="text-sm text-gray-300">Enhanced international brand prestige</p>
             </div>
-            <div className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
-              <Scale className="w-16 h-16 mx-auto mb-4 text-[#EAB308]" />
+            <div className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6 text-center hover:shadow-xl transition-shadow">
+              <Scale className="w-16 h-16 mx-auto mb-4 text-[#BC9139]" />
               <h3 className="text-xl font-bold mb-3">Legal Strength</h3>
               <p className="text-sm text-gray-300">Stronger enforcement and deterrent power</p>
             </div>
@@ -260,14 +260,14 @@ const WellKnownTrademarkPage = () => {
 
           return (
             <section key={sectionIdx} id={sectionId} className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-                <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+                <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
                 {section?.title || 'Section'}
               </h2>
 
               {/* Content Type */}
               {isContentSection && sectionContent && (
-                <div className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
+                <div className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {sectionContent}
                   </p>
@@ -280,7 +280,7 @@ const WellKnownTrademarkPage = () => {
                   {sectionList.map((item: string, idx: number) => (
                     <div key={idx} className="flex gap-4 sm:gap-6">
                       <div className="flex-shrink-0">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#EAB308] rounded-full flex items-center justify-center text-[#071B34] font-bold text-base sm:text-lg shadow-md">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#BC9139] rounded-full flex items-center justify-center text-[#111111] font-bold text-base sm:text-lg shadow-md">
                           {idx + 1}
                         </div>
                       </div>
@@ -296,9 +296,9 @@ const WellKnownTrademarkPage = () => {
                   {sectionList.map((item: string, idx: number) => {
                     const [caseName, ...desc] = item.split(' – ');
                     return (
-                      <div key={idx} className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6 hover:shadow-lg transition-shadow">
-                        <Scale className="w-8 h-8 text-[#EAB308] mb-3" />
-                        <h3 className="text-base font-semibold text-[#EAB308] mb-2">{caseName}</h3>
+                      <div key={idx} className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6 hover:shadow-lg transition-shadow">
+                        <Scale className="w-8 h-8 text-[#BC9139] mb-3" />
+                        <h3 className="text-base font-semibold text-[#BC9139] mb-2">{caseName}</h3>
                         {desc.length > 0 && (
                           <p className="text-sm text-gray-300 leading-relaxed">{desc.join(' – ')}</p>
                         )}
@@ -310,9 +310,9 @@ const WellKnownTrademarkPage = () => {
                 /* Regular List - Grid layout */
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {sectionList.map((item: string, idx: number) => (
-                    <div key={idx} className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-5 border-l-4 border-[#EAB308]">
+                    <div key={idx} className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-5 border-l-4 border-[#BC9139]">
                       <div className="flex items-start gap-3">
-                        <CheckCircle2 className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</p>
                       </div>
                     </div>
@@ -326,16 +326,16 @@ const WellKnownTrademarkPage = () => {
         {/* FAQs Section */}
         {faqs.length > 0 && (
           <section id="faqs" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+              <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
               Frequently Asked Questions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="border border-gray-200 rounded-xl p-6 hover:border-[#EAB308]/50 transition-colors hover:shadow-md">
+                <div key={idx} className="border border-gray-200 rounded-xl p-6 hover:border-[#BC9139]/50 transition-colors hover:shadow-md">
                   <div className="flex items-start gap-3 mb-3">
-                    <HelpCircle className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
-                    <h3 className="text-base font-semibold text-[#071B34]">
+                    <HelpCircle className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
+                    <h3 className="text-base font-semibold text-[#111111]">
                       {faq?.question || ''}
                     </h3>
                   </div>
@@ -351,24 +351,24 @@ const WellKnownTrademarkPage = () => {
         )}
 
         {/* CTA Section */}
-        <section id="cta" className="bg-gradient-to-r from-[#EAB308] to-[#F2C79A] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#071B34] mb-4">
+        <section id="cta" className="bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#111111] mb-4">
             Elevate Your Brand to Elite Status
           </h2>
-          <p className="text-base sm:text-lg text-[#071B34]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#111111]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Secure well-known trademark recognition and protect your brand across all classes with comprehensive legal support and expert guidance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <div className="flex items-center gap-2 bg-[#071B34] text-white px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 bg-[#111111] text-white px-6 py-3 rounded-lg">
               <IndianRupee className="w-5 h-5" />
               <span className="font-semibold">Starting from ₹{service.price}</span>
             </div>
-            <div className="flex items-center gap-2 bg-[#071B34] text-white px-6 py-3 rounded-lg">
+            <div className="flex items-center gap-2 bg-[#111111] text-white px-6 py-3 rounded-lg">
               <Clock className="w-5 h-5" />
               <span className="font-semibold">{service.timeline}</span>
             </div>
           </div>
-          <button className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
+          <button className="bg-[#111111] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#252525] transition-colors shadow-lg">
             Apply for Well-Known Status
           </button>
         </section>

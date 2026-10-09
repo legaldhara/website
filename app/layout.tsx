@@ -1,10 +1,17 @@
 import './globals.css';
+import 'lenis/dist/lenis.css';
 import type { Metadata } from 'next';
-// import { Inter, Poppins } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 // import PageLoader from '@/components/PageLoader';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-manrope',
+});
 
 
 export const metadata: Metadata = {
@@ -26,7 +33,7 @@ export default function RootLayout({
        <head>
         <link rel="icon" href="/assets/legal-dhara-mark-48.png" />
       </head>
-      <body className="font-sans">
+      <body className={`${manrope.variable} font-sans`}>
         {/* <PageLoader /> */}
         
                <Header />

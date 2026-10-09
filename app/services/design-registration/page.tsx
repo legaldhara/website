@@ -47,12 +47,12 @@ export default function designRegistration() {
       
       <div className="min-h-screen bg-gray-200">
       {/* Hero Section */}
-      <div className="bg-[#071B34] text-white">
+      <div className="bg-[#111111] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#EAB308] rounded-2xl mb-6">
-                <Lightbulb className="w-8 h-8 sm:w-10 sm:h-10 text-[#071B34]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#BC9139] rounded-2xl mb-6">
+                <Lightbulb className="w-8 h-8 sm:w-10 sm:h-10 text-[#111111]" />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 {service?.title || 'Provisional Patent Application'}
@@ -64,13 +64,13 @@ export default function designRegistration() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Calendar className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">12 Months</div>
+                <Calendar className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">12 Months</div>
                 <div className="text-sm text-gray-300">Priority Period</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <TrendingUp className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">Low Cost</div>
+                <TrendingUp className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">Low Cost</div>
                 <div className="text-sm text-gray-300">Filing Option</div>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function designRegistration() {
         
         {/* Overview Section */}
         <section id="overview" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34] mb-6">Overview</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">Overview</h2>
           
           <div className="space-y-4">
             {introduction.length > 0 && introduction.map((para, idx) => (
@@ -110,12 +110,12 @@ export default function designRegistration() {
   id="timeline-visual"
   className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8"
 >
-  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-6 flex items-center gap-3">
-    <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-6 flex items-center gap-3">
+    <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
     Design Registration Timeline
   </h2>
 
-  <p className="text-[#071B34]/80 text-base sm:text-lg mb-8">
+  <p className="text-[#111111]/80 text-base sm:text-lg mb-8">
     The design registration process in India usually takes <strong>6 to 12 months</strong>, depending on
     factors like the accuracy of the application, timely responses to objections (if any), and the absence
     of opposition. A smooth application with no issues can often be processed more quickly.
@@ -144,7 +144,7 @@ export default function designRegistration() {
     </div>
   </div>
 
-  <p className="text-[#071B34]/80 text-base sm:text-lg mt-8">
+  <p className="text-[#111111]/80 text-base sm:text-lg mt-8">
     If your design also includes a <strong>unique functional aspect</strong>, you may want to consider
     <strong> patent registration</strong> to ensure complete protection. Additionally, for artistic works or
     creative expressions that go beyond industrial designs, <strong>copyright registration</strong> can offer
@@ -168,14 +168,14 @@ export default function designRegistration() {
 
           return (
             <section key={sectionIdx} id={sectionId} className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-                <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+                <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
                 {section?.title || 'Section'}
               </h2>
 
               {/* Paragraph Type */}
               {sectionType === 'paragraph' && sectionContent && (
-                <div className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
+                <div className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {sectionContent}
                   </p>
@@ -188,11 +188,11 @@ export default function designRegistration() {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-5 border-l-4 border-[#EAB308]">
+                      <div key={idx} className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-5 border-l-4 border-[#BC9139]">
                         <div className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                           <div>
-                            <h3 className="text-base font-semibold text-[#071B34] mb-1">{title.trim()}</h3>
+                            <h3 className="text-base font-semibold text-[#111111] mb-1">{title.trim()}</h3>
                             {desc.length > 0 && desc[0].trim() && (
                               <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ').trim()}</p>
                             )}
@@ -208,9 +208,9 @@ export default function designRegistration() {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-r from-[#071B34] to-[#0a2847] text-white rounded-xl p-6">
+                      <div key={idx} className="bg-gradient-to-r from-[#111111] to-[#252525] text-white rounded-xl p-6">
                         <div className="flex items-start gap-3">
-                          <CheckCircle2 className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                           <div>
                             <h3 className="text-base font-semibold mb-2">{title.trim()}</h3>
                             {desc.length > 0 && desc[0].trim() && (
@@ -228,8 +228,8 @@ export default function designRegistration() {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-br from-[#F2C79A]/20 to-[#EAB308]/10 rounded-xl p-5 border border-[#EAB308]/30 hover:shadow-lg transition-shadow">
-                        <h3 className="text-base font-semibold text-[#071B34] mb-3">{title.trim()}</h3>
+                      <div key={idx} className="bg-gradient-to-br from-[#E7E2D8]/20 to-[#BC9139]/10 rounded-xl p-5 border border-[#BC9139]/30 hover:shadow-lg transition-shadow">
+                        <h3 className="text-base font-semibold text-[#111111] mb-3">{title.trim()}</h3>
                         {desc.length > 0 && desc[0].trim() && (
                           <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ').trim()}</p>
                         )}
@@ -243,8 +243,8 @@ export default function designRegistration() {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6">
-                        <Shield className="w-10 h-10 text-[#EAB308] mb-4" />
+                      <div key={idx} className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6">
+                        <Shield className="w-10 h-10 text-[#BC9139] mb-4" />
                         <h3 className="text-base sm:text-lg font-semibold mb-3">{title.trim()}</h3>
                         {desc.length > 0 && desc[0].trim() && (
                           <p className="text-sm text-gray-300 leading-relaxed">{desc.join(': ').trim()}</p>
@@ -259,11 +259,11 @@ export default function designRegistration() {
                   {sectionList.map((item: string, idx: number) => {
                     const [title, ...desc] = item.split(': ');
                     return (
-                      <div key={idx} className="bg-gradient-to-r from-[#EAB308]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
+                      <div key={idx} className="bg-gradient-to-r from-[#BC9139]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
                         <div className="flex items-start gap-3">
-                          <Award className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                          <Award className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                           <div>
-                            <h3 className="text-base font-semibold text-[#071B34] mb-2">{title.trim()}</h3>
+                            <h3 className="text-base font-semibold text-[#111111] mb-2">{title.trim()}</h3>
                             {desc.length > 0 && desc[0].trim() && (
                               <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ').trim()}</p>
                             )}
@@ -282,11 +282,11 @@ export default function designRegistration() {
                     if (hasDescription) {
                       const [title, ...desc] = item.split(': ');
                       return (
-                        <div key={idx} className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
+                        <div key={idx} className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
                           <div className="flex items-start gap-3">
-                            <CheckCircle2 className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
                             <div className="flex-1">
-                              <h3 className="text-base font-semibold text-[#071B34] mb-2">{title.trim()}</h3>
+                              <h3 className="text-base font-semibold text-[#111111] mb-2">{title.trim()}</h3>
                               {desc.length > 0 && desc[0].trim() && (
                                 <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ').trim()}</p>
                               )}
@@ -297,8 +297,8 @@ export default function designRegistration() {
                     }
 
                     return (
-                      <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#F2C79A]/5 to-transparent rounded-lg">
-                        <CheckCircle2 className="w-5 h-5 text-[#EAB308] flex-shrink-0 mt-1" />
+                      <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#E7E2D8]/5 to-transparent rounded-lg">
+                        <CheckCircle2 className="w-5 h-5 text-[#BC9139] flex-shrink-0 mt-1" />
                         <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{item}</p>
                       </div>
                     );
@@ -312,16 +312,16 @@ export default function designRegistration() {
         {/* FAQs Section */}
         {faqs.length > 0 && (
           <section id="faqs" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+              <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, idx) => (
-                <div key={idx} className="border border-gray-200 rounded-xl p-6 hover:border-[#EAB308]/50 transition-colors hover:shadow-md">
+                <div key={idx} className="border border-gray-200 rounded-xl p-6 hover:border-[#BC9139]/50 transition-colors hover:shadow-md">
                   <div className="flex items-start gap-3 mb-3">
-                    <HelpCircle className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-0.5" />
-                    <h3 className="text-base font-semibold text-[#071B34]">
+                    <HelpCircle className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-0.5" />
+                    <h3 className="text-base font-semibold text-[#111111]">
                       {faq?.question || ''}
                     </h3>
                   </div>

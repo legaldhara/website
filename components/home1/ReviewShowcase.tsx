@@ -89,7 +89,7 @@ export default function ReviewShowcase() {
 
           <figure className={styles.artwork}>
             <Image
-              src="/assets/home1-reviews/legal-diary.png"
+              src="/assets/home1-reviews/legal-diary.webp"
               width={1560}
               height={970}
               sizes="(max-width: 700px) calc(100vw - 32px), 46vw"

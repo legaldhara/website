@@ -1,5 +1,33 @@
 import type { Config } from 'tailwindcss';
 
+const brandNeutral = {
+  50: '#F7F5F0',
+  100: '#F7F5F0',
+  200: '#E7E2D8',
+  300: '#D8D2C6',
+  400: '#A7A39C',
+  500: '#747474',
+  600: '#5F5F5F',
+  700: '#454545',
+  800: '#252525',
+  900: '#151515',
+  950: '#111111',
+};
+
+const brandAccent = {
+  50: '#F7F5F0',
+  100: '#F3EBDD',
+  200: '#E7E2D8',
+  300: '#D7BA7A',
+  400: '#C9A253',
+  500: '#BC9139',
+  600: '#A77D2C',
+  700: '#7D5D21',
+  800: '#4D3A1D',
+  900: '#252525',
+  950: '#111111',
+};
+
 const config: Config = {
   darkMode: ['class'],
   content: [
@@ -10,7 +38,8 @@ const config: Config = {
   theme: {
     extend: {
        fontFamily: {
-        urbanist: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'Avenir Next', 'Arial', 'sans-serif'],
+        urbanist: ['var(--font-manrope)', 'Avenir Next', 'Arial', 'sans-serif'],
         },
 
       colors: {
@@ -65,6 +94,22 @@ const config: Config = {
           800: '#111111',
           900: '#111111',
         },
+        gray: brandNeutral,
+        slate: brandNeutral,
+        zinc: brandNeutral,
+        neutral: brandNeutral,
+        stone: brandNeutral,
+        indigo: brandAccent,
+        purple: brandAccent,
+        cyan: brandAccent,
+        teal: brandAccent,
+        pink: brandAccent,
+        amber: brandAccent,
+        sky: brandAccent,
+        violet: brandAccent,
+        fuchsia: brandAccent,
+        lime: brandAccent,
+        rose: brandAccent,
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

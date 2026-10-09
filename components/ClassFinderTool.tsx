@@ -5,7 +5,7 @@ import Link from "next/link"
 
 function ClassFinderTool() {
   return (
-    <section className="py-12 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-deep-blue via-[#0A2342] to-deep-blue relative overflow-hidden">
+    <section className="py-12 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-deep-blue via-[#111111] to-deep-blue relative overflow-hidden">
       {/* Animated Background Elements */}
       <motion.div
         className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"
@@ -117,7 +117,7 @@ function ClassFinderTool() {
             >
               <Link
                 href="services/trademark-class-finder"
-                className="group relative px-8 py-3.5 bg-gradient-to-r from-brand-orange to-[#D4A004] rounded-xl font-bold text-sm text-deep-blue transition-all hover:shadow-2xl hover:shadow-brand-orange/30 flex items-center gap-2"
+                className="group relative px-8 py-3.5 bg-gradient-to-r from-brand-orange to-[#BC9139] rounded-xl font-bold text-sm text-deep-blue transition-all hover:shadow-2xl hover:shadow-brand-orange/30 flex items-center gap-2"
               >
                 <Search className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                 Find Your Trademark Class Now
@@ -212,7 +212,7 @@ function ClassFinderTool() {
 
               {/* Floating Badge */}
               <motion.div
-                className="absolute -top-4 -right-4 bg-gradient-to-br from-brand-orange to-[#D4A004] text-deep-blue px-4 py-2 rounded-full shadow-lg rotate-12"
+                className="absolute -top-4 -right-4 bg-gradient-to-br from-brand-orange to-[#BC9139] text-deep-blue px-4 py-2 rounded-full shadow-lg rotate-12"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >

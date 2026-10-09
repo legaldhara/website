@@ -144,7 +144,7 @@ const Footer = () => {
             {/* Logo and Company Name */}
             <div className="flex items-center space-x-3 mb-6">
               <Image
-                src="/assets/LD2.webp"
+                src="/assets/ld-monogram-dark.webp"
                 alt="Legal Dhara Logo"
                 width={48}
                 height={48}

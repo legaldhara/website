@@ -30,7 +30,7 @@ export function CaseRequirements({ lifecycle, onRefresh }: { lifecycle: Lifecycl
       {requirement.documentLabels.map((label) => <label key={label} className="block text-sm font-medium">{label}<input required type="file" aria-label={label} disabled={pendingId !== null} className="mt-1 block w-full" onChange={(event) => { const file = event.target.files?.[0]; if (file) setFiles((current) => ({ ...current, [requirement.id]: { ...current[requirement.id], [label]: file } })); }} /></label>)}
       <button type="submit" disabled={pendingId !== null} className="rounded-lg bg-[#111111] px-5 py-2 text-white disabled:opacity-50">{pendingId === requirement.id ? "Submitting…" : "Submit documents"}</button>
     </form>}
-    {requirement.assets.length > 0 && <ul className="mt-3 space-y-1">{requirement.assets.map((asset) => <li key={asset.id}><a className="text-sm text-[#8A681E] underline" href={asset.secureUrl} target="_blank" rel="noreferrer">{asset.label || asset.originalName}</a></li>)}</ul>}
+    {requirement.assets.length > 0 && <ul className="mt-3 space-y-1">{requirement.assets.map((asset) => <li key={asset.id}><a className="text-sm text-[#252525] underline" href={asset.secureUrl} target="_blank" rel="noreferrer">{asset.label || asset.originalName}</a></li>)}</ul>}
     {error && pendingId === null && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}
   </article>)}</div>;
 }

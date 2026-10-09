@@ -852,13 +852,13 @@ export default function FindYourClassTool() {
     <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#FFC24F]/10 to-deep-blue/5 rounded-full blur-3xl opacity-60 -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-deep-blue/10 to-[#FFC24F]/5 rounded-full blur-3xl opacity-60 -z-10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#BC9139]/10 to-deep-blue/5 rounded-full blur-3xl opacity-60 -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-deep-blue/10 to-[#BC9139]/5 rounded-full blur-3xl opacity-60 -z-10"></div>
 
       <div className="container mx-auto px-4 md:px-8 lg:px-32">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFC24F]/20 to-deep-blue/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border border-[#FFC24F]/30">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#BC9139]/20 to-deep-blue/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border border-[#BC9139]/30">
             <Sparkles className="h-5 w-5 text-deep-blue" />
             <span className="text-sm font-bold text-deep-blue tracking-wide">FIND YOUR TRADEMARK CLASS</span>
           </div>
@@ -889,11 +889,11 @@ export default function FindYourClassTool() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyPress={handleKeyPress}
-                className="flex-1 h-12 text-lg px-4 border-2 border-deep-blue/20 focus:border-[#FFC24F] focus:ring-0 transition-all duration-300"
+                className="flex-1 h-12 text-lg px-4 border-2 border-deep-blue/20 focus:border-[#BC9139] focus:ring-0 transition-all duration-300"
               />
               <Button
                 onClick={handleSearch}
-                className="bg-gradient-to-r from-deep-blue to-deep-blue/90 hover:from-[#FFC24F] hover:to-[#FFC24F]/90 hover:text-deep-blue text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
+                className="bg-gradient-to-r from-deep-blue to-deep-blue/90 hover:from-[#BC9139] hover:to-[#BC9139]/90 hover:text-deep-blue text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-300 font-bold"
               >
                 <Search className="h-5 w-5 mr-2" />
                 Find Class
@@ -903,11 +903,11 @@ export default function FindYourClassTool() {
             {results.length > 0 && (
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-deep-blue flex items-center gap-2">
-                  <Lightbulb className="h-6 w-6 text-[#FFC24F]" />
+                  <Lightbulb className="h-6 w-6 text-[#BC9139]" />
                   Relevant Trademark Classes:
                 </h3>
                 {results.map((tc) => (
-                  <Card key={tc.classNumber} className="border-2 border-[#FFC24F]/30 bg-white/70 shadow-md">
+                  <Card key={tc.classNumber} className="border-2 border-[#BC9139]/30 bg-white/70 shadow-md">
                     <CardHeader className="pb-3">
                       <CardTitle className="text-xl font-bold text-deep-blue flex items-center gap-2">
                         Class {tc.classNumber}: {tc.name}
@@ -964,8 +964,8 @@ export default function FindYourClassTool() {
 
         {/* Bottom CTA */}
         {/* <div className="mt-16 text-center bg-gradient-to-r from-deep-blue to-deep-blue/90 rounded-3xl p-8 relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FFC24F]/10 to-transparent"></div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC24F]/20 rounded-full blur-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#BC9139]/10 to-transparent"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#BC9139]/20 rounded-full blur-2xl"></div>
           <div className="relative z-10">
             <h3 className="text-3xl font-bold text-white mb-4">Need Expert Guidance?</h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
@@ -974,7 +974,7 @@ export default function FindYourClassTool() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-[#FFC24F] to-[#FFC24F]/90 hover:from-[#FFC24F]/90 hover:to-[#FFC24F] text-deep-blue px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold hover:scale-105"
+              className="bg-gradient-to-r from-[#BC9139] to-[#BC9139]/90 hover:from-[#BC9139]/90 hover:to-[#BC9139] text-deep-blue px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold hover:scale-105"
             >
               <Link href="/contact">Schedule a Free Consultation</Link>
             </Button>

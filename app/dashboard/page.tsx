@@ -980,16 +980,16 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#071B34] to-[#0a2647] shadow-xl">
+      <div className="bg-gradient-to-r from-[#111111] to-[#252525] shadow-xl">
         <div className="container mx-auto px-6 lg:px-20">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#EAB308] to-[#F2C79A] rounded-full flex items-center justify-center shadow-lg">
-                <User className="h-8 w-8 text-[#071B34]" />
+              <div className="w-14 h-14 bg-gradient-to-br from-[#BC9139] to-[#E7E2D8] rounded-full flex items-center justify-center shadow-lg">
+                <User className="h-8 w-8 text-[#111111]" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">Welcome Back!</h1>
-                <p className="text-[#F2C79A]">{user?.name || 'User'}</p>
+                <p className="text-[#E7E2D8]">{user?.name || 'User'}</p>
               </div>
             </div>
             <button
@@ -1009,14 +1009,14 @@ export default function DashboardPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-l-[#EAB308] hover:shadow-xl transition-shadow"
+            className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-l-[#BC9139] hover:shadow-xl transition-shadow"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 mb-2 font-medium">Total Applications</p>
-                <p className="text-4xl font-bold text-[#071B34]">{applications.length}</p>
+                <p className="text-4xl font-bold text-[#111111]">{applications.length}</p>
               </div>
-              <FileText className="h-12 w-12 text-[#EAB308]" />
+              <FileText className="h-12 w-12 text-[#BC9139]" />
             </div>
           </motion.div>
 
@@ -1072,26 +1072,26 @@ export default function DashboardPage() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl shadow-lg mb-10 overflow-hidden"
         >
-          <div className="bg-gradient-to-r from-[#071B34] to-[#0a2647] p-6">
+          <div className="bg-gradient-to-r from-[#111111] to-[#252525] p-6">
             <h2 className="text-2xl font-bold text-white flex items-center">
-              <Upload className="h-6 w-6 mr-3 text-[#EAB308]" />
+              <Upload className="h-6 w-6 mr-3 text-[#BC9139]" />
               Upload Documents
             </h2>
-            <p className="text-[#F2C79A] mt-1">Upload documents for admin review</p>
+            <p className="text-[#E7E2D8] mt-1">Upload documents for admin review</p>
           </div>
 
           <div className="p-8">
             <div
               className={`border-3 border-dashed rounded-2xl p-12 text-center transition-all ${isDragging
-                  ? "border-[#EAB308] bg-yellow-50"
-                  : "border-gray-300 bg-gray-50 hover:border-[#EAB308] hover:bg-yellow-50"
+                  ? "border-[#BC9139] bg-yellow-50"
+                  : "border-gray-300 bg-gray-50 hover:border-[#BC9139] hover:bg-yellow-50"
                 }`}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
             >
-              <Upload className="h-16 w-16 text-[#EAB308] mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-[#071B34] mb-2">
+              <Upload className="h-16 w-16 text-[#BC9139] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-[#111111] mb-2">
                 Drag & Drop your files here
               </h3>
               <p className="text-gray-600 mb-6">or click to browse</p>
@@ -1107,7 +1107,7 @@ export default function DashboardPage() {
                 htmlFor="file-upload"
                 className={`inline-flex items-center px-8 py-3 rounded-xl font-semibold cursor-pointer shadow-lg hover:shadow-xl transition-all ${uploading
                     ? "bg-gray-300 text-gray-700 cursor-not-allowed"
-                    : "bg-[#EAB308] text-[#071B34] hover:bg-[#d9a307]"
+                    : "bg-[#BC9139] text-[#111111] hover:bg-[#BC9139]"
                   }`}
               >
                 <Plus className="h-5 w-5 mr-2" />
@@ -1118,7 +1118,7 @@ export default function DashboardPage() {
            {/* ✅ Preview Section */}
 {previewUrls.length > 0 && uploadedFiles.length > 0 && (
   <div className="mt-8">
-    <h4 className="font-semibold text-[#071B34] text-lg mb-4">
+    <h4 className="font-semibold text-[#111111] text-lg mb-4">
       Preview Files ({previewUrls.length})
     </h4>
 
@@ -1193,7 +1193,7 @@ export default function DashboardPage() {
             <button
               onClick={() => setActiveTab('applications')}
               className={`flex-1 px-6 py-5 font-semibold transition-all ${activeTab === 'applications'
-                  ? 'bg-[#EAB308] text-[#071B34] border-b-4 border-[#071B34]'
+                  ? 'bg-[#BC9139] text-[#111111] border-b-4 border-[#111111]'
                   : 'text-gray-600 hover:bg-gray-50'
                 }`}
             >
@@ -1203,7 +1203,7 @@ export default function DashboardPage() {
             <button
               onClick={() => setActiveTab('services')}
               className={`flex-1 px-6 py-5 font-semibold transition-all ${activeTab === 'services'
-                  ? 'bg-[#EAB308] text-[#071B34] border-b-4 border-[#071B34]'
+                  ? 'bg-[#BC9139] text-[#111111] border-b-4 border-[#111111]'
                   : 'text-gray-600 hover:bg-gray-50'
                 }`}
             >
@@ -1214,7 +1214,7 @@ export default function DashboardPage() {
             <button
               onClick={() => setActiveTab('Certificates')}
               className={`flex-1 px-6 py-5 font-semibold transition-all ${activeTab === 'Certificates'
-                  ? 'bg-[#EAB308] text-[#071B34] border-b-4 border-[#071B34]'
+                  ? 'bg-[#BC9139] text-[#111111] border-b-4 border-[#111111]'
                   : 'text-gray-600 hover:bg-gray-50'
                 }`}
             >
@@ -1228,7 +1228,7 @@ export default function DashboardPage() {
             <div className="p-4 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34]">My Applications</h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#111111]">My Applications</h2>
                   <p className="text-sm sm:text-base text-gray-600 mt-1">Track the status of all your service applications</p>
                 </div>
               </div>
@@ -1245,7 +1245,7 @@ export default function DashboardPage() {
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-700 mb-2 sm:mb-3">No Applications Yet</h3>
                   <p className="text-sm sm:text-base text-gray-500 mb-6 sm:mb-8">Start by applying for a service from the Service Hub</p>
                   <button
-                    className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#EAB308] text-[#071B34] rounded-xl hover:bg-[#d9a307] transition-all font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
+                    className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#BC9139] text-[#111111] rounded-xl hover:bg-[#BC9139] transition-all font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
                     onClick={() => setActiveTab('services')}
                   >
                     Browse Services
@@ -1258,12 +1258,12 @@ export default function DashboardPage() {
                       key={application.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-white border-2 border-gray-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:shadow-xl hover:border-[#EAB308] transition-all duration-300"
+                      className="bg-white border-2 border-gray-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:shadow-xl hover:border-[#BC9139] transition-all duration-300"
                     >
                       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4">
                         <div className="flex-1">
                           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3 sm:mb-4">
-                            <h3 className="font-bold text-lg sm:text-xl text-[#071B34]">
+                            <h3 className="font-bold text-lg sm:text-xl text-[#111111]">
                               {application.ServiceName || application.service?.name}
                             </h3>
                             <span className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold border w-fit ${getStatusColor(application.applicationStatus)}`}>
@@ -1273,16 +1273,16 @@ export default function DashboardPage() {
                           </div>
                           {application.businessName && (
                             <p className="text-sm sm:text-base text-gray-600 mb-3">
-                              Business: <span className="font-semibold text-[#071B34]">{application.businessName}</span>
+                              Business: <span className="font-semibold text-[#111111]">{application.businessName}</span>
                             </p>
                           )}
                           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 text-gray-500 text-sm sm:text-base">
                             <span className="flex items-center">
-                              <Calendar className="h-4 sm:h-5 w-4 sm:w-5 mr-2 text-[#EAB308]" />
+                              <Calendar className="h-4 sm:h-5 w-4 sm:w-5 mr-2 text-[#BC9139]" />
                               {formatDate(application.createdAt)}
                             </span>
                             <span className="flex items-center">
-                              <FileText className="h-4 sm:h-5 w-4 sm:w-5 mr-2 text-[#EAB308]" />
+                              <FileText className="h-4 sm:h-5 w-4 sm:w-5 mr-2 text-[#BC9139]" />
                               {application.ticketNo}
                             </span>
                           </div>
@@ -1290,13 +1290,13 @@ export default function DashboardPage() {
                         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:ml-6">
                           <button
                             onClick={() => setSelectedApplicationId(application.ticketNo)}
-                            className="flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-[#071B34] text-white rounded-lg sm:rounded-xl hover:bg-[#0a2647] transition-all font-semibold shadow-md hover:shadow-lg text-sm sm:text-base"
+                            className="flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-[#111111] text-white rounded-lg sm:rounded-xl hover:bg-[#252525] transition-all font-semibold shadow-md hover:shadow-lg text-sm sm:text-base"
                           >
                             <Eye className="h-4 w-4 mr-2" />
                             View Details
                           </button>
                           {/* {application.applicationStatus === 'COMPLETED' && (
-                            <button className="flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-[#EAB308] text-[#071B34] rounded-lg sm:rounded-xl hover:bg-[#d9a307] transition-all font-semibold shadow-md hover:shadow-lg text-sm sm:text-base">
+                            <button className="flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-[#BC9139] text-[#111111] rounded-lg sm:rounded-xl hover:bg-[#BC9139] transition-all font-semibold shadow-md hover:shadow-lg text-sm sm:text-base">
                               <Download className="h-4 w-4 mr-2" />
                               Download
                             </button>
@@ -1322,7 +1322,7 @@ export default function DashboardPage() {
           {activeTab === 'services' && (
             <div className="p-8">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-[#071B34]">Service Hub</h2>
+                <h2 className="text-3xl font-bold text-[#111111]">Service Hub</h2>
                 <p className="text-gray-600 mt-1">Browse and apply for our services</p>
               </div>
 
@@ -1345,12 +1345,12 @@ export default function DashboardPage() {
                       key={service.id}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:border-[#EAB308] transition-all duration-300 group flex flex-col"
+                      className="bg-white border-2 border-gray-200 rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:border-[#BC9139] transition-all duration-300 group flex flex-col"
                     >
                       {/* Header Section */}
                       <div className="space-y-3 flex-grow">
                         <div className="flex justify-between items-start gap-2">
-                          <h3 className="font-bold text-lg md:text-xl text-[#071B34] group-hover:text-[#EAB308] transition-colors leading-tight">
+                          <h3 className="font-bold text-lg md:text-xl text-[#111111] group-hover:text-[#BC9139] transition-colors leading-tight">
                             {service.name}
                           </h3>
                           {service.isActive && (
@@ -1376,18 +1376,18 @@ export default function DashboardPage() {
                         {/* Price Details */}
                         <div className="grid grid-cols-2 gap-3">
                           {/* Our Fee */}
-                          <div className="bg-gradient-to-br from-[#EAB308]/10 to-[#EAB308]/5 rounded-lg p-3 border border-[#EAB308]/20">
+                          <div className="bg-gradient-to-br from-[#BC9139]/10 to-[#BC9139]/5 rounded-lg p-3 border border-[#BC9139]/20">
                             <p className="text-xs text-gray-600 mb-1 font-medium">Our Fee</p>
-                            <p className="text-xl md:text-2xl font-bold text-[#071B34] flex items-center">
+                            <p className="text-xl md:text-2xl font-bold text-[#111111] flex items-center">
                               <IndianRupee className="h-4 w-4 md:h-5 md:w-5" />
                               {service.price.toLocaleString()}
                             </p>
                           </div>
 
                           {/* Govt Charges */}
-                          <div className="bg-gradient-to-br from-[#071B34]/10 to-[#071B34]/5 rounded-lg p-3 border border-[#071B34]/20">
+                          <div className="bg-gradient-to-br from-[#111111]/10 to-[#111111]/5 rounded-lg p-3 border border-[#111111]/20">
                             <p className="text-xs text-gray-600 mb-1 font-medium">Govt Fee</p>
-                            <p className="text-xl md:text-2xl font-bold text-[#071B34] flex items-center">
+                            <p className="text-xl md:text-2xl font-bold text-[#111111] flex items-center">
                               <IndianRupee className="h-4 w-4 md:h-5 md:w-5" />
                               {service.governmentCharges.toLocaleString()}
                             </p>
@@ -1395,7 +1395,7 @@ export default function DashboardPage() {
                         </div>
 
                         {/* Total Price Banner */}
-                        <div className="bg-gradient-to-r from-[#071B34] to-[#0a2347] rounded-lg p-3 text-white">
+                        <div className="bg-gradient-to-r from-[#111111] to-[#111111] rounded-lg p-3 text-white">
                           <div className="flex items-center justify-between">
                             <span className="text-sm font-medium">Total Amount</span>
                             <span className="text-2xl md:text-3xl font-bold flex items-center gap-1">
@@ -1409,7 +1409,7 @@ export default function DashboardPage() {
 
                         {/* Apply Button */}
                         <button
-                          className="w-full flex items-center justify-center px-4 py-3 bg-[#EAB308] text-[#071B34] rounded-xl hover:bg-[#d9a307] transition-all font-semibold shadow-lg hover:shadow-xl group-hover:scale-105 text-sm md:text-base"
+                          className="w-full flex items-center justify-center px-4 py-3 bg-[#BC9139] text-[#111111] rounded-xl hover:bg-[#BC9139] transition-all font-semibold shadow-lg hover:shadow-xl group-hover:scale-105 text-sm md:text-base"
                           onClick={() => router.push(`/apply?serviceId=${service.id}&serviceName=${encodeURIComponent(service.name)}&servicePrice=${encodeURIComponent(service.price)}&governmentCharges=${encodeURIComponent(service.governmentCharges)}`)}
                         >
                           Apply Now
@@ -1435,7 +1435,7 @@ export default function DashboardPage() {
             <div className="p-8">
              <div className="mb-8 flex items-center justify-between">
   <div>
-    <h2 className="text-3xl font-bold text-[#071B34]">My Certificate</h2>
+    <h2 className="text-3xl font-bold text-[#111111]">My Certificate</h2>
     <p className="text-gray-600 mt-1">Check your certificates status</p>
   </div>
 
@@ -1462,7 +1462,7 @@ export default function DashboardPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-10  max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-[#071B34] to-[#0a2847] rounded-xl p-6 shadow-lg">
+          <div className="bg-gradient-to-br from-[#111111] to-[#252525] rounded-xl p-6 shadow-lg">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex-1 min-w-[200px]">
                 <h3 className="text-xl font-bold text-white mb-1">Need Assistance?</h3>
@@ -1472,7 +1472,7 @@ export default function DashboardPage() {
               <div className="flex gap-3 flex-wrap">
                 <Link
                   href="tel:+919424440004"
-                  className="flex items-center px-5 py-2.5 bg-white text-[#071B34] rounded-lg hover:bg-gray-100 transition-all font-medium shadow-md hover:shadow-lg group"
+                  className="flex items-center px-5 py-2.5 bg-white text-[#111111] rounded-lg hover:bg-gray-100 transition-all font-medium shadow-md hover:shadow-lg group"
                 >
                   <Phone className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
                   Call Us
@@ -1480,7 +1480,7 @@ export default function DashboardPage() {
 
                 <Link
                   href="info@legaldhara.com"
-                  className="flex items-center px-5 py-2.5 bg-[#EAB308] text-[#071B34] rounded-lg hover:bg-[#fbbf24] transition-all font-medium shadow-md hover:shadow-lg group"
+                  className="flex items-center px-5 py-2.5 bg-[#BC9139] text-[#111111] rounded-lg hover:bg-[#BC9139] transition-all font-medium shadow-md hover:shadow-lg group"
                 >
                   <Mail className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
                   Email Support

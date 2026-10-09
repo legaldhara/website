@@ -42,12 +42,12 @@ export default function Opc() {
       {/* Overview Section */}
       <div className="min-h-screen bg-deep-blue">
       {/* Hero Section */}
-      <div className="bg-[#071B34] text-white">
+      <div className="bg-[#111111] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#EAB308] rounded-2xl mb-6">
-                <UserCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#071B34]" />
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-[#BC9139] rounded-2xl mb-6">
+                <UserCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#111111]" />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 {service.title}
@@ -59,13 +59,13 @@ export default function Opc() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <UserCircle className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">1</div>
+                <UserCircle className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">1</div>
                 <div className="text-sm text-gray-300">Person Company</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20">
-                <Shield className="w-8 h-8 text-[#EAB308] mb-3" />
-                <div className="text-2xl sm:text-3xl font-bold text-[#EAB308]">100%</div>
+                <Shield className="w-8 h-8 text-[#BC9139] mb-3" />
+                <div className="text-2xl sm:text-3xl font-bold text-[#BC9139]">100%</div>
                 <div className="text-sm text-gray-300">Control</div>
               </div>
             </div>
@@ -77,11 +77,11 @@ export default function Opc() {
         
         {/* Overview Section */}
         <section id="overview" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#071B34] mb-6">Overview</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] mb-6">Overview</h2>
           
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-semibold text-[#071B34] mb-4">Introduction to OPC</h3>
+              <h3 className="text-xl font-semibold text-[#111111] mb-4">Introduction to OPC</h3>
               <div className="space-y-4">
                 {service?.details?.overview1?.introduction?.map((para, idx) => (
                   <p key={idx} className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -91,9 +91,9 @@ export default function Opc() {
               </div>
             </div>
 
-            <div className="bg-[#EAB308]/10 border-l-4 border-[#EAB308] p-6 rounded-r-xl mt-6">
-              <h3 className="text-lg font-semibold text-[#071B34] mb-3 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-[#EAB308]" />
+            <div className="bg-[#BC9139]/10 border-l-4 border-[#BC9139] p-6 rounded-r-xl mt-6">
+              <h3 className="text-lg font-semibold text-[#111111] mb-3 flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-[#BC9139]" />
                 Legal Definition
               </h3>
               {service?.details?.overview1?.whatIs?.map((para, idx) => (
@@ -107,8 +107,8 @@ export default function Opc() {
 
         {/* Features Section */}
         <section id="features" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service?.details?.sections?.[0].title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,8 +118,8 @@ export default function Opc() {
               return section0.list.map((item: any, idx: number) => {
                 const [title, ...desc] = item.split(': ');
                 return (
-                  <div key={idx} className="bg-gradient-to-br from-[#F2C79A]/20 to-[#EAB308]/10 rounded-xl p-6 border border-[#EAB308]/30">
-                    <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-2">{title}</h3>
+                  <div key={idx} className="bg-gradient-to-br from-[#E7E2D8]/20 to-[#BC9139]/10 rounded-xl p-6 border border-[#BC9139]/30">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-2">{title}</h3>
                     <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ')}</p>
                   </div>
                 );
@@ -130,8 +130,8 @@ export default function Opc() {
 
         {/* Privileges Section */}
         <section id="privileges" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service?.details?.sections?.[1].title}
           </h2>
           <div className="space-y-4">
@@ -141,10 +141,10 @@ export default function Opc() {
               return section1.list.map((item : any, idx : number) => {
                 const [title, ...desc] = item.split(': ');
                 return (
-                  <div key={idx} className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-lg">
-                    <Award className="w-6 h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+                  <div key={idx} className="flex items-start gap-4 p-4 bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-lg">
+                    <Award className="w-6 h-6 text-[#BC9139] flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-base font-semibold text-[#071B34] mb-1">{title}</h3>
+                      <h3 className="text-base font-semibold text-[#111111] mb-1">{title}</h3>
                       <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ')}</p>
                     </div>
                   </div>
@@ -156,8 +156,8 @@ export default function Opc() {
 
         {/* Legal Status Section */}
         <section id="legal-status" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service?.details?.sections?.[2].title}
           </h2>
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -167,18 +167,18 @@ export default function Opc() {
 
         {/* Benefits Section */}
         <section id="benefits" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Benefits of OPC Registration
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {service?.details?.benefits1?.map((benefit, idx) => {
               const [title, ...desc] = benefit.split(': ');
               return (
-                <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-lg border-l-4 border-[#EAB308]">
-                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#EAB308] flex-shrink-0 mt-1" />
+                <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-lg border-l-4 border-[#BC9139]">
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#BC9139] flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-base font-semibold text-[#071B34] mb-1">{title}</h3>
+                    <h3 className="text-base font-semibold text-[#111111] mb-1">{title}</h3>
                     <p className="text-sm text-gray-700 leading-relaxed">{desc.join(': ')}</p>
                   </div>
                 </div>
@@ -189,14 +189,14 @@ export default function Opc() {
 
         {/* Eligibility Section */}
         <section id="eligibility" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service?.details?.eligibility11?.title}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {service.details?.eligibility11?.sections.map((req, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-[#071B34] to-[#0a2847] text-white rounded-xl p-6">
-                <h3 className="text-base sm:text-lg font-semibold text-[#EAB308] mb-3">{req.heading}</h3>
+              <div key={idx} className="bg-gradient-to-br from-[#111111] to-[#252525] text-white rounded-xl p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-[#BC9139] mb-3">{req.heading}</h3>
                 <p className="text-sm text-gray-300 leading-relaxed">{req.text}</p>
               </div>
             ))}
@@ -205,22 +205,22 @@ export default function Opc() {
 
         {/* Documents Required Section */}
         <section id="documents-required" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Documents Required
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {service.details?.requiredDocuments1?.documentTypes?.map((docType, idx) => (
-              <div key={idx} className="border border-[#EAB308]/30 rounded-xl p-6 bg-gradient-to-br from-[#F2C79A]/5 to-transparent">
+              <div key={idx} className="border border-[#BC9139]/30 rounded-xl p-6 bg-gradient-to-br from-[#E7E2D8]/5 to-transparent">
                 <div className="flex items-center gap-3 mb-4">
-                  <FileText className="w-6 h-6 text-[#EAB308]" />
-                  <h3 className="text-lg font-semibold text-[#071B34]">{docType.type}</h3>
+                  <FileText className="w-6 h-6 text-[#BC9139]" />
+                  <h3 className="text-lg font-semibold text-[#111111]">{docType.type}</h3>
                 </div>
                 <div className="space-y-3">
                   {docType.documents.map((doc, docIdx) => (
                     <div key={docIdx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#EAB308] flex-shrink-0 mt-1" />
+                      <CheckCircle2 className="w-5 h-5 text-[#BC9139] flex-shrink-0 mt-1" />
                       <p className="text-sm text-gray-700">{doc}</p>
                     </div>
                   ))}
@@ -232,8 +232,8 @@ export default function Opc() {
 
         {/* Process Section */}
         <section id="process" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Registration Process
           </h2>
           <div className="space-y-6">
@@ -242,12 +242,12 @@ export default function Opc() {
               return (
                 <div key={idx} className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#EAB308] rounded-full flex items-center justify-center text-[#071B34] font-bold text-lg">
+                    <div className="w-12 h-12 bg-[#BC9139] rounded-full flex items-center justify-center text-[#111111] font-bold text-lg">
                       {idx + 1}
                     </div>
                   </div>
                   <div className="flex-1 pt-2">
-                    <h3 className="text-lg font-semibold text-[#071B34] mb-2">{stepTitle}</h3>
+                    <h3 className="text-lg font-semibold text-[#111111] mb-2">{stepTitle}</h3>
                     {stepDesc.length > 0 && (
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                         {stepDesc.join(' - ')}
@@ -262,14 +262,14 @@ export default function Opc() {
 
         {/* Compliance Section */}
         <section id="compliance" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service.details?.operation?.title}
           </h2>
           <div className="space-y-6">
             {service.details?.operation?.sections.map((section, idx) => (
-              <div key={idx} className="bg-gradient-to-r from-[#F2C79A]/10 to-transparent rounded-xl p-6 border-l-4 border-[#EAB308]">
-                <h3 className="text-base sm:text-lg font-semibold text-[#071B34] mb-3">{section.heading}</h3>
+              <div key={idx} className="bg-gradient-to-r from-[#E7E2D8]/10 to-transparent rounded-xl p-6 border-l-4 border-[#BC9139]">
+                <h3 className="text-base sm:text-lg font-semibold text-[#111111] mb-3">{section.heading}</h3>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-line">
                   {section.text}
                 </p>
@@ -280,14 +280,14 @@ export default function Opc() {
 
         {/* Tax Section */}
         <section id="taxation" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             {service.details?.financialRegulations?.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {service?.details?.financialRegulations?.sections.map((section, idx) => (
-              <div key={idx} className="bg-[#071B34] text-white rounded-xl p-6 hover:bg-[#0a2847] transition-colors">
-                <h3 className="text-base sm:text-lg font-semibold text-[#EAB308] mb-3">{section.heading}</h3>
+              <div key={idx} className="bg-[#111111] text-white rounded-xl p-6 hover:bg-[#252525] transition-colors">
+                <h3 className="text-base sm:text-lg font-semibold text-[#BC9139] mb-3">{section.heading}</h3>
                 <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
                   {section.text}
                 </p>
@@ -299,8 +299,8 @@ export default function Opc() {
        
 
          <section id="faqs" className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10 mb-8">
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#071B34] mb-4 sm:mb-6 flex items-center gap-3">
-            <span className="w-2 h-8 bg-[#EAB308] rounded-full"></span>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#111111] mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="w-2 h-8 bg-[#BC9139] rounded-full"></span>
             Frequently Asked Questions
           </h2>
           <div className="space-y-4">
@@ -331,14 +331,14 @@ export default function Opc() {
         </section>
 
          {/* CTA Section */}
-        <section id="cta" className="bg-gradient-to-r from-[#EAB308] to-[#F2C79A] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#071B34] mb-4">
+        <section id="cta" className="bg-gradient-to-r from-[#BC9139] to-[#E7E2D8] rounded-2xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#111111] mb-4">
             Ready to Register Your OPC?
           </h2>
-          <p className="text-base sm:text-lg text-[#071B34]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#111111]/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Start your solo entrepreneurial journey with complete legal protection and expert guidance
           </p>
-          <Link href='/contact' className="bg-[#071B34] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#0a2847] transition-colors shadow-lg">
+          <Link href='/contact' className="bg-[#111111] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#252525] transition-colors shadow-lg">
             Start Your OPC Registration
           </Link>
         </section>

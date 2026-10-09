@@ -980,7 +980,7 @@ export default function TrademarkClassFinder() {
                 <Button
                   onClick={handleSearch}
                   disabled={isSearching}
-                  className="bg-gradient-to-r from-[#1B4061] to-[#2c5c8a] hover:from-[#1B4061] hover:to-[#244b6d] text-white px-6 py-2.5 text-base shadow-lg hover:shadow-xl transition-all duration-300 font-bold rounded-lg h-11 min-w-[120px]"
+                  className="bg-gradient-to-r from-[#252525] to-[#252525] hover:from-[#252525] hover:to-[#252525] text-white px-6 py-2.5 text-base shadow-lg hover:shadow-xl transition-all duration-300 font-bold rounded-lg h-11 min-w-[120px]"
                 >
                   {isSearching ? (
                     <div className="flex items-center gap-2">

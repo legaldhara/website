@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function ExpertsCTA() {
   return (
-    <section className="w-full bg-[#F4F4F4] px-4 py-8 md:px-6 lg:px-8">
+    <section className="w-full bg-[#F7F5F0] px-4 py-8 md:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-2xl bg-deep-blue
 
