@@ -322,13 +322,27 @@
 }
 
 .footer {
+  --class-divider-progress: 1;
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   margin-top: 24px;
   padding-top: 20px;
   gap: 28px;
   align-items: center;
-  border-top: 1px solid var(--line);
+  border-top: 0;
+}
+
+.footer::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--line);
+  content: "";
+  transform: scaleX(var(--class-divider-progress));
+  transform-origin: left center;
 }
 
 .benefits {

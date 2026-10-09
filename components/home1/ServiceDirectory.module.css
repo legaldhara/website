@@ -27,7 +27,14 @@
   text-decoration: none;
 }
 
-.section a:focus-visible {
+.section button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.section a:focus-visible,
+.section button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 4px;
 }
@@ -104,17 +111,19 @@
   border-bottom: 1px solid var(--line);
 }
 
-.categories a {
+.categories button {
   display: block;
   margin-bottom: -1px;
   padding: 0 8px 14px;
+  background: transparent;
   border-bottom: 2px solid transparent;
   color: var(--muted);
+  cursor: pointer;
   font-size: 17px;
   line-height: 1.4;
 }
 
-.categories a:hover,
+.categories button:hover,
 .categories .activeCategory {
   color: var(--ink);
 }
@@ -147,11 +156,15 @@
 
 .serviceLink {
   display: grid;
+  width: 100%;
   grid-template-columns: 44px minmax(0, 1fr) 26px;
   padding: 25px 12px;
   gap: 14px;
   align-items: center;
+  background: transparent;
   border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  text-align: left;
   transition: background 200ms ease;
 }
 
@@ -211,7 +224,6 @@
 .figure {
   min-width: 0;
   align-self: center;
-  animation: artworkEnter 650ms ease both;
 }
 
 .figure img {
@@ -323,17 +335,6 @@
   white-space: nowrap;
 }
 
-@keyframes artworkEnter {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 1100px) and (min-width: 701px) {
   .intro {
     display: block;
@@ -350,15 +351,7 @@
   }
 
   .details {
-    display: grid;
     grid-column: 1 / -1;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-  }
-
-  .detail + .detail {
-    padding-top: 0;
-    border-top: 0;
   }
 
   .detail ul {
@@ -419,7 +412,7 @@
     gap: 10px 14px;
   }
 
-  .categories a {
+  .categories button {
     padding: 5px 0 10px;
     font-size: 14px;
   }
@@ -431,7 +424,35 @@
   }
 
   .directory {
+    display: flex;
+    width: 100%;
+    padding: 4px 0 8px;
+    gap: 9px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    scroll-snap-type: inline proximity;
+  }
+
+  .directory::-webkit-scrollbar {
     display: none;
+  }
+
+  .directoryLabel,
+  .consultation {
+    display: none;
+  }
+
+  .serviceLink {
+    min-width: min(78vw, 290px);
+    padding: 14px 12px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .linkNumber {
+    min-height: 46px;
+    font-size: 23px;
   }
 
   .figure {
@@ -533,10 +554,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .figure {
-    animation: none;
-  }
-
   .serviceLink,
   .cta img {
     transition: none;

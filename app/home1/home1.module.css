@@ -73,6 +73,37 @@
   background: var(--hero-gold);
 }
 
+.hero [data-hero-rule] {
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: heroRuleDraw 480ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.hero [data-hero-motion] {
+  animation: heroContentReveal 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(120ms + var(--hero-order, 0) * 70ms);
+}
+
+@keyframes heroRuleDraw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 18% 0);
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+    transform: translateY(0);
+  }
+}
+
 .brandNote p {
   margin: 0;
   font-size: 15px;
@@ -521,6 +552,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero [data-hero-rule],
+  .hero [data-hero-motion] {
+    animation: none;
+    clip-path: none;
+    transform: none;
+  }
+
   .primaryAction,
   .secondaryAction,
   .serviceTrack,

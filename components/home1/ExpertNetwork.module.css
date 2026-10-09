@@ -11,6 +11,7 @@
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-home1), "Avenir Next", Arial, sans-serif;
+  overflow: hidden;
 }
 
 .network * {
@@ -26,6 +27,7 @@
 .header {
   width: min(100%, var(--home1-content-max));
   margin: 0 auto 28px;
+  overflow: hidden;
 }
 
 .shortRule {
@@ -149,7 +151,9 @@
 }
 
 .expert {
+  --network-line-progress: 1;
   display: flex;
+  position: relative;
   min-width: 0;
   padding: 16px 30px 20px;
   flex-direction: column;
@@ -158,12 +162,44 @@
 
 .expert:nth-child(even) {
   padding-left: 46px;
-  border-left: 1px solid var(--line);
 }
 
 .expert:nth-child(n + 3) {
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+}
+
+.expert::before,
+.expert::after {
+  position: absolute;
+  z-index: 1;
+  background: var(--line);
+  content: "";
+  pointer-events: none;
+}
+
+.expert::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  opacity: 0;
+  transform: scaleY(var(--network-line-progress));
+  transform-origin: top;
+}
+
+.expert::after {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  opacity: 0;
+  transform: scaleX(var(--network-line-progress));
+  transform-origin: left;
+}
+
+.expert:nth-child(even)::before,
+.expert:nth-child(n + 3)::after {
+  opacity: 1;
 }
 
 .graphic {
@@ -173,6 +209,11 @@
   max-width: 100%;
   margin-bottom: 10px;
   overflow: visible;
+}
+
+.graphic use {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 0;
 }
 
 .category {
@@ -202,22 +243,6 @@
 
 .expert > .link {
   margin-top: auto;
-}
-
-.revealed .graphic use {
-  animation: drawStroke 800ms ease both;
-  animation-delay: calc(var(--expert-sequence) * 100ms);
-  stroke-dasharray: 300;
-  stroke-dashoffset: 0;
-}
-
-@keyframes drawStroke {
-  from {
-    stroke-dashoffset: 300;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 
 @media (max-width: 1199px) {
@@ -358,11 +383,18 @@
     grid-template-columns: 88px minmax(0, 1fr);
     column-gap: 18px;
     padding: 22px 0;
-    border-left: 0;
   }
 
-  .expert + .expert {
-    border-top: 1px solid var(--line);
+  .expert::before {
+    opacity: 0;
+  }
+
+  .expert::after {
+    opacity: 0;
+  }
+
+  .expert + .expert::after {
+    opacity: 1;
   }
 
   .graphic {

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Manrope } from "next/font/google";
 import { ArrowRight } from "lucide-react";
@@ -32,28 +33,32 @@ export default function HomePage() {
 
           <div className={styles.content}>
             <div className={styles.brandNote}>
-              <span className={styles.brandRule} />
-              <p>Legal Dhara</p>
-              <span>Simplifying Legal Solutions for You.</span>
+              <span className={styles.brandRule} data-hero-rule />
+              <p data-hero-motion style={{ "--hero-order": 0 } as CSSProperties}>Legal Dhara</p>
+              <span data-hero-motion style={{ "--hero-order": 1 } as CSSProperties}>
+                Simplifying Legal Solutions for You.
+              </span>
             </div>
 
             <h1 className={styles.headline}>
-              <span>Legal expertise.</span>
-              <strong>Without the extra fees.</strong>
+              <span data-hero-motion style={{ "--hero-order": 2 } as CSSProperties}>Legal expertise.</span>
+              <strong data-hero-motion style={{ "--hero-order": 3 } as CSSProperties}>
+                Without the extra fees.
+              </strong>
             </h1>
 
-            <p className={styles.zeroFees}>
+            <p className={styles.zeroFees} data-hero-motion style={{ "--hero-order": 4 } as CSSProperties}>
               <span>₹0 service charges.</span>
               <span>₹0 consultation charges.</span>
             </p>
 
-            <p className={styles.supportingCopy}>
+            <p className={styles.supportingCopy} data-hero-motion style={{ "--hero-order": 5 } as CSSProperties}>
               Pay only applicable government fees.
               <br />
               Expert guidance from consultation to filing.
             </p>
 
-            <div className={styles.actions}>
+            <div className={styles.actions} data-hero-motion style={{ "--hero-order": 6 } as CSSProperties}>
               <Link href="/contact" className={styles.primaryAction}>
                 Get Free Consultation
                 <ArrowRight aria-hidden="true" />
